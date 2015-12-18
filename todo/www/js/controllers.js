@@ -20,4 +20,3 @@ angular.module('bartApp', [])
       // err.status will contain the status code
     })
   })
-

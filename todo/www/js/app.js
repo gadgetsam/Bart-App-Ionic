@@ -22,3 +22,15 @@ angular.module('bartApp', ['ionic'])
     }
   });
 })
+
+ .config(function ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state('home', {
+                url: '/home',
+                templateUrl: 'templates/home.html',
+                controller: 'MainCtrl'
+            })
+        $urlRouterProvider.otherwise('/home');
+
+        // $urlRouterProvider.otherwise('/welcome?clear');
+    })
