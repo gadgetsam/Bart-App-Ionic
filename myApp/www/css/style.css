@@ -1,1 +1,15 @@
 /* Empty. Add your own CSS if you like */
+.colorbox{
+    width:10px;
+    background-color:blue;
+    color:blue;
+    height:100%;
+}
+hr {
+    display: block;
+    height: .5px;
+    border: 0;
+    border-top: 1px solid #E0E0E0;
+    margin: 1em 0;
+    padding: 0; 
+}
