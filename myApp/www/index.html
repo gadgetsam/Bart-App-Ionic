@@ -19,11 +19,15 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
+    <script src="https://x2js.googlecode.com/hg/xml2json.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
+    <script src="js/moment.js"></script>
   </head>
+<!--  <body ng-app="starter"  ng-controller='TimeCtrl'> The first thing messing stuff up was declaring the new ng-controller here. -->
   <body ng-app="starter">
+<!--    <div ng-controller="MainCtrl"> When the new controller was messed with here it also messed it up.-->
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
@@ -31,6 +35,7 @@
       <ion-nav-back-button>
       </ion-nav-back-button>
     </ion-nav-bar>
+<!--      </div>-->
     <!--
       The views will be rendered in the <ion-nav-view> directive below
       Templates are in the /templates folder (but you could also
