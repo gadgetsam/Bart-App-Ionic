@@ -50,17 +50,7 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
-}).factory('xmlParser', function () {
-    var x2js = new X2JS();
-    return {
-      xml2json: x2js.xml2json,
-      xml_str2json_withOutBind : x2js.xml_str2json,
-      xml_str2json: function (args) {
-        return angular.bind(x2js, x2js.xml_str2json, args)();
-      },
-      json2xml: x2js.json2xml_str
-    }
-  })
+})
   .controller('MainCtrl', function($scope, $http, xmlParser, $interval) {
 
     var tripGetter = function(orgin, dest) {
@@ -114,7 +104,8 @@ angular.module('starter.controllers', [])
               console.log(JSON.parse(window.localStorage.getItem("trips")));
               console.log("run 2");
               console.log(trips.params.push([origs,dests]));
-              window.localStorage.setItem("trips", JSON.stringify({params:trips.params.push([origs,dests])}));
+              //window.localStorage.removeItem("trips")
+              //window.localStorage.setItem("trips", JSON.stringify({params:trips.params.push([origs,dests])}));
               console.log(JSON.parse(window.localStorage.getItem("trips")));
             }};
           var tripCounter = function(){
