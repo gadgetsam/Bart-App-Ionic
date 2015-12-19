@@ -2,11 +2,11 @@
     <ion-content>
         <div style="margin:10px;">
             <div class="row">
-                <button class="button button-small button-outline button-positive icon" style="width:60%; margin-right:2%;"  ng-click="showLookup()">Quick Lookup
+                <button class="button button-small button-outline button-positive icon" style="width:60%; margin-right:1%;" ng-click="modal.show()">Quick Lookup
                 </button>
-                <button class="button button-small button-outline button-positive icon ion-ios-plus-outline" style="width:20%; margin-right:2%;  margin-left:2%;">
+                <button class="button button-small button-outline button-positive icon ion-ios-plus-outline" style="width:20%; margin-right:1%;  margin-left:1%;" ng-click="showConfirm()">
                 </button>
-                <button class="button button-small button-outline button-positive icon  ion-location" style="width:20%; margin-left:2%;">
+                <button class="button button-small button-outline button-positive icon  ion-location" style="width:20%; margin-left:1%;">
                 </button>
             </div>
         </div>
@@ -14,22 +14,82 @@
 
             <ion-item class="item-remove-animate item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
 
-<blockquote style="margin-top:0px; margin-bottom:0px; padding:0px; padding-left:10px; border-color:#FF5733;">
+                <blockquote style="margin-top:0px; margin-bottom:0px; padding:0px; padding-left:10px; border-color:#FF5733;">
                     <h2>{{chat.name}}</h2>
                     <p>{{chat.lastText}}</p>
                     <i class="icon ion-chevron-right icon-accessory"></i>
-</blockquote>
-                    <ion-option-button class="button-assertive" ng-click="remove(chat)">
-                        Delete
-                    </ion-option-button>
+                </blockquote>
+                <ion-option-button class="button-assertive" ng-click="remove(chat)">
+                    Delete
+                </ion-option-button>
                 </div>
             </ion-item>
-<!--
+            <!--
             <div class="item-remove-animate " ng-repeat="chat in chats"  href="#/tab/chats/{{chat.id}}">
                 <blockquote style="border-color:blue;">Yo Homeslice</blockquote>
                 <hr style="padding:0px;">
             </div>
 -->
         </ion-list>
+
+        <script id="my-modal.html" type="text/ng-template">
+            <ion-modal-view>
+                <ion-header-bar>
+                    <h1 class="title">Select Trip</h1>
+                    <div class="button button-clear" ng-click="modal.hide()"><span class="icon ion-close"></span>
+                    </div>
+                </ion-header-bar>
+                <ion-content>
+                    <div style="padding:5%; font-size:17px;">
+                        <center>
+                            Depart From:
+                            <select ng-model="start">
+                                <option>Milbrae</option>
+                                <option>SFO</option>
+                                <option>San Bruno</option>
+                                <option>South San Francisco</option>
+                                <option>Colma</option>
+                                <option>Daily City</option>
+                                <option>Balboa</option>
+                                <option>Glen Park</option>
+                                <option>24th Street</option>
+                                <option>16th Street</option>
+                                <option>Civic Center</option>
+                                <option>Powell Street</option>
+                                <option>Montogomery</option>
+                                <option>Embarcadero</option>
+
+                            </select>
+                            <br>
+                            <br> Arrive At:
+                            <select ng-model="end">
+                                <option>Milbrae</option>
+                                <option>SFO</option>
+                                <option>San Bruno</option>
+                                <option>South San Francisco</option>
+                                <option>Colma</option>
+                                <option>Daily City</option>
+                                <option>Balboa</option>
+                                <option>Glen Park</option>
+                                <option>24th Street</option>
+                                <option>16th Street</option>
+                                <option>Civic Center</option>
+                                <option>Powell Street</option>
+                                <option>Montogomery</option>
+                                <option>Embarcadero</option>
+
+                            </select>
+                            <br>
+                            <br>
+                            <p>Confirm your trip from <b>{{start}}</b> to <b>{{end}}</b>
+                            </p>
+                            <button class="button button-outline button-calm">
+                                View
+                            </button>
+                        </center>
+                    </div>
+                </ion-content>
+            </ion-modal-view>
+        </script>
     </ion-content>
 </ion-view>
