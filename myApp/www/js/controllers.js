@@ -1,8 +1,8 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function ($scope) {})
+  .controller('DashCtrl', function ($scope) {})
 
-.controller('ChatsCtrl', function ($scope, Chats, $ionicPopup, $timeout, $ionicModal) {
+  .controller('ChatsCtrl', function ($scope, Chats, $ionicPopup, $timeout, $ionicModal) {
     // With the new view caching in Ionic, Controllers are only called
     // when they are recreated or on app start, instead of every page change.
     // To listen for when this page is active (for example, to refresh data),
@@ -13,44 +13,44 @@ angular.module('starter.controllers', [])
 
     $scope.chats = Chats.all();
     $scope.remove = function (chat) {
-        Chats.remove(chat);
+      Chats.remove(chat);
     };
     $ionicModal.fromTemplateUrl('my-modal.html', {
-        scope: $scope,
-        animation: 'slide-in-up'
+      scope: $scope,
+      animation: 'slide-in-up'
     }).then(function (modal) {
-        $scope.modal = modal;
+      $scope.modal = modal;
     });
     $scope.openModal = function () {
-        $scope.modal.show();
+      $scope.modal.show();
     };
     $scope.closeModal = function () {
-        $scope.modal.hide();
+      $scope.modal.hide();
     };
     //Cleanup the modal when we're done with it!
     $scope.$on('$destroy', function () {
-        $scope.modal.remove();
+      $scope.modal.remove();
     });
     // Execute action on hide modal
     $scope.$on('modal.hidden', function () {
-        // Execute action
+      // Execute action
     });
     // Execute action on remove modal
     $scope.$on('modal.removed', function () {
-        // Execute action
+      // Execute action
     });
+
 })
 
-.controller('ChatDetailCtrl', function ($scope, $stateParams, Chats) {
-    $scope.chat = Chats.get($stateParams.chatId);
+.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
+  $scope.chat = Chats.get($stateParams.chatId);
 })
 
 .controller('AccountCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
   };
-})
-    .factory('xmlParser', function () {
+}).factory('xmlParser', function () {
     var x2js = new X2JS();
     return {
       xml2json: x2js.xml2json,
@@ -61,8 +61,6 @@ angular.module('starter.controllers', [])
       json2xml: x2js.json2xml_str
     }
   })
-
-
   .controller('MainCtrl', function($scope, $http, xmlParser, $interval) {
 
     var tripGetter = function(orgin, dest) {
@@ -105,13 +103,33 @@ angular.module('starter.controllers', [])
 
 
     }
+    var addRoute = function(origs, dests){
+      trips = JSON.parse(window.localStorage.getItem("trips"));
+
+
+      if(trips== undefined) {
+      window.localStorage.setItem("trips", JSON.stringify([[origs,dests]]));
+    }
+    else{
+        //console.log(trips.push([origs,dests]));
+        window.localStorage.setItem("trips", JSON.stringify(trips.push([origs,dests])));
+      }};
     var tripCounter = function(){
-      $scope.trip = tripGetter("ASHB","CIVC")
+      trips =JSON.parse(window.localStorage.getItem("trips"));
+      console.log(trips);
+      if( trips!== undefined) {
+
+        $scope.trip = tripGetter(trips[0][0],trips[0][1])
+      }
+
       console.log("ran")
     }
+    window.localStorage.removeItem("trips")
+    addRoute("ASHB","CIVC");
+    addRoute("ASHB","CIVC");
 
     tripCounter();
-    $interval(tripCounter, 30000);
+    $interval(tripCounter, 1000);
     //console.log($scope.time)
 
   })
@@ -125,4 +143,6 @@ angular.module('starter.controllers', [])
   }
   tick();
   $interval(tick, 1000);
-});
+})
+
+
