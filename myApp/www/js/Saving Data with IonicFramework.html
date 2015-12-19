@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/ -->
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en-US" prefix="og: http://ogp.me/ns#"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script async="" data-rocketsrc="?cf_action=sync_comments&amp;post_id=181" data-rocketoptimized="true"></script><script data-rocketsrc="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_US.eSFgm4ul_CM.O/m=gapi_iframes_style_bubble/exm=auth,ytsubscribe/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCOYUPT7bgygiJNtfNSzhqjt3mR-UQ/t=zcms/cb=gapi.loaded_2" data-rocketoptimized="true" async=""></script><script data-rocketsrc="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_US.eSFgm4ul_CM.O/m=auth/exm=ytsubscribe/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCOYUPT7bgygiJNtfNSzhqjt3mR-UQ/t=zcms/cb=gapi.loaded_1" data-rocketoptimized="true" async=""></script><script data-rocketsrc="https://apis.google.com/_/scs/apps-static/_/js/k=oz.gapi.en_US.eSFgm4ul_CM.O/m=ytsubscribe/rt=j/sv=1/d=1/ed=1/am=AQ/rs=AGLTcCOYUPT7bgygiJNtfNSzhqjt3mR-UQ/t=zcms/cb=gapi.loaded_0" data-rocketoptimized="true" async=""></script><script type="text/javascript" async="" data-rocketsrc="https://ssl.google-analytics.com/ga.js" data-rocketoptimized="true"></script><script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"c94906c37776b320170733a150885ebc",petok:"f8d5d7bfd45c7202e46756302ca4d3d2b2e66da1-1450560306-3600",zone:"nraboy.com",rocket:"a",apps:{},sha2test:0}];document.write('<script type="text/javascript" src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=38857570ac/cloudflare.min.js"><'+'\/script>');}}catch(e){};
+//]]>
+</script><script type="text/javascript" src="./Saving Data with IonicFramework_files/cloudflare.min.js"></script><style type="text/css"></style><style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style><script data-module="cloudflare/rocket" id="cfjs_block_1350b443606" onload="CloudFlare.__cfjs_block_1350b443606_load()" onerror="CloudFlare.__cfjs_block_1350b443606_error()" onreadystatechange="CloudFlare.__cfjs_block_1350b443606_readystatechange()" type="text/javascript" src="./Saving Data with IonicFramework_files/rocket.js"></script>
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="pingback" href="https://blog.nraboy.com/xmlrpc.php">
+<title>Saving Data with IonicFramework</title>
+ 
+<meta name="description" content="Save data in IonicFramework with cross compatible HTML5 local storage">
+<meta name="robots" content="noodp">
+<link rel="canonical" href="./Saving Data with IonicFramework_files/Saving Data with IonicFramework.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Saving Data with IonicFramework">
+<meta property="og:description" content="Save data in IonicFramework with cross compatible HTML5 local storage">
+<meta property="og:url" content="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/">
+<meta property="og:site_name" content="Nic Raboy&#39;s Code Blog">
+<meta property="article:tag" content="data">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="storage">
+<meta property="article:section" content="Android">
+<meta property="article:published_time" content="2014-06-13T02:59:44+00:00">
+<meta property="article:modified_time" content="2014-09-11T06:48:52+00:00">
+<meta property="og:updated_time" content="2014-09-11T06:48:52+00:00">
+ 
+<link rel="alternate" type="application/rss+xml" title="Nic Raboy&#39;s Code Blog » Feed" href="https://blog.nraboy.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Nic Raboy&#39;s Code Blog » Comments Feed" href="https://blog.nraboy.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Nic Raboy&#39;s Code Blog » Saving Data With IonicFramework Comments Feed" href="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/feed/">
+<script type="text/rocketscript" data-rocketoptimized="true">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"https:\/\/blog.nraboy.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.3.1"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+<style type="text/css">img.wp-smiley,img.emoji{display:inline!important;border:none!important;box-shadow:none!important;height:1em!important;width:1em!important;margin:0 .07em!important;vertical-align:-0.1em!important;background:none!important;padding:0!important;}</style>
+<link rel="stylesheet" id="crayon-css" href="./Saving Data with IonicFramework_files/crayon.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-theme-github-css" href="./Saving Data with IonicFramework_files/github.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-font-monaco-css" href="./Saving Data with IonicFramework_files/monaco.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-css" href="./Saving Data with IonicFramework_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-fa-icon-css" href="./Saving Data with IonicFramework_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-bootstrap-css" href="./Saving Data with IonicFramework_files/bootstrap.min(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-icons-css" href="./Saving Data with IonicFramework_files/font-awesome.min(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-fonts-css" href="./Saving Data with IonicFramework_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-style-css" href="./Saving Data with IonicFramework_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="ebs_dynamic_css-css" href="./Saving Data with IonicFramework_files/ebs_dynamic_css.php" type="text/css" media="all">
+<link rel="stylesheet" id="genericons-css" href="./Saving Data with IonicFramework_files/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./Saving Data with IonicFramework_files/jetpack.css" type="text/css" media="all">
+ 
+<script type="text/rocketscript" data-rocketoptimized="true">
+
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-27068716-1']);
+	_gaq.push(['_gat._forceSSL']);
+	_gaq.push(['_trackPageview']);
+
+	(function () {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})();
+
+</script>
+ 
+<script type="text/rocketscript" data-rocketsrc="//blog.nraboy.com/wp-includes/js/jquery/jquery.js?ver=1.11.3" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketsrc="//blog.nraboy.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"2.7.1","is_admin":"0","ajaxurl":"https:\/\/blog.nraboy.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type="text/rocketscript" data-rocketsrc="//blog.nraboy.com/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js?ver=2.7.1" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketsrc="//blog.nraboy.com/wp-content/plugins/easy-bootstrap-shortcodes/js/bootstrap.min.js?ver=4.3.1" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketsrc="//blog.nraboy.com/wp-content/themes/sparkling/inc/js/modernizr.min.js?ver=4.3.1" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketsrc="//blog.nraboy.com/wp-content/themes/sparkling/inc/js/bootstrap.min.js?ver=4.3.1" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketsrc="//blog.nraboy.com/wp-content/themes/sparkling/inc/js/functions.min.js?ver=4.3.1" data-rocketoptimized="true"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.nraboy.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blog.nraboy.com/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 4.3.1">
+<link rel="shortlink" href="https://blog.nraboy.com/?p=181">
+<style type="text/css">img#wpstats{display:none}</style><style type="text/css">.entry-content{font-family:Open Sans;font-size:14px;font-weight:normal;color:#6B6B6B;}</style><style type="text/css">@font-face{font-family:'ssbp';src:url('//blog.nraboy.com/wp-content/plugins/simple-share-buttons-plus/sharebuttons/assets/fonts/ssbp.eot?5276i0');src:url('//blog.nraboy.com/wp-content/plugins/simple-share-buttons-plus/sharebuttons/assets/fonts/ssbp.eot?#iefix5276i0') format('embedded-opentype'),url('//blog.nraboy.com/wp-content/plugins/simple-share-buttons-plus/sharebuttons/assets/fonts/ssbp.woff2?5276i0') format('woff2'),url('//blog.nraboy.com/wp-content/plugins/simple-share-buttons-plus/sharebuttons/assets/fonts/ssbp.woff?5276i0') format('woff'),url('//blog.nraboy.com/wp-content/plugins/simple-share-buttons-plus/sharebuttons/assets/fonts/ssbp.ttf?5276i0') format('truetype'),url('//blog.nraboy.com/wp-content/plugins/simple-share-buttons-plus/sharebuttons/assets/fonts/ssbp.svg?5276i0#ssbp') format('svg');font-weight:normal;font-style:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}@-webkit-keyframes spin{from{-webkit-transform:rotate(0deg)}to{-webkit-transform:rotate(360deg)}}@keyframes spin{from{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.ssbp-spinner:before{font-family:'ssbp';content:"\e614"}.ssbp-spinner{-webkit-animation:spin 2s infinite linear;animation:spin 2s infinite linear;display:inline-block}.ssbp-btn:before,.ssbp-toggle-switch:before{display:inline-block;font-family:'ssbp';speak:none;font-size:24px;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none}.ssbp-arrow-right:before{content:"\e612"}.ssbp-arrow-left:before{content:"\e613"}.ssbp-arrow-down:before{content:"\e619"}.ssbp-arrow-up:before{content:"\e61a"}.ssbp-chevron-down:before,.ssbp-toggle-switch:before{content:"\e618"}.ssbp-chevron-up:before,.ssbp--state-hidden .ssbp-toggle-switch:before{content:"\e615"}.ssbp-chevron-right:before,.ssbp--fixed-right .ssbp-toggle-switch:before,.ssbp--state-hidden.ssbp--fixed-left .ssbp-toggle-switch:before{content:"\e616"}.ssbp-chevron-left:before,.ssbp--fixed-left .ssbp-toggle-switch:before,.ssbp--state-hidden.ssbp--fixed-right .ssbp-toggle-switch:before{content:"\e617"}.ssbp-simplesharebuttons:before{content:"\e611"}.ssbp-yummly:before{content:"\e60b"}.ssbp-whatsapp:before{content:"\e60f"}.ssbp-diggit:before{content:"\e60c"}.ssbp-buffer:before{content:"\e60d"}.ssbp-close:before{content:"\e614"}.ssbp-twitter:before{content:"\e605"}.ssbp-reddit:before{content:"\e606"}.ssbp-flattr:before{content:"\e607"}.ssbp-tumblr:before{content:"\e608"}.ssbp-linkedin:before{content:"\e609"}.ssbp-google:before{content:"\e60a"}.ssbp-xing:before{content:"\e610"}.ssbp-facebook:before{content:"\e60e"}.ssbp-facebook-messenger:before{content:"\e611"}.ssbp-vk:before{content:"\e600"}.ssbp-stumbleupon:before{content:"\e601"}.ssbp-print:before{content:"\e602"}.ssbp-pinterest:before{content:"\e603"}.ssbp-email:before{content:"\e604"}.ssbp-ellipsis:before{content:"\e612"}.ssbp-x:before{content:"\e613"}@media print{.ssbp-wrap{display:none!important}}@media only screen and (min-width:481px){.ssbp-li--whatsapp,.ssbp-li--facebook-messenger{display:none!important}}.ssbp-wrap *,.ssbp-wrap *:before,.ssbp-wrap *:after{box-sizing:border-box}.ssbp-input-url-div,.ssbp-total-shares,.ssbp-each-share,.ssbp-toggle-switch,.ssbp-text{display:none}.ssbp-wrap{position:relative;display:inline-block;padding:0px;font-size:0;color:#272727}.ssbp-wrap.ssbp--centred{display:block;text-align:center}.ssbp-wrap.ssbp--aligned-right{display:block;text-align:right}.ssbp-wrap.ssbp--aligned-right .ssbp-container{display:inline-block}.ssbp-wrap .ssbp-container,.ssbp-wrap .ssbp-toggle-switch{font-size:16px}.ssbp-wrap .ssbp-list{list-style:none;display:inline-block;vertical-align:middle;margin:0;padding:0}.ssbp-wrap .ssbp-list li{position:relative;display:inline-block;vertical-align:top}.ssbp-wrap .ssbp-list li:first-of-type{margin-left:0}.ssbp-wrap .ssbp-btn{display:inline-block;text-align:center;text-decoration:none;font-family:sans-serif}.ssbp-wrap.ssbp--stacked .ssbp-list li,.ssbp-wrap.ssbp--fixed-left .ssbp-list li,.ssbp-wrap.ssbp--fixed-right .ssbp-list li{display:block;margin-top:6px;margin-left:0!important;margin-right:0!important}.ssbp-wrap.ssbp--stacked .ssbp-list li:first-of-type,.ssbp-wrap.ssbp--fixed-left .ssbp-list li:first-of-type,.ssbp-wrap.ssbp--fixed-right .ssbp-list li:first-of-type{margin-top:0}.ssbp-wrap[class*="ssbp--fixed"]{position:fixed;z-index:99999}.ssbp-wrap[class*="ssbp--fixed"] .ssbp-container{-webkit-transition:0.25s;transition:0.25s}.ssbp-wrap.ssbp--fixed-top,.ssbp-wrap.ssbp--fixed-bottom{left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%)}.ssbp-wrap.ssbp--fixed-left,.ssbp-wrap.ssbp--fixed-right{top:25%}.ssbp-wrap.ssbp--fixed-top{top:0}.ssbp-wrap.ssbp--fixed-bottom{bottom:0}.ssbp-wrap.ssbp--fixed-left{left:0}.ssbp-wrap.ssbp--fixed-right{right:0}.ssbp-wrap[data-ssbp-counts="true"] .ssbp-each-share{display:block;pointer-events:none}.ssbp-wrap[data-ssbp-total-counts="true"] .ssbp-total-shares{display:inline-block;padding:0 .5em;text-align:center;font-size:14px;line-height:2}.ssbp-wrap[data-ssbp-total-counts="true"].ssbp--fixed-left .ssbp-total-shares,.ssbp-wrap[data-ssbp-total-counts="true"].ssbp--fixed-right .ssbp-total-shares,.ssbp-wrap[data-ssbp-total-counts="true"].ssbp--stacked .ssbp-total-shares,.ssbp-wrap[data-ssbp-total-counts="true"].ssbp--fixed-left .ssbp-total-shares,.ssbp-wrap[data-ssbp-total-counts="true"].ssbp--fixed-right .ssbp-total-shares{display:block;padding:0}.ssbp-toggle-switch{position:absolute;padding:0;border:0;background:transparent;text-align:center;cursor:pointer;-webkit-transition:0.25s;transition:0.25s;display:none!important}[data-ssbp-toggle="true"][class*="ssbp--fixed"] .ssbp-toggle-switch{display:inline-block!important}.ssbp-toggle-switch:active,.ssbp-toggle-switch:hover,.ssbp-toggle-switch:focus{padding:0;border:0}.ssbp--fixed-left .ssbp-toggle-switch,.ssbp--fixed-right .ssbp-toggle-switch{left:0;bottom:100%;width:100%}.ssbp--fixed-top .ssbp-toggle-switch,.ssbp--fixed-bottom .ssbp-toggle-switch{left:100%;bottom:0;height:100%}.ssbp--show-toggle.ssbp--fixed-top .ssbp-toggle-switch:before{-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg)}.ssbp--show-toggle.ssbp--fixed-bottom .ssbp-toggle-switch:before{-webkit-transform:rotate(-90deg);-ms-transform:rotate(-90deg);transform:rotate(-90deg)}.ssbp--show-toggle.ssbp--fixed-right .ssbp-toggle-switch:before{-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}.ssbp--state-hidden .ssbp-each-share{opacity:0}.ssbp--state-hidden .ssbp-container{-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%)}.ssbp--state-hidden.ssbp--fixed-top .ssbp-container{-webkit-transform:translateY(-100%);-ms-transform:translateY(-100%);transform:translateY(-100%)}.ssbp--state-hidden.ssbp--fixed-bottom .ssbp-container{-webkit-transform:translateY(100%);-ms-transform:translateY(100%);transform:translateY(100%)}.ssbp--state-hidden.ssbp--fixed-left .ssbp-container{-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%)}.ssbp--state-hidden.ssbp--fixed-right .ssbp-container{-webkit-transform:translateX(100%);-ms-transform:translateX(100%);transform:translateX(100%)}.ssbp--theme-2 .ssbp-toggle-switch{background:#4C4C4C;background:rgba(39,39,39,0.8);border-radius:0;color:#fff}.ssbp--theme-2 .ssbp-toggle-switch:active,.ssbp--theme-2 .ssbp-toggle-switch:hover,.ssbp--theme-2 .ssbp-toggle-switch:focus{background:#4C4C4C;background:rgba(39,39,39,0.9)}.ssbp--theme-2.ssbp--centred .ssbp-list{display:table;table-layout:fixed;width:100%}.ssbp--theme-2.ssbp--centred .ssbp-list li{display:inline-block!important;margin:0 0!important;display:table-cell!important;width:auto;height:auto}.ssbp--theme-2.ssbp--centred .ssbp-btn{display:block;width:auto}.ssbp--theme-2 .ssbp-list li{overflow:hidden;margin:0!important}.ssbp--theme-2 .ssbp-btn{width:3em;height:3em;line-height:3em;position:relative;color:#fff;-webkit-transition:0.25s;transition:0.25s;border-bottom:0}.ssbp--theme-2 .ssbp-btn:before{-webkit-transition:0.25s;transition:0.25s}.ssbp--theme-2 .ssbp-btn+.ssbp-each-share{position:absolute;z-index:10;bottom:0;left:0;right:0;-webkit-transform:translateY(0);-ms-transform:translateY(0);transform:translateY(0);-webkit-transition:0.25s;transition:0.25s}.ssbp--theme-2 .ssbp-btn:hover,.ssbp--theme-2 .ssbp-btn:focus,.ssbp--theme-2 .ssbp-btn:active,.ssbp--theme-2 .ssbp-btn:visited{z-index:10;color:#fff}.ssbp--theme-2 .ssbp-btn:hover:before,.ssbp--theme-2 .ssbp-btn:focus:before,.ssbp--theme-2 .ssbp-btn:active:before,.ssbp--theme-2 .ssbp-btn:visited:before{-webkit-transform:none!important;-ms-transform:none!important;transform:none!important}.ssbp--theme-2 .ssbp-btn:hover+.ssbp-each-share,.ssbp--theme-2 .ssbp-btn:focus+.ssbp-each-share,.ssbp--theme-2 .ssbp-btn:active+.ssbp-each-share,.ssbp--theme-2 .ssbp-btn:visited+.ssbp-each-share{-webkit-transform:translateY(100%);-ms-transform:translateY(100%);transform:translateY(100%)}.ssbp--theme-2 .ssbp-btn:active{-webkit-transform:scale(1.2);-ms-transform:scale(1.2);transform:scale(1.2)}.ssbp--theme-2[data-ssbp-counts="true"] .ssbp-btn:before{-webkit-transform:translateY(-0.25em) scale(0.75);-ms-transform:translateY(-0.25em) scale(0.75);transform:translateY(-0.25em) scale(0.75)}.ssbp--theme-2 .ssbp-buffer{background-color:#272727}.ssbp--theme-2 .ssbp-buffer:hover,.ssbp--theme-2 .ssbp-buffer:focus,.ssbp--theme-2 .ssbp-buffer:active{background-color:#0e0e0e}.ssbp--theme-2 .ssbp-diggit{background-color:#14589E}.ssbp--theme-2 .ssbp-diggit:hover,.ssbp--theme-2 .ssbp-diggit:focus,.ssbp--theme-2 .ssbp-diggit:active{background-color:#0e3f71}.ssbp--theme-2 .ssbp-email{background-color:#787878}.ssbp--theme-2 .ssbp-email:hover,.ssbp--theme-2 .ssbp-email:focus,.ssbp--theme-2 .ssbp-email:active{background-color:#5f5f5f}.ssbp--theme-2 .ssbp-ellipsis{background-color:#4582EC}.ssbp--theme-2 .ssbp-ellipsis:hover,.ssbp--theme-2 .ssbp-ellipsis:focus,.ssbp--theme-2 .ssbp-ellipsis:active{background-color:#1863e6}.ssbp--theme-2 .ssbp-facebook{background-color:#3b5998}.ssbp--theme-2 .ssbp-facebook:hover,.ssbp--theme-2 .ssbp-facebook:focus,.ssbp--theme-2 .ssbp-facebook:active{background-color:#2d4373}.ssbp--theme-2 .ssbp-facebook-messenger{background-color:#0084FF}.ssbp--theme-2 .ssbp-facebook-messenger:hover,.ssbp--theme-2 .ssbp-facebook-messenger:focus,.ssbp--theme-2 .ssbp-facebook-messenger:active{background-color:#006acc}.ssbp--theme-2 .ssbp-flattr{background-color:#f67C1A}.ssbp--theme-2 .ssbp-flattr:hover,.ssbp--theme-2 .ssbp-flattr:focus,.ssbp--theme-2 .ssbp-flattr:active{background-color:#d56308}.ssbp--theme-2 .ssbp-google{background-color:#DC4E41}.ssbp--theme-2 .ssbp-google:hover,.ssbp--theme-2 .ssbp-google:focus,.ssbp--theme-2 .ssbp-google:active{background-color:#c63224}.ssbp--theme-2 .ssbp-linkedin{background-color:#007bb6}.ssbp--theme-2 .ssbp-linkedin:hover,.ssbp--theme-2 .ssbp-linkedin:focus,.ssbp--theme-2 .ssbp-linkedin:active{background-color:#005983}.ssbp--theme-2 .ssbp-pinterest{background-color:#ce1a19}.ssbp--theme-2 .ssbp-pinterest:hover,.ssbp--theme-2 .ssbp-pinterest:focus,.ssbp--theme-2 .ssbp-pinterest:active{background-color:#a11413}.ssbp--theme-2 .ssbp-print{background-color:#1F6B43}.ssbp--theme-2 .ssbp-print:hover,.ssbp--theme-2 .ssbp-print:focus,.ssbp--theme-2 .ssbp-print:active{background-color:#14432a}.ssbp--theme-2 .ssbp-reddit{background-color:#FF4500}.ssbp--theme-2 .ssbp-reddit:hover,.ssbp--theme-2 .ssbp-reddit:focus,.ssbp--theme-2 .ssbp-reddit:active{background-color:#cc3700}.ssbp--theme-2 .ssbp-simplesharebuttons{background-color:#4582ec}.ssbp--theme-2 .ssbp-simplesharebuttons:hover,.ssbp--theme-2 .ssbp-simplesharebuttons:focus,.ssbp--theme-2 .ssbp-simplesharebuttons:active{background-color:#1863e6}.ssbp--theme-2 .ssbp-stumbleupon{background-color:#EB4924}.ssbp--theme-2 .ssbp-stumbleupon:hover,.ssbp--theme-2 .ssbp-stumbleupon:focus,.ssbp--theme-2 .ssbp-stumbleupon:active{background-color:#ca3412}.ssbp--theme-2 .ssbp-tumblr{background-color:#2C4762}.ssbp--theme-2 .ssbp-tumblr:hover,.ssbp--theme-2 .ssbp-tumblr:focus,.ssbp--theme-2 .ssbp-tumblr:active{background-color:#1c2e3f}.ssbp--theme-2 .ssbp-twitter{background-color:#00a9f1}.ssbp--theme-2 .ssbp-twitter:hover,.ssbp--theme-2 .ssbp-twitter:focus,.ssbp--theme-2 .ssbp-twitter:active{background-color:#0085be}.ssbp--theme-2 .ssbp-vk{background-color:#45668E}.ssbp--theme-2 .ssbp-vk:hover,.ssbp--theme-2 .ssbp-vk:focus,.ssbp--theme-2 .ssbp-vk:active{background-color:#344d6c}.ssbp--theme-2 .ssbp-whatsapp{background-color:#34AF23}.ssbp--theme-2 .ssbp-whatsapp:hover,.ssbp--theme-2 .ssbp-whatsapp:focus,.ssbp--theme-2 .ssbp-whatsapp:active{background-color:#27851b}.ssbp--theme-2 .ssbp-yummly{background-color:#E16120}.ssbp--theme-2 .ssbp-yummly:hover,.ssbp--theme-2 .ssbp-yummly:focus,.ssbp--theme-2 .ssbp-yummly:active{background-color:#b64d18}.ssbp--theme-2 .ssbp-xing{background-color:#026466}.ssbp--theme-2 .ssbp-xing:hover,.ssbp--theme-2 .ssbp-xing:focus,.ssbp--theme-2 .ssbp-xing:active{background-color:#013334}.ssbp--theme-2 .ssbp-each-share{padding:2px;background-color:rgba(0,0,0,0.1);font-size:10px;text-align:center;color:#FFF}@-webkit-keyframes spin{from{-webkit-transform:rotate(0deg)}to{-webkit-transform:rotate(360deg)}}@keyframes spin{from{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.ssbp-spinner:before{font-family:'ssbp';content:"\e614"}.ssbp-spinner{-webkit-animation:spin 2s infinite linear;animation:spin 2s infinite linear;display:inline-block}.ssbp-btn:before,.ssbp-toggle-switch:before{display:inline-block;font-family:'ssbp';speak:none;font-size:24px;font-style:normal;font-weight:normal;font-variant:normal;text-transform:none}.ssbp-arrow-right:before{content:"\e612"}.ssbp-arrow-left:before{content:"\e613"}.ssbp-arrow-down:before{content:"\e619"}.ssbp-arrow-up:before{content:"\e61a"}.ssbp-chevron-down:before{content:"\e618"}.ssbp-chevron-up:before{content:"\e615"}.ssbp-chevron-right:before{content:"\e616"}.ssbp-chevron-left:before{content:"\e617"}.ssbp-simplesharebuttons:before{content:"\e611"}.ssbp-yummly:before{content:"\e60b"}.ssbp-whatsapp:before{content:"\e60f"}.ssbp-diggit:before{content:"\e60c"}.ssbp-buffer:before{content:"\e60d"}.ssbp-close:before{content:"\e614"}.ssbp-twitter:before{content:"\e605"}.ssbp-reddit:before{content:"\e606"}.ssbp-flattr:before{content:"\e607"}.ssbp-tumblr:before{content:"\e608"}.ssbp-linkedin:before{content:"\e609"}.ssbp-google:before{content:"\e60a"}.ssbp-xing:before{content:"\e610"}.ssbp-facebook:before{content:"\e60e"}.ssbp-facebook-messenger:before{content:"\e611"}.ssbp-vk:before{content:"\e600"}.ssbp-stumbleupon:before{content:"\e601"}.ssbp-print:before{content:"\e602"}.ssbp-pinterest:before{content:"\e603"}.ssbp-email:before{content:"\e604"}.ssbp-ellipsis:before{content:"\e612"}.ssbp-x:before{content:"\e613"}@media only screen and (max-width:480px){.ssbp-container{-webkit-transition:0.25s;transition:0.25s}.ssbp-wrap[data-ssbp-responsive="true"]{position:fixed;top:auto;right:0;bottom:0;left:0;z-index:12;text-align:center;-webkit-transform:none;-ms-transform:none;transform:none}[data-ssbp-responsive="true"][data-ssbp-toggle="true"]{padding-right:24px}[data-ssbp-responsive="true"][data-ssbp-toggle="true"] .ssbp-toggle-switch{display:inline-block!important;left:auto;top:0;right:0;bottom:0;width:auto;height:auto;background:rgba(255,255,255,0.66);color:#4C4C4C}[data-ssbp-responsive="true"][data-ssbp-toggle="true"] .ssbp-toggle-switch:before{content:"\e618"}[data-ssbp-responsive="true"][data-ssbp-toggle="true"].ssbp--state-hidden .ssbp-toggle-switch:before{content:"\e615"}[data-ssbp-responsive="true"] .ssbp-list{display:table;table-layout:fixed;width:100%}[data-ssbp-responsive="true"] .ssbp-list li{display:inline-block!important;margin:0 12px!important;display:table-cell!important;width:auto;height:auto}[data-ssbp-responsive="true"] .ssbp-btn{display:block;width:auto}[data-ssbp-responsive="true"].ssbp--state-hidden .ssbp-container{-webkit-transform:translateY(100%);-ms-transform:translateY(100%);transform:translateY(100%)}[data-ssbp-responsive="true"].ssbp--theme-1 .ssbp-btn,[data-ssbp-responsive="true"].ssbp--theme-4 .ssbp-btn,[data-ssbp-responsive="true"].ssbp--theme-6 .ssbp-btn{display:inline-block;width:3em}[data-ssbp-responsive="true"].ssbp--theme-1 .ssbp-each-share,[data-ssbp-responsive="true"].ssbp--theme-4 .ssbp-each-share,[data-ssbp-responsive="true"].ssbp--theme-6 .ssbp-each-share{left:50%;right:auto;margin-left:12px}[data-ssbp-responsive="true"].ssbp--theme-2 .ssbp-btn{width:inherit}[data-ssbp-responsive="true"].ssbp--theme-1,[data-ssbp-responsive="true"].ssbp--theme-4,[data-ssbp-responsive="true"].ssbp--theme-6,[data-ssbp-responsive="true"].ssbp--theme-8{padding:12px}[data-ssbp-responsive="true"].ssbp--theme-1[data-ssbp-toggle="true"],[data-ssbp-responsive="true"].ssbp--theme-4[data-ssbp-toggle="true"],[data-ssbp-responsive="true"].ssbp--theme-6[data-ssbp-toggle="true"],[data-ssbp-responsive="true"].ssbp--theme-8[data-ssbp-toggle="true"]{padding-right:36px}[data-ssbp-responsive="true"].ssbp--theme-1.ssbp--state-hidden .ssbp-container,[data-ssbp-responsive="true"].ssbp--theme-4.ssbp--state-hidden .ssbp-container,[data-ssbp-responsive="true"].ssbp--theme-6.ssbp--state-hidden .ssbp-container,[data-ssbp-responsive="true"].ssbp--theme-8.ssbp--state-hidden .ssbp-container{margin-bottom:-12px}[data-ssbp-responsive="true"].ssbp--theme-7 .ssbp-text{display:block}[data-ssbp-responsive="true"].ssbp--theme-8 .ssbp-btn{display:inline-block;width:4em}}.ssbp-set--one .ssbp-btn{color:#fff;}.ssbp-set--one .ssbp-btn{width:4em!important;height:4em!important;}.ssbp-set--one .ssbp-btn{line-height:4em!important;}font-size:px!important;}@media only screen and (min-width:480px){.ssbp-wrap .ssbp-list{padding-bottom:10px;}}.ssbp-wrap .ssbp-list li{}</style><link rel="icon" href="https://blog.nraboy.com/wp-content/uploads/2015/11/cropped-nraboy-picture-32x32.jpg" sizes="32x32">
+<link rel="icon" href="https://blog.nraboy.com/wp-content/uploads/2015/11/cropped-nraboy-picture-192x192.jpg" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://blog.nraboy.com/wp-content/uploads/2015/11/cropped-nraboy-picture-180x180.jpg">
+<meta name="msapplication-TileImage" content="https://blog.nraboy.com/wp-content/uploads/2015/11/cropped-nraboy-picture-270x270.jpg">
+<link rel="stylesheet" id="custom-css-css" type="text/css" href="./Saving Data with IonicFramework_files/saved_resource">
+<script data-rocketsrc="https://blog.nraboy.com/wp-includes/js/wp-emoji-release.min.js?ver=4.3.1" data-rocketoptimized="true" type="text/javascript"></script><script type="text/javascript" async="" data-rocketsrc="//nraboy.disqus.com/embed.js" data-rocketoptimized="true"></script><script async="" type="text/javascript" data-rocketsrc="//nraboy.disqus.com/count.js" data-rocketoptimized="true"></script><link type="text/css" rel="stylesheet" id="ig_css_0" media="all" href="./Saving Data with IonicFramework_files/frontend.css"><link type="text/css" rel="stylesheet" id="ig_css_1" media="all" href="./Saving Data with IonicFramework_files/default.css"><link type="text/css" rel="stylesheet" id="ig_css_2" media="all" href="./Saving Data with IonicFramework_files/default(1).css"><link type="text/css" rel="stylesheet" id="ig_css_3" media="all" href="./Saving Data with IonicFramework_files/canvas.css"><link type="text/css" rel="stylesheet" id="ig_css_4" media="all" href="./Saving Data with IonicFramework_files/hello.css"><style>.gc-bubbleDefault{background-color:transparent !important;text-align:left;padding:0 !important;margin:0 !important;border:0 !important;table-layout:auto !important}.gc-reset{background-color:transparent !important;border:0 !important;padding:0 !important;margin:0 !important;text-align:left}.pls-bubbleTop{border-bottom:1px solid #ccc !important}.pls-topTail,.pls-vertShimLeft,.pls-contentLeft{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/border_3.gif) !important}.pls-topTail{background-repeat:repeat-x !important;background-position:bottom !important}.pls-vertShim{background-color:#fff !important;text-align:right}.tbl-grey .pls-vertShim{background-color:#f5f5f5 !important}.pls-vertShimLeft{background-repeat:repeat-y !important;background-position:right !important;height:4px}.pls-vertShimRight{height:4px}.pls-confirm-container .pls-vertShim{background-color:#fff3c2 !important}.pls-contentWrap{background-color:#fff !important;position:relative !important;vertical-align:top}.pls-contentLeft{background-repeat:repeat-y;background-position:right;vertical-align:top}.pls-dropRight{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropR_3.png) !important;background-repeat:repeat-y !important;vertical-align:top}.pls-vert,.pls-tailleft,.pls-dropTR .pls-dropBR,.pls-dropBL,.pls-vert img{vertical-align:top}.pls-dropBottom{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleDropB_3.png) !important;background-repeat:repeat-x !important;width:100%;vertical-align:top}.pls-topLeft{background:inherit !important;text-align:right;vertical-align:bottom}.pls-topRight{background:inherit !important;text-align:left;vertical-align:bottom}.pls-bottomLeft{background:inherit !important;text-align:right}.pls-bottomRight{background:inherit !important;text-align:left;vertical-align:top}.pls-tailtop,.pls-tailright,.pls-tailbottom,.pls-tailleft{display:none;position:relative}.pls-tailbottom,.pls-tailtop,.pls-tailright,.pls-tailleft,.pls-dropTR,.pls-dropBR,.pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite_3.png) !important;background-repeat:no-repeat}.tbl-grey .pls-tailbottom,.tbl-grey .pls-tailtop,.tbl-grey .pls-tailright,.tbl-grey .pls-tailleft,.tbl-grey .pls-dropTR,.tbl-grey .pls-dropBR,.tbl-grey .pls-dropBL{background-image:url(//ssl.gstatic.com/s2/oz/images/stars/po/bubblev1/bubbleSprite-grey.png) !important}.pls-tailbottom{background-position:-23px 0}.pls-confirm-container .pls-tailbottom{background-position:-23px -10px}.pls-tailtop{background-position:-19px -20px}.pls-tailright{background-position:0 0}.pls-tailleft{background-position:-10px 0}.pls-tailtop{vertical-align:top}.gc-bubbleDefault td{line-height:0;font-size:0}.pls-topLeft img,.pls-topRight img,.pls-tailbottom{vertical-align:bottom}.pls-bottomLeft img,.bubbleDropTR,.pls-dropBottomL img,.pls-dropBottom img,.pls-dropBottomR img,.pls-bottomLeft{vertical-align:top}.pls-dropTR{background-position:0 -22px}.pls-dropBR{background-position:0 -27px}.pls-dropBL{background-position:0 -16px}.pls-spacertop,.pls-spacerright,.pls-spacerbottom,.pls-spacerleft{position:static !important}.pls-spinner{bottom:0;position:absolute;left:0;margin:auto;right:0;top:0} </style></head>
+<body class="single single-post postid-181 single-format-standard group-blog ig_laptop">
+<a class="sr-only sr-only-focusable" href="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/#content">Skip to main content</a>
+<div id="page" class="hfeed site">
+<header id="masthead" class="site-header" role="banner">
+<nav class="navbar navbar-default " role="navigation">
+<div class="container">
+<div class="row">
+<div class="site-navigation-inner col-sm-12">
+<div class="navbar-header">
+<button type="button" class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<div id="logo">
+<p class="site-name"> <a class="navbar-brand" href="https://blog.nraboy.com/" title="Nic Raboy&#39;s Code Blog" rel="home">Nic Raboy's Code Blog</a>
+</p> </div> 
+</div>
+<div class="collapse navbar-collapse navbar-ex1-collapse"><ul id="menu-top" class="nav navbar-nav"><li id="menu-item-124" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-124"><a title="My Profile" href="https://www.nraboy.com/">My Profile</a></li>
+<li id="menu-item-3245" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3245"><a title="Online Courses" href="https://blog.nraboy.com/courses/">Online Courses</a></li>
+<li id="menu-item-3266" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3266"><a title="Resources" href="https://blog.nraboy.com/resources/">Resources</a></li>
+<li id="menu-item-125" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-125"><a title="Contact Me" href="https://www.nraboy.com/#/contact">Contact Me</a></li>
+</ul></div> </div>
+</div>
+</div>
+</nav> 
+</header> 
+<div id="content" class="site-content">
+<div class="top-section">
+</div>
+<div class="container main-content-area">
+<div class="row pull-left">
+<div class="main-content-inner col-sm-12 col-md-8">
+<div id="primary" class="content-area">
+<main id="main" class="site-main" role="main">
+
+<article id="post-181" class="post-181 post type-post status-publish format-standard hentry category-android category-angularjs category-ionicframework-2 category-ios tag-data tag-javascript tag-storage">
+<div class="post-inner-content">
+<header class="entry-header page-header">
+<h1 class="entry-title ">Saving Data With IonicFramework</h1>
+<div class="entry-meta">
+<span class="posted-on"><i class="fa fa-calendar"></i> <a href="./Saving Data with IonicFramework_files/Saving Data with IonicFramework.html" rel="bookmark"><time class="entry-date published" datetime="2014-06-13T02:59:44+00:00">June 13, 2014</time><time class="updated" datetime="2014-09-11T06:48:52+00:00">September 11, 2014</time></a></span><span class="byline"> <i class="fa fa-user"></i> <span class="author vcard"><a class="url fn n" href="https://blog.nraboy.com/author/nraboy/">Nic Raboy</a></span></span>
+<span class="cat-links"><i class="fa fa-folder-open-o"></i>
+<a href="https://blog.nraboy.com/category/android/" rel="category tag">Android</a>, <a href="https://blog.nraboy.com/category/javascript-2/angularjs/" rel="category tag">AngularJS</a>, <a href="https://blog.nraboy.com/category/apache-cordova-2/ionicframework-2/" rel="category tag">Ionic Framework</a>, <a href="https://blog.nraboy.com/category/ios/" rel="category tag">iOS</a> </span>
+</div> 
+</header> 
+<div class="entry-content">
+<div class="ssbp-set--one ssbp-wrap ssbp-- ssbp--theme-2" data-ssbp-responsive="true"><button class="ssbp-toggle-switch ssbp-toggle-close" style="display: inline-block;"><span></span></button><div class="ssbp-container" data-ssbp-share-text="" data-ssbp-url="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/" data-ssbp-title="Saving Data With IonicFramework" data-ssbp-short-url="" data-ssbp-post-id="181"><ul class="ssbp-list"><li class="ssbp-li--facebook"><a href="http://www.facebook.com/sharer.php?u=https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/" class="ssbp-btn ssbp-facebook ssbp-facebook--standard" data-ssbp-title="Saving Data With IonicFramework" data-ssbp-url="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/" data-ssbp-site="Facebook"><span class="ssbp-text">Facebook</span></a></li><li class="ssbp-li--google"><a href="https://plus.google.com/share?url=https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/" class="ssbp-btn ssbp-google" data-ssbp-title="Saving Data With IonicFramework" data-ssbp-url="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/" data-ssbp-site="Google+"><span class="ssbp-text">Google+</span></a></li><li class="ssbp-li--twitter"><a href="https://twitter.com/share?url=https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/&amp;text=Saving+Data+With+IonicFramework+&amp;tags=&amp;via=nraboy" class="ssbp-btn ssbp-twitter ssbp-twitter--standard" data-ssbp-title="Saving Data With IonicFramework" data-ssbp-url="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/" data-ssbp-site="Twitter"><span class="ssbp-text">Twitter</span></a></li><li class="ssbp-li--reddit"><a href="http://reddit.com/submit?url=https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/&amp;title=Saving%20Data%20With%20IonicFramework" class="ssbp-btn ssbp-reddit" data-ssbp-title="Saving Data With IonicFramework" data-ssbp-url="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/" data-ssbp-site="Reddit"><span class="ssbp-text">Reddit</span></a></li><li class="ssbp-li--linkedin"><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/" class="ssbp-btn ssbp-linkedin" data-ssbp-title="Saving Data With IonicFramework" data-ssbp-url="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/" data-ssbp-site="LinkedIn"><span class="ssbp-text">Linkedin</span></a></li><li class="ssbp-li--stumbleupon"><a href="http://www.stumbleupon.com/submit?url=https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/&amp;title=Saving%20Data%20With%20IonicFramework" class="ssbp-btn ssbp-stumbleupon" data-ssbp-title="Saving Data With IonicFramework" data-ssbp-url="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/" data-ssbp-site="StumbleUpon"><span class="ssbp-text">Stumble</span></a></li></ul><div class="ssbp-input-url-div"><input class="ssbp-input-url" type="text" value="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/"></div></div></div><p>Coming from native Android and SQLite, the concept of universal data storage on local devices has been different. &nbsp;<a href="http://cordova.apache.org/" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-article&#39;, &#39;http://cordova.apache.org/&#39;, &#39;Apache Cordova&#39;]);" title="Apache Cordova">Apache Cordova</a> and <a href="http://ionicframework.com/" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-article&#39;, &#39;http://ionicframework.com/&#39;, &#39;IonicFramework&#39;]);" title="IonicFramework">IonicFramework</a>, being as awesome as they are, support HTML5 local storage calls. &nbsp;This allows us to store and retrieve data without the use or knowledge of SQL and on any platform we plan to use.</p>
+<p><span id="more-181"></span></p>
+<p>Typically you would make use of the local storage by using commands like the following:</p> 
+<div id="crayon-5675bfe436c76151505135" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-mac print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 18px !important; height: auto;">
+<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title">JavaScript Example</span>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">JavaScript</span></div></div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+<div class="crayon-plain-wrap"></div>
+<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+<table class="crayon-table">
+<tbody><tr class="crayon-row">
+<td class="crayon-nums " data-settings="show">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 18px !important;"><div class="crayon-num" data-line="crayon-5675bfe436c76151505135-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c76151505135-2">2</div><div class="crayon-num" data-line="crayon-5675bfe436c76151505135-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c76151505135-4">4</div><div class="crayon-num" data-line="crayon-5675bfe436c76151505135-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c76151505135-6">6</div><div class="crayon-num" data-line="crayon-5675bfe436c76151505135-7">7</div></div>
+</td>
+<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5675bfe436c76151505135-1"><span class="crayon-st">if</span><span class="crayon-sy">(</span><span class="crayon-r">typeof</span><span class="crayon-sy">(</span><span class="crayon-v">Storage</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">!=</span><span class="crayon-h"> </span><span class="crayon-s">"undefined"</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c76151505135-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">localStorage</span><span class="crayon-sy">.</span><span class="crayon-e">setItem</span><span class="crayon-sy">(</span><span class="crayon-s">"firstname"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"Nic"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5675bfe436c76151505135-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">localStorage</span><span class="crayon-sy">.</span><span class="crayon-e">setItem</span><span class="crayon-sy">(</span><span class="crayon-s">"lastname"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-s">"Raboy"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c76151505135-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">alert</span><span class="crayon-sy">(</span><span class="crayon-v">localStorage</span><span class="crayon-sy">.</span><span class="crayon-e">getItem</span><span class="crayon-sy">(</span><span class="crayon-s">"firstname"</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-s">" "</span><span class="crayon-h"> </span><span class="crayon-o">+</span><span class="crayon-h"> </span><span class="crayon-v">localStorage</span><span class="crayon-sy">.</span><span class="crayon-e">getItem</span><span class="crayon-sy">(</span><span class="crayon-s">"lastname"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5675bfe436c76151505135-5"><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-st">else</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c76151505135-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-r">alert</span><span class="crayon-sy">(</span><span class="crayon-s">"Sorry, your browser does not support Web Storage..."</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5675bfe436c76151505135-7"><span class="crayon-sy">}</span></div></div></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+ 
+<p>You can easily use the setItem, getItem, and removeItem methods to manage your data. &nbsp;The good news is you can use those same commands with IonicFramework.</p> 
+<div id="crayon-5675bfe436c89339851126" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-mac print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 18px !important; height: auto;">
+<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title">app.js</span>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">JavaScript</span></div></div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important; margin-top: -17px; display: none;"></div>
+<div class="crayon-plain-wrap"></div>
+<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+<table class="crayon-table">
+<tbody><tr class="crayon-row">
+<td class="crayon-nums " data-settings="show">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 18px !important;"><div class="crayon-num" data-line="crayon-5675bfe436c89339851126-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c89339851126-2">2</div><div class="crayon-num" data-line="crayon-5675bfe436c89339851126-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c89339851126-4">4</div><div class="crayon-num" data-line="crayon-5675bfe436c89339851126-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c89339851126-6">6</div><div class="crayon-num" data-line="crayon-5675bfe436c89339851126-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c89339851126-8">8</div><div class="crayon-num" data-line="crayon-5675bfe436c89339851126-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c89339851126-10">10</div><div class="crayon-num" data-line="crayon-5675bfe436c89339851126-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c89339851126-12">12</div><div class="crayon-num" data-line="crayon-5675bfe436c89339851126-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c89339851126-14">14</div><div class="crayon-num" data-line="crayon-5675bfe436c89339851126-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c89339851126-16">16</div><div class="crayon-num" data-line="crayon-5675bfe436c89339851126-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c89339851126-18">18</div><div class="crayon-num" data-line="crayon-5675bfe436c89339851126-19">19</div></div>
+</td>
+<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5675bfe436c89339851126-1"><span class="crayon-v">myApp</span><span class="crayon-sy">.</span><span class="crayon-e">controller</span><span class="crayon-sy">(</span><span class="crayon-s">'Login'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">$</span><span class="crayon-v">scope</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c89339851126-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-v">scope</span><span class="crayon-sy">.</span><span class="crayon-v">login</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">username</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">password</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5675bfe436c89339851126-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">window</span><span class="crayon-sy">.</span><span class="crayon-v">localStorage</span><span class="crayon-sy">.</span><span class="crayon-e">setItem</span><span class="crayon-sy">(</span><span class="crayon-s">"username"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">username</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c89339851126-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">window</span><span class="crayon-sy">.</span><span class="crayon-v">localStorage</span><span class="crayon-sy">.</span><span class="crayon-e">setItem</span><span class="crayon-sy">(</span><span class="crayon-s">"password"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">password</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5675bfe436c89339851126-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c89339851126-6">&nbsp;</div><div class="crayon-line" id="crayon-5675bfe436c89339851126-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-v">scope</span><span class="crayon-sy">.</span><span class="crayon-v">isLoggedIn</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c89339851126-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-sy">(</span><span class="crayon-v">window</span><span class="crayon-sy">.</span><span class="crayon-v">localStorage</span><span class="crayon-sy">.</span><span class="crayon-e">getItem</span><span class="crayon-sy">(</span><span class="crayon-s">"username"</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">!==</span><span class="crayon-h"> </span><span class="crayon-v">undefined</span><span class="crayon-h"> </span><span class="crayon-o">&amp;&amp;</span><span class="crayon-h"> </span><span class="crayon-v">window</span><span class="crayon-sy">.</span><span class="crayon-v">localStorage</span><span class="crayon-sy">.</span><span class="crayon-e">getItem</span><span class="crayon-sy">(</span><span class="crayon-s">"password"</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">!==</span><span class="crayon-h"> </span><span class="crayon-v">undefined</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5675bfe436c89339851126-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-t">true</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c89339851126-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-st">else</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5675bfe436c89339851126-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">return</span><span class="crayon-h"> </span><span class="crayon-t">false</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c89339851126-12"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5675bfe436c89339851126-13"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c89339851126-14">&nbsp;</div><div class="crayon-line" id="crayon-5675bfe436c89339851126-15"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-v">scope</span><span class="crayon-sy">.</span><span class="crayon-v">logout</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c89339851126-16"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">window</span><span class="crayon-sy">.</span><span class="crayon-v">localStorage</span><span class="crayon-sy">.</span><span class="crayon-e">removeItem</span><span class="crayon-sy">(</span><span class="crayon-s">"username"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5675bfe436c89339851126-17"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">window</span><span class="crayon-sy">.</span><span class="crayon-v">localStorage</span><span class="crayon-sy">.</span><span class="crayon-e">removeItem</span><span class="crayon-sy">(</span><span class="crayon-s">"password"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c89339851126-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5675bfe436c89339851126-19"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+ 
+<p>But what happens if you want to store complex data. &nbsp;For example what if you wanted to store data from an <strong>$http.get</strong> request to cache in the event no internet is available in the future.</p> 
+<div id="crayon-5675bfe436c91768303550" class="crayon-syntax crayon-theme-github crayon-font-monaco crayon-os-mac print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 18px !important; height: auto;">
+<div class="crayon-toolbar" data-settings=" show" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><span class="crayon-title">app.js</span>
+<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-popup-button" title="Open Code In New Window"><div class="crayon-button-icon"></div></div><span class="crayon-language">JavaScript</span></div></div>
+<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important; margin-top: -17px; display: none;"></div>
+<div class="crayon-plain-wrap"></div>
+<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+<table class="crayon-table">
+<tbody><tr class="crayon-row">
+<td class="crayon-nums " data-settings="show">
+<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 18px !important;"><div class="crayon-num" data-line="crayon-5675bfe436c91768303550-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c91768303550-2">2</div><div class="crayon-num" data-line="crayon-5675bfe436c91768303550-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c91768303550-4">4</div><div class="crayon-num" data-line="crayon-5675bfe436c91768303550-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c91768303550-6">6</div><div class="crayon-num" data-line="crayon-5675bfe436c91768303550-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c91768303550-8">8</div><div class="crayon-num" data-line="crayon-5675bfe436c91768303550-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c91768303550-10">10</div><div class="crayon-num" data-line="crayon-5675bfe436c91768303550-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-5675bfe436c91768303550-12">12</div></div>
+</td>
+<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 18px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-5675bfe436c91768303550-1"><span class="crayon-v">myApp</span><span class="crayon-sy">.</span><span class="crayon-e">controller</span><span class="crayon-sy">(</span><span class="crayon-s">'Profile'</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-sy">$</span><span class="crayon-v">scope</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">$</span><span class="crayon-v">http</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c91768303550-2"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-v">http</span><span class="crayon-sy">.</span><span class="crayon-e">get</span><span class="crayon-sy">(</span><span class="crayon-s">"https://api.example.com/profile"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h"> </span><span class="crayon-v">params</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-sy">{</span><span class="crayon-h"> </span><span class="crayon-s">"api_key"</span><span class="crayon-o">:</span><span class="crayon-h"> </span><span class="crayon-s">"some_key_here"</span><span class="crayon-h"> </span><span class="crayon-sy">}</span><span class="crayon-h"> </span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5675bfe436c91768303550-3"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">success</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c91768303550-4"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-v">scope</span><span class="crayon-sy">.</span><span class="crayon-v">profile</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">data</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-5675bfe436c91768303550-5"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">window</span><span class="crayon-sy">.</span><span class="crayon-v">localStorage</span><span class="crayon-sy">.</span><span class="crayon-e">setItem</span><span class="crayon-sy">(</span><span class="crayon-s">"profile"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">JSON</span><span class="crayon-sy">.</span><span class="crayon-e">stringify</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c91768303550-6"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-5675bfe436c91768303550-7"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">.</span><span class="crayon-e">error</span><span class="crayon-sy">(</span><span class="crayon-t">function</span><span class="crayon-sy">(</span><span class="crayon-v">data</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c91768303550-8"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-sy">(</span><span class="crayon-v">window</span><span class="crayon-sy">.</span><span class="crayon-v">localStorage</span><span class="crayon-sy">.</span><span class="crayon-e">getItem</span><span class="crayon-sy">(</span><span class="crayon-s">"profile"</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">!==</span><span class="crayon-h"> </span><span class="crayon-v">undefined</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-5675bfe436c91768303550-9"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">$</span><span class="crayon-v">scope</span><span class="crayon-sy">.</span><span class="crayon-v">profile</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">JSON</span><span class="crayon-sy">.</span><span class="crayon-e">parse</span><span class="crayon-sy">(</span><span class="crayon-v">window</span><span class="crayon-sy">.</span><span class="crayon-v">localStorage</span><span class="crayon-sy">.</span><span class="crayon-e">getItem</span><span class="crayon-sy">(</span><span class="crayon-s">"profile"</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c91768303550-10"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-5675bfe436c91768303550-11"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-5675bfe436c91768303550-12"><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div></div></td>
+</tr>
+</tbody></table>
+</div>
+</div>
+ 
+<p>The above is an example of an fictional API request that gets a users profile. &nbsp;When the GET request succeeds, the result is stored in the scope as well as a local storage bucket. &nbsp;However, you can’t just store the raw object into local storage. &nbsp;You must first serialize it with the <strong>JSON.stringify</strong> command. &nbsp;This will create a flat string instead of an object. &nbsp;Now lets say the profile API is called a second time, but the mobile device’s internet isn’t stable or it doesn’t exist. &nbsp;The error callback will happen and if the local profile bucket exists, <strong>JSON.parse</strong> will un-flatten it and store it in our scope. &nbsp;Besides seeing possibly older data, the user won’t even know that there was a problem.</p>
+<p>A video version of this article can be seen below.</p><div class="insert-post-ads" style="clear:both;width:100%;margin:0 0 20px 0;"><center>
+<script async="" data-rocketsrc="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/rocketscript" data-rocketoptimized="true"></script>
+ 
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8504140913961629" data-ad-slot="8065047163" data-ad-format="auto" data-adsbygoogle-status="done"></ins>
+<script type="text/rocketscript" data-rocketoptimized="true">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center></div>
+<p><iframe width="648" height="365" src="./Saving Data with IonicFramework_files/T2UAtb8zAms.html" frameborder="0" allowfullscreen=""></iframe></p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-181" class="share-facebook sd-button share-icon" href="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/?share=facebook" target="_blank" title="Share on Facebook"><span>Facebook</span></a></li><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-181" class="share-twitter sd-button share-icon" href="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/?share=twitter" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-181" class="share-google-plus-1 sd-button share-icon" href="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/?share=google-plus-1" target="_blank" title="Click to share on Google+"><span>Google</span></a></li><li class="share-linkedin"><a rel="nofollow" data-shared="sharing-linkedin-181" class="share-linkedin sd-button share-icon" href="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-pocket"><a rel="nofollow" data-shared="" class="share-pocket sd-button share-icon" href="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/?share=pocket" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a></li><li class="share-tumblr"><a rel="nofollow" data-shared="" class="share-tumblr sd-button share-icon" href="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-reddit"><a rel="nofollow" data-shared="" class="share-reddit sd-button share-icon" href="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/?share=reddit" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li><a href="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/#" class="sharing-anchor sd-button share-more"><span>More</span></a></li><li class="share-end"></li></ul><div class="sharing-hidden"><div class="inner" style="display: none;"><ul><li class="share-pinterest"><a rel="nofollow" data-shared="sharing-pinterest-181" class="share-pinterest sd-button share-icon" href="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/?share=pinterest" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-email"><a rel="nofollow" data-shared="" class="share-email sd-button share-icon" href="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/?share=email" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-end"></li><li class="share-end"></li></ul></div></div></div></div></div><div class="ig_inline_container ig_the_content ig_after"><div class="icegram ig_inline ig_container ig_canvas ig_no_icon ig_show ig_anim_no-anim_in" id="icegram_message_3320" style="color: rgb(255, 255, 255); display: block; background-color: rgb(204, 68, 68);"><div class="ig_close" id="ig_close_3320"></div><div class="ig_content ig_clear_fix"><div class="ig_data"><div class="ig_headline">LIKE WHAT YOU'VE READ?</div><div class="ig_message"><p>If so, please join the many&nbsp;people who receive exclusive monthly&nbsp;application development&nbsp;tips, and get a <strong>FREE COPY</strong> of my eBook, <strong>The Ionic Framework Cheat Sheet</strong>!</p>
+</div><div class="ig_button" style="border-color: rgb(62, 101, 152); color: rgb(255, 255, 255); cursor: pointer; background-color: rgb(68, 119, 189);">Get Started</div></div></div></div></div> </div> 
+<footer class="entry-meta">
+ 
+<div class="tagcloud" style="display: block;">
+<a href="https://blog.nraboy.com/tag/data/">data</a> <a href="https://blog.nraboy.com/tag/javascript/">javascript</a> <a href="https://blog.nraboy.com/tag/storage/">storage</a>
+</div>
+ 
+</footer> 
+</div>
+<div class="post-inner-content secondary-content-box">
+ 
+<div class="author-bio content-box-inner">
+ 
+<div class="avatar">
+<img alt="" src="./Saving Data with IonicFramework_files/7d55990e9cc9544ca2f435aa3a690490" srcset="https://secure.gravatar.com/avatar/7d55990e9cc9544ca2f435aa3a690490?s=120&amp;d=mm&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60"> </div>
+ 
+ 
+<div class="author-bio-content">
+<h4 class="author-name"><a href="https://blog.nraboy.com/author/nraboy/">Nic Raboy</a></h4>
+<p class="author-description">
+Nic is a skilled application developer that has released several native and hybrid mobile applications to iTunes and Google Play. He writes about his development experiences related to making web and mobile app development easier to understand and has experience in Android, Node.js, Apache Cordova, Java, NoSQL, SQL, PHP, and Unity3D. </p>
+</div> 
+</div> 
+</div>
+</article> 
+<div id="disqus_thread"><iframe id="dsq-app1" name="dsq-app1" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Saving Data with IonicFramework_files/saved_resource.html" style="width: 100% !important; border: none !important; overflow: hidden !important; height: 5716px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+<nav class="navigation post-navigation" role="navigation">
+<h1 class="screen-reader-text">Post navigation</h1>
+<div class="nav-links">
+<div class="nav-previous"><a href="https://blog.nraboy.com/2014/06/check-network-connection-with-ionicframework/" rel="prev"><i class="fa fa-chevron-left"></i> Check Network Connection With IonicFramework</a></div><div class="nav-next"><a href="https://blog.nraboy.com/2014/06/creating-an-android-java-plugin-for-unity3d/" rel="next">Creating An Android Java Plugin For Unity3D <i class="fa fa-chevron-right"></i></a></div> </div> 
+</nav> 
+
+</main> 
+</div> 
+</div>
+<div id="secondary" class="widget-area col-sm-12 col-md-4" role="complementary">
+<div class="well">
+<aside id="search-2" class="widget widget_search">
+<form role="search" method="get" class="form-search" action="https://blog.nraboy.com/">
+<div class="input-group">
+<label class="screen-reader-text" for="s">Search for:</label>
+<input type="text" class="form-control search-query" placeholder="Search…" value="" name="s" title="Search for:">
+<span class="input-group-btn">
+<button type="submit" class="btn btn-default" name="submit" id="searchsubmit" value="Search" style=""><span class="glyphicon glyphicon-search"></span></button>
+</span>
+</div>
+</form></aside><aside id="sparkling-social-2" class="widget sparkling-social"><h3 class="widget-title">Follow Me</h3>
+ 
+<div class="social-icons sticky-sidebar-social">
+<nav id="menu-social" class="social-icons"><ul id="menu-social-items" class="social-menu"><li id="menu-item-3164" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3164"><a href="https://www.twitter.com/nraboy" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-widget&#39;, &#39;https://www.twitter.com/nraboy&#39;, &#39;Twitter&#39;]);"><i class="social_icon fa"><span>Twitter</span></i></a></li>
+<li id="menu-item-3165" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3165"><a href="https://www.youtube.com/users/NicRaboy" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-widget&#39;, &#39;https://www.youtube.com/users/NicRaboy&#39;, &#39;YouTube&#39;]);"><i class="social_icon fa"><span>YouTube</span></i></a></li>
+<li id="menu-item-3166" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3166"><a href="https://www.github.com/nraboy" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-widget&#39;, &#39;https://www.github.com/nraboy&#39;, &#39;GitHub&#39;]);"><i class="social_icon fa"><span>GitHub</span></i></a></li>
+<li id="menu-item-3167" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3167"><a href="https://plus.google.com/+NicRaboy" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-widget&#39;, &#39;https://plus.google.com/+NicRaboy&#39;, &#39;Google+&#39;]);"><i class="social_icon fa"><span>Google+</span></i></a></li>
+<li id="menu-item-3168" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3168"><a href="https://www.linkedin.com/in/nraboy" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-widget&#39;, &#39;https://www.linkedin.com/in/nraboy&#39;, &#39;LinkedIn&#39;]);"><i class="social_icon fa"><span>LinkedIn</span></i></a></li>
+</ul></nav>
+</div> </aside><aside id="text-5" class="widget widget_text"> <div class="textwidget"><script async="" data-rocketsrc="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/rocketscript" data-rocketoptimized="true"></script>
+ 
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-8504140913961629" data-ad-slot="3210444768" data-adsbygoogle-status="done"><!--No ad requested because of display:none on the adsbygoogle tag--></ins>
+<script type="text/rocketscript" data-rocketoptimized="true">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</aside> <aside id="recent-posts-2" class="widget widget_recent_entries"> <h3 class="widget-title">Recent Posts</h3> <ul>
+<li>
+<a href="https://blog.nraboy.com/2015/12/find-the-application-version-in-your-nativescript-app/">Find The Application Version In Your NativeScript App</a>
+</li>
+<li>
+<a href="https://blog.nraboy.com/2015/12/fix-ios-9-app-transport-security-issues-in-nativescript/">Fix iOS 9 App Transport Security Issues In NativeScript</a>
+</li>
+<li>
+<a href="https://blog.nraboy.com/2015/12/navigate-between-routes-in-a-nativescript-mobile-app/">Navigate Between Routes In A NativeScript Mobile App</a>
+</li>
+<li>
+<a href="https://blog.nraboy.com/2015/11/make-http-requests-in-a-nativescript-mobile-application/">Make HTTP Requests In A NativeScript Mobile Application</a>
+</li>
+<li>
+<a href="https://blog.nraboy.com/2015/11/nativescript-vs-ionic-framework-should-you-switch/">NativeScript vs Ionic Framework, Should You Switch?</a>
+</li>
+</ul>
+</aside><aside id="text-4" class="widget widget_text"><h3 class="widget-title">Subscribe on YouTube</h3> <div class="textwidget"><script data-rocketsrc="//apis.google.com/js/platform.js" type="text/rocketscript" data-rocketoptimized="true"></script>
+<div id="___ytsubscribe_0" style="text-indent: 0px; margin: 0px; padding: 0px; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 170px; height: 48px; background: transparent;"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 170px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 48px;" tabindex="0" vspace="0" width="100%" id="I0_1450560321373" name="I0_1450560321373" src="./Saving Data with IonicFramework_files/subscribe_embed.html" data-gapiattached="true"></iframe></div></div>
+</aside><aside id="sparkling-cats-3" class="widget sparkling-cats"><h3 class="widget-title">Categories</h3>
+<div class="cats-widget">
+<ul> <li class="cat-item cat-item-7"><a href="https://blog.nraboy.com/category/android/">Android</a> <span>108</span>
+</li>
+<li class="cat-item cat-item-9"><a href="https://blog.nraboy.com/category/ios/">iOS</a> <span>93</span>
+</li>
+<li class="cat-item cat-item-189"><a href="https://blog.nraboy.com/category/apache-cordova-2/">Apache Cordova</a> <span>81</span>
+</li>
+<li class="cat-item cat-item-298"><a href="https://blog.nraboy.com/category/javascript-2/">JavaScript</a> <span>66</span>
+</li>
+</ul>
+</div> 
+</aside><aside id="text-3" class="widget widget_text"> <div class="textwidget"><script async="" data-rocketsrc="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" type="text/rocketscript" data-rocketoptimized="true"></script>
+ 
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8504140913961629" data-ad-slot="1359917567" data-ad-format="auto" data-adsbygoogle-status="done"></ins>
+<script type="text/rocketscript" data-rocketoptimized="true">
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</aside><aside id="text-6" class="widget widget_text"><h3 class="widget-title">Support this site</h3> <div class="textwidget">If my tutorial blog was helpful to you, then please consider visiting my <a href="http://amzn.com/w/1YU2424SGEF1B" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-widget&#39;, &#39;http://amzn.com/w/1YU2424SGEF1B&#39;, &#39;Amazon Wishlist&#39;]);" target="_blank" style="color: #DA4453">Amazon Wishlist</a> or donating via <a href="https://paypal.me/nraboy" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-widget&#39;, &#39;https://paypal.me/nraboy&#39;, &#39;Paypal&#39;]);" target="_blank" style="color: #DA4453">Paypal</a> or <a href="https://cash.me/$nraboy" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-widget&#39;, &#39;https://cash.me/$nraboy&#39;, &#39;Square Cash&#39;]);" target="_blank" style="color: #DA4453">Square Cash</a></div>
+</aside> </div>
+</div> 
+</div> 
+</div> 
+</div> 
+<div id="footer-area">
+<div class="container footer-inner">
+<div class="row">
+<div class="footer-widget-area">
+<div class="col-sm-4 footer-widget" role="complementary">
+<div id="text-8" class="widget widget_text"><h3 class="widgettitle">About</h3> <div class="textwidget">Welcome to my code blog! My name is Nic Raboy and I love to fiddle with code and new technology. Here you'll find tutorials regarding mobile application development, web application development, and game development. It doesn't end there. Anything I find in my coding adventures ends up here as well.</div>
+</div> </div> 
+<div class="col-sm-4 footer-widget" role="complementary">
+<div id="nav_menu-2" class="widget widget_nav_menu"><h3 class="widgettitle">Useful Links</h3><div class="menu-useful-links-container"><ul id="menu-useful-links" class="menu"><li id="menu-item-396" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-396"><a href="http://www.nraboy.com/">My Profile</a></li>
+<li id="menu-item-399" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-399"><a href="https://github.com/nraboy" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-widget&#39;, &#39;https://github.com/nraboy&#39;, &#39;Github&#39;]);">Github</a></li>
+<li id="menu-item-3438" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3438"><a href="https://blog.nraboy.com/sponsorship-and-advertising-opportunities/">Advertise</a></li>
+</ul></div></div> </div> 
+<div class="col-sm-4 footer-widget" role="complementary">
+<div id="text-12" class="widget widget_text"><h3 class="widgettitle">Subscribe To My Newsletter</h3> <div class="textwidget"> 
+<link href="./Saving Data with IonicFramework_files/slim-081711.css" rel="stylesheet" type="text/css">
+<style type="text/css">#mc_embed_signup{clear:left;font:14px Helvetica,Arial,sans-serif;}#mc_embed_signup form{padding:inherit;}#mc_embed_signup .button{background-color:#DA442C;border-color:#DA442C;}</style>
+<div id="mc_embed_signup">
+<form action="https://nraboy.us11.list-manage.com/subscribe/post?u=0c466bf677e408d22c228fec4&amp;id=971fe098c9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+<div id="mc_embed_signup_scroll">
+<p>Subscribe to my newsletter for monthly tips and tricks on subjects such as mobile, web, and game development.</p>
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="">
+ 
+<div style="position: absolute; left: -5000px;"><input type="text" name="b_0c466bf677e408d22c228fec4_971fe098c9" tabindex="-1" value=""></div>
+<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-default"></div>
+</div>
+</form>
+</div>
+ </div>
+</div> </div> 
+</div> </div>
+</div>
+<footer id="colophon" class="site-footer" role="contentinfo">
+<div class="site-info container">
+<div class="row">
+<nav role="navigation" class="col-md-6">
+<ul id="menu-footer-links" class="nav footer-nav clearfix"><li id="menu-item-397" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-397"><a href="https://blog.nraboy.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-2900" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2900"><a href="http://eepurl.com/bAz2Pb" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;outbound-widget&#39;, &#39;http://eepurl.com/bAz2Pb&#39;, &#39;Newsletter&#39;]);">Newsletter</a></li>
+<li id="menu-item-398" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-398"><a href="https://www.nraboy.com/#/contact">Contact Me</a></li>
+</ul> </nav>
+<div class="copyright col-md-6">
+<a href="http://blog.nraboy.com/" title="Nic Raboy">Nic Raboy</a> All rights reserved. Theme by <a href="http://colorlib.com/" target="_blank">Colorlib</a> Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a> </div>
+</div>
+</div> 
+<div class="scroll-to-top" style="display: block;"><i class="fa fa-angle-up"></i></div> 
+</footer> 
+</div>
+</div> 
+<script type="text/rocketscript" data-rocketoptimized="true">
+    jQuery( document ).ready( function( $ ){
+      if ( $( window ).width() >= 767 ){
+        $( '.navbar-nav > li.menu-item > a' ).click( function(){
+          window.location = $( this ).attr( 'href' );
+        });
+      }
+    });
+  </script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+    			jQuery(function() {
+    				jQuery( window ).on( 'init.icegram', function( e, ig ) {
+				        jQuery('.ig_inline_container:empty').remove();
+				    });
+    			});
+    		 </script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+		window.WPCOM_sharing_counts = {"https:\/\/blog.nraboy.com\/2014\/06\/saving-data-with-ionicframework\/":181};
+	</script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-google-plus-1' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+		});
+		</script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-linkedin' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+		});
+		</script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-pocket' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+		});
+		</script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-tumblr' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtumblr', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+		});
+		</script>
+<div id="sharing_email" style="display: none;">
+<form action="./Saving Data with IonicFramework_files/Saving Data with IonicFramework.html" method="post">
+<label for="target_email">Send to Email Address</label>
+<input type="email" name="target_email" id="target_email" value="">
+<label for="source_name">Your Name</label>
+<input type="text" name="source_name" id="source_name" value="">
+<label for="source_email">Your Email Address</label>
+<input type="email" name="source_email" id="source_email" value="">
+<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off">
+<script type="text/rocketscript" data-rocketoptimized="true"> document.getElementById('jetpack-source_f_name').value = ''; </script>
+<img style="float: right; display: none" class="loading" src="./Saving Data with IonicFramework_files/loading.gif" alt="loading" width="16" height="16">
+<input type="submit" value="Send Email" class="sharing_send btn btn-default">
+<a rel="nofollow" href="https://blog.nraboy.com/2014/06/saving-data-with-ionicframework/#cancel" class="sharing_cancel">Cancel</a>
+<div class="errors errors-1" style="display: none;">
+Post was not sent - check your email addresses! </div>
+<div class="errors errors-2" style="display: none;">
+Email check failed, please try again </div>
+<div class="errors errors-3" style="display: none;">
+Sorry, your blog cannot share posts by email. </div>
+</form>
+</div>
+<script type="text/rocketscript" data-rocketoptimized="true">
+/* <![CDATA[ */
+var ssbpLazy = {"ajax_url":"https:\/\/blog.nraboy.com\/wp-admin\/admin-ajax.php","security":"ea29131579"};
+/* ]]> */
+</script>
+<script type="text/rocketscript" data-rocketsrc="//blog.nraboy.com/wp-content/plugins/simple-share-buttons-plus/js/ssbp_lazy_tracking.min.js?ver=4.3.1" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+/* <![CDATA[ */
+var ssbpAjax = {"ajax_url":"https:\/\/blog.nraboy.com\/wp-admin\/admin-ajax.php","security":"4d7a88c47d"};
+/* ]]> */
+</script>
+<script type="text/rocketscript" data-rocketsrc="//blog.nraboy.com/wp-content/plugins/simple-share-buttons-plus/js/ssbp_page.js?ver=4.3.1" data-rocketoptimized="true"></script><script type="text/javascript" src="./Saving Data with IonicFramework_files/ssbp_page.js"></script>
+<script type="text/rocketscript" data-rocketsrc="//s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201551" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketsrc="//blog.nraboy.com/wp-content/themes/sparkling/inc/js/skip-link-focus-fix.js?ver=20140222" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketsrc="//blog.nraboy.com/wp-includes/js/comment-reply.min.js?ver=4.3.1" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+/* <![CDATA[ */
+var embedVars = {"disqusConfig":{"platform":"wordpress@4.3.1","language":""},"disqusIdentifier":"181 http:\/\/blog.nraboy.com\/?p=181","disqusShortname":"nraboy","disqusTitle":"Saving Data With IonicFramework","disqusUrl":"https:\/\/blog.nraboy.com\/2014\/06\/saving-data-with-ionicframework\/","options":{"manualSync":false},"postId":"181"};
+/* ]]> */
+</script>
+<script type="text/rocketscript" data-rocketsrc="//blog.nraboy.com/wp-content/plugins/disqus-comment-system/media/js/disqus.js?ver=4.3.1" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"nraboy"};
+/* ]]> */
+</script>
+<script type="text/rocketscript" data-rocketsrc="//blog.nraboy.com/wp-content/plugins/disqus-comment-system/media/js/count.js?ver=4.3.1" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+/* <![CDATA[ */
+var icegram_pre_data = {"ajax_url":"https:\/\/blog.nraboy.com\/wp-admin\/admin-ajax.php","post_obj":{"is_home":false,"page_id":181,"action":"display_messages","shortcodes":[],"cache_compatibility":"yes","device":"laptop"}};
+/* ]]> */
+</script>
+<script type="text/rocketscript" data-rocketsrc="//blog.nraboy.com/wp-content/plugins/icegram/assets/js/main.js?ver=1.9.11.1" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/rocketscript" data-rocketsrc="//blog.nraboy.com/wp-content/plugins/jetpack/modules/sharedaddy/sharing.js?ver=3.8.1" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketsrc="//stats.wp.com/e-201551.js" async="" defer="" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:3.8.1',blog:'72032833',post:'181',tz:'-8',srv:'blog.nraboy.com'} ]);
+	_stq.push([ 'clickTrackerInit', '72032833', '181' ]);
+</script>
+
+
+ <script type="text/javascript">(function () {
+        return window.SIG_EXT = {};
+      })()</script><script id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{(function() { for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }})()}catch(e){}</script><img src="./Saving Data with IonicFramework_files/g.gif" id="wpstats"><iframe name="oauth2relay723132118" id="oauth2relay723132118" src="./Saving Data with IonicFramework_files/postmessageRelay.html" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><script type="text/javascript" id="ig_script_0" data-rocketsrc="https://blog.nraboy.com/wp-content/plugins/icegram/assets/js/icegram.js" data-rocketoptimized="true"></script><script type="text/javascript" id="ig_script_1" data-rocketsrc="https://blog.nraboy.com/wp-content/plugins/ig-inline/inline/main.js" data-rocketoptimized="true"></script><script type="text/javascript" id="ig_script_2" data-rocketsrc="https://blog.nraboy.com/wp-content/plugins/icegram/message-types/action-bar/main.js" data-rocketoptimized="true"></script><script type="text/javascript" id="ig_script_3" data-rocketsrc="https://blog.nraboy.com/wp-content/plugins/ig-behavior-triggers/classes/../assets/js/frontend.js" data-rocketoptimized="true"></script><script type="text/javascript" id="ig_script_4" data-rocketsrc="https://blog.nraboy.com/wp-content/plugins/ig-cta-actions/classes/../assets/js/frontend.js" data-rocketoptimized="true" gapi_processed="true"></script><div id="icegram_messages_container"><div class="icegram action_bar_3373"><div class="ig_action_bar ig_container ig_hello ig_no_hide ig_bottom ig_no_icon ig_show ig_anim_no-anim_in" id="icegram_message_3373" style="color: rgb(255, 255, 255); display: block; background-color: rgb(204, 68, 68);"><div class="ig_content ig_clear_fix"><div class="ig_close" id="ig_close_3373" style="background-color: rgb(204, 68, 68);"><span></span></div><div class="ig_data ig_clear_fix"><div class="ig_headline">Download my eBook, The Ionic Framework Cheat Sheet, FREE</div><div class="ig_message" style="display: none;"></div></div><div class="ig_button" style="border-color: rgb(62, 101, 152); color: rgb(255, 255, 255); cursor: pointer; background-color: rgb(68, 119, 189);">Get It Now</div></div></div></div></div><div style="display: block; visibility: hidden; position: absolute; width: 106px; left: -10000px; top: -10000px;"><table cellpadding="0" cellspacing="0" dir="ltr" style="width:106px;" frame="void" rules="none" class=" gc-bubbleDefault pls-container"><tbody><tr class="gc-reset"><td class="pls-topLeft gc-reset"><img class="gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./Saving Data with IonicFramework_files/border_3.gif"></td><td class="pls-topTail gc-reset"><img class="pls-tailbottom gc-reset" style="width:15px !important; height:9px !important; max-width: 15px !important; max-height: 9px !important;" src="./Saving Data with IonicFramework_files/spacer.gif"><img class="pls-spacerbottom gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./Saving Data with IonicFramework_files/spacer.gif"></td><td class="pls-topRight gc-reset"><img class="gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./Saving Data with IonicFramework_files/border_3.gif"></td></tr><tr class="gc-reset"><td class="pls-vertShimLeft gc-reset"><img class="gc-reset" style="width:1px !important; height:4px !important; max-width: 1px !important; max-height: 4px !important;" src="./Saving Data with IonicFramework_files/spacer.gif"></td><td class="pls-vertShim gc-reset"><img class="gc-reset" style="width:1px !important; height:4px !important; max-width: 1px !important; max-height: 4px !important;" src="./Saving Data with IonicFramework_files/spacer.gif"></td><td class="pls-vertShimRight gc-reset"><img class="pls-dropTR gc-reset" style="width:5px !important; height:4px !important; max-width: 5px !important; max-height: 4px !important;" src="./Saving Data with IonicFramework_files/spacer.gif"></td></tr><tr class="gc-reset"><td class="pls-contentLeft gc-reset"><img class="pls-tailright gc-reset" style="width:9px !important; height:15px !important; max-width: 9px !important; max-height: 15px !important;" src="./Saving Data with IonicFramework_files/spacer.gif"><img class="pls-spacerright gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./Saving Data with IonicFramework_files/spacer.gif"></td><td class="pls-contentWrap gc-reset"><div class="goog-bubble-content gc-reset"><iframe frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="margin:0px;position:absolute;z-index:1;border-style:none;outline:none;width:100px;" tabindex="0" vspace="0" width="100%" id="I0_1450560328689" name="I0_1450560328689" src="./Saving Data with IonicFramework_files/subscribe_embed(1).html"></iframe></div></td><td class="pls-dropRight gc-reset"><img class="pls-tailleft gc-reset" style="width:12px !important; height:19px !important; max-width: 12px !important; max-height: 19px !important;" src="./Saving Data with IonicFramework_files/spacer.gif"><img class="pls-spacerleft gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./Saving Data with IonicFramework_files/spacer.gif"></td></tr><tr class="gc-reset"><td class="pls-bottomLeft gc-reset"><img class="gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./Saving Data with IonicFramework_files/border_3.gif"></td><td class="gc-reset"><table cellpadding="0" cellspacing="0" style="width:100%" class="gc-reset"><tbody><tr class="gc-reset"><td class="pls-vert gc-reset"><img class="pls-dropBL gc-reset" style="width:4px !important; height:5px !important; max-width: 4px !important; max-height: 5px !important;" src="./Saving Data with IonicFramework_files/spacer.gif"></td><td class="pls-dropBottom gc-reset"><img class="pls-tailtop gc-reset" style="width:19px !important; height:13px !important; max-width: 19px !important; max-height: 13px !important;" src="./Saving Data with IonicFramework_files/spacer.gif"><img class="pls-spacertop gc-reset" style="width:1px !important; height:1px !important; max-width: 1px !important; max-height: 1px !important;" src="./Saving Data with IonicFramework_files/spacer.gif"></td></tr></tbody></table></td><td class="pls-vert gc-reset"><img class="pls-dropBR gc-reset" style="width:5px !important; height:5px !important; max-width: 5px !important; max-height: 5px !important;" src="./Saving Data with IonicFramework_files/spacer.gif"></td></tr></tbody></table></div></body></html>

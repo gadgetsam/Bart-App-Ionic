@@ -86,11 +86,6 @@ angular.module('starter.controllers', [])
           //console.log(trip.trips);
         };
 
-        //$scope.currentDate = new Date();
-        //
-        //console.log($scope.currentdate.getHours() + ":"
-        //  + $scope.currentdate.getMinutes() + ":" + $scope.currentdate.getSeconds())
-        //return xmlParser.xml_str2json(string.data);
         return trip
 
 
@@ -107,16 +102,24 @@ angular.module('starter.controllers', [])
       trips = JSON.parse(window.localStorage.getItem("trips"));
 
 
-      if(trips== undefined) {
-      window.localStorage.setItem("trips", JSON.stringify([[origs,dests]]));
-    }
-    else{
-        //console.log(trips.push([origs,dests]));
-        window.localStorage.setItem("trips", JSON.stringify(trips.push([origs,dests])));
-      }};
-    var tripCounter = function(){
-      trips =JSON.parse(window.localStorage.getItem("trips"));
-      console.log(trips);
+            if(trips== undefined) {
+              console.log(trips);
+            window.localStorage.setItem("trips", JSON.stringify({params:[[origs,dests]]}));
+              console.log("run 1");
+              console.log(JSON.parse(window.localStorage.getItem("trips")));
+
+          }
+          else{
+              console.log(trips.params);
+              console.log(JSON.parse(window.localStorage.getItem("trips")));
+              console.log("run 2");
+              console.log(trips.params.push([origs,dests]));
+              window.localStorage.setItem("trips", JSON.stringify({params:trips.params.push([origs,dests])}));
+              console.log(JSON.parse(window.localStorage.getItem("trips")));
+            }};
+          var tripCounter = function(){
+      trips =JSON.parse(window.localStorage.getItem("trips")).params;
+      //console.log(trips);
       if( trips!== undefined) {
 
         $scope.trip = tripGetter(trips[0][0],trips[0][1])
@@ -125,9 +128,11 @@ angular.module('starter.controllers', [])
       console.log("ran")
     }
     window.localStorage.removeItem("trips")
-    addRoute("ASHB","CIVC");
-    addRoute("ASHB","CIVC");
 
+    addRoute("ASHB","CIVC");
+    console.log(JSON.parse(window.localStorage.getItem("trips")).params);
+    addRoute("ASHBs","CIVCs");
+    //console.log(JSON.parse(window.localStorage.getItem("trips")).params);
     tripCounter();
     $interval(tripCounter, 1000);
     //console.log($scope.time)
