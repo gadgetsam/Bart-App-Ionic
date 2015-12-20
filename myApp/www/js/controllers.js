@@ -68,6 +68,20 @@ angular.module('starter.controllers', [])
     $scope.$on('modal.removed', function () {
         // Execute action
     });
+    
+    //Popup for nearest station
+    // An alert dialog
+ $scope.showAlert = function() {
+   var alertPopup = $ionicPopup.alert({
+     title: 'Richmond',
+     template: 'The nearest Station, Richmond Station, is 5.1 miles away'
+   });
+
+   alertPopup.then(function(res) {
+     console.log('Thank you for not eating my delicious ice cream cone');
+   });
+ };
+    //End popup
 
 
     //Below this line is all the code from MainCtrl. Need all the code to be here too because in the html it can only access information from it's own controller. It can't jump between controllers.
@@ -288,7 +302,7 @@ angular.module('starter.controllers', [])
                 //console.log(JSON.parse(window.localStorage.getItem("trips")));
             }
         };
-        
+
         window.localStorage.removeItem("trips")
             //console.log(JSON.parse(window.localStorage.getItem("trips")));
         addRoute("ASHB", "CIVC");
