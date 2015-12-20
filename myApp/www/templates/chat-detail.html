@@ -7,29 +7,41 @@
 <ion-view view-title="{{trips[0].origin}} to {{trips[0].destination}}">
     <ion-content class="padding">
 
-
+<h4>Soonest Train</h4>
         <div class="card">
             <div class="item item-text-wrap">
                 <blockquote style="padding-bottom:0px; padding-top:0px; border-color:blue;">
-                    <b>From: </b>{{trips[0].origin}}
-                    <br>
-                    <b>To: </b>{{trips[0].destination}}
-                    <br>
-                    <b>Time: </b>{{trips[0].trips[0].origTime}} - {{trips[0].trips[0].destTime}}
-                    <br>
-                    <b>Fare: </b>{{trips[0].trips[0].fare}}
-                    <br>
+                        <p style="font-size:17px;">
+                        <b>From: </b>{{trips[0].origin}}
+                        <br>
+                        <b>To: </b>{{trips[0].destination}}
+                        <br>
+                        <b>Time: </b>{{trips[0].trips[0].origTime}} - {{trips[0].trips[0].destTime}}
+                        <br>
+                        <b>Fare: </b>{{trips[0].trips[0].fare}}
+                        <br>
+                    </p>
                 </blockquote>
             </div>
         </div>
 
-        <div class="card" ng-repeat="trip in trips[0].trips">
+       <h4>Later Trains</h4>
+        <div class="card"  ng-repeat="trip in trips[0].trips">
             <div class="item item-text-wrap">
-                <b>From: {{trip.origTime}}</b>
-                <b>To: </b>
-                <b>Time: </b>
-                <b>Duration: </b>
-                <b>Fare: </b>
+                <blockquote style="padding-bottom:0px; padding-top:0px; border-color:blue;">
+                    <p>
+                        <b>From: </b>{{trips[0].origin}}
+                        <br>
+                        <b>To: </b>{{trips[0].destination}}
+                        <br>
+                        <b>Time: </b>{{trip.origTime}}
+                        <br>
+                        <b>Fare: </b>{{trip.fare}}
+                        <br>
+                        
+                    </p>
+                </blockquote>
+
             </div>
         </div>
 
