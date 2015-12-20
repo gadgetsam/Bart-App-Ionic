@@ -199,7 +199,7 @@ angular.module('starter.controllers', [])
             enableFriends: true
         };
     })
-    .controller('MainCtrl', function ($scope, $http, xmlParser, $interval) {
+    .controller('MainCtrl', function ($scope, $http, xmlParser, $interval, $location) {
 
         var tripGetter = function (orgins, dests, num) {
             tripDic = JSON.parse(window.localStorage.getItem("trips")).params;
@@ -288,11 +288,13 @@ angular.module('starter.controllers', [])
                 //console.log(JSON.parse(window.localStorage.getItem("trips")));
             }
         };
-
+        var update = function(){
+          currentId = $location.$$absUrl.substr($location.$$absUrl.length -1);
+        }
         window.localStorage.removeItem("trips")
             //console.log(JSON.parse(window.localStorage.getItem("trips")));
         addRoute("ASHB", "CIVC");
-    console.log( window.location.href.substr(-1,-1));
+
         addRoute("12th", "CIVC");
         //console.log(JSON.parse(window.localStorage.getItem("trips")).params);
         tripGetter("asd", "rasd", 1);
@@ -301,12 +303,13 @@ angular.module('starter.controllers', [])
 
     })
 
-.controller('TimeCtrl', function ($scope, $interval) {
+.controller('TimeCtrl', function ($scope, $interval,$location) {
     var tick = function () {
         timem = moment();
-        $scope.sec = timem.format("ss");
-        $scope.min = timem.format("mm");
+        sec = timem.format("ss");
+        min = timem.format("mm");
 
+      //$scope.currentId = $location.$$absUrl.substr($location.$$absUrl.length -1);
         //console.log($scope.sec)
     }
     tick();
