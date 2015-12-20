@@ -13,7 +13,7 @@
         </div>
         <ion-list>
 
-            <ion-item class="item-remove-animate item-icon-right" ng-repeat="trip in trips" type="item-text-wrap" href="#/tab/chats/{{trip.id}}" ng-click="update()">
+            <ion-item class="item-remove-animate item-icon-right" ng-repeat="trip in trips" type="item-text-wrap" href="#/tab/chats/{{trip.id}}" ng-click="currentId=trip.id">
                 <blockquote style="margin-top:0px; margin-bottom:0px; padding:0px; padding-left:10px; border-color:#FF5733;">
                     <div class="row">
                         <h2>From {{trip.origin}} to {{trip.destination}}</h2>
@@ -93,7 +93,7 @@
                                 View
                             </button>
 
-                            
+
                             <!--View the actual train data -->
                             <div class="card" ng-if="start.length > 0 && end.length > 0">
                                 <div class="item item-text-wrap">
@@ -114,7 +114,7 @@
                                 </div>
                             </div>
                             <!--End train data -->
-                            
+
                         </center>
                     </div>
 

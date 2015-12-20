@@ -226,7 +226,7 @@ angular.module('starter.controllers', [])
         window.localStorage.removeItem("trips")
             //console.log(JSON.parse(window.localStorage.getItem("trips")));
         addRoute("12th St. Oakland City Center", "Balboa Park");
-    currentId = 0;
+    $scope.currentId = 0;
         addRoute("Balboa Park", "16th St. Mission");
 
 
@@ -239,8 +239,8 @@ angular.module('starter.controllers', [])
 .controller('TimeCtrl', function ($scope, $interval,$location) {
     var tick = function () {
         time = moment();
-        sec = time.format("ss");
-        min = time.format("mm");
+        $scope.sec = time.format("ss");
+        $scope.min = time.format("mm");
 
       //$scope.currentId = $location.$$absUrl.substr($location.$$absUrl.length -1);
         //console.log($scope.sec)
