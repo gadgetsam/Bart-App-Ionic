@@ -288,13 +288,11 @@ angular.module('starter.controllers', [])
                 //console.log(JSON.parse(window.localStorage.getItem("trips")));
             }
         };
-        var update = function(){
-          currentId = $location.$$absUrl.substr($location.$$absUrl.length -1);
-        }
+        
         window.localStorage.removeItem("trips")
             //console.log(JSON.parse(window.localStorage.getItem("trips")));
         addRoute("ASHB", "CIVC");
-
+    currentId = 0;
         addRoute("12th", "CIVC");
         //console.log(JSON.parse(window.localStorage.getItem("trips")).params);
         tripGetter("asd", "rasd", 1);
