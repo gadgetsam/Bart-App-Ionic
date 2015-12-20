@@ -15,7 +15,7 @@ angular.module('starter.controllers', [])
     $scope.remove = function (chat) {
         Chats.remove(chat);
     };
-    
+
     //Ionic modal code
     $ionicModal.fromTemplateUrl('my-modal.html', {
         scope: $scope,
@@ -42,7 +42,7 @@ angular.module('starter.controllers', [])
         // Execute action
     });
 
-    //Below this line is all the code from MainCtrl. Need all the code to be here too because in the html it can only access information from it's own controller. It can't jump between controllers. 
+    //Below this line is all the code from MainCtrl. Need all the code to be here too because in the html it can only access information from it's own controller. It can't jump between controllers.
 
     //START OF MAINCTRL CODE
 
@@ -56,7 +56,9 @@ angular.module('starter.controllers', [])
             dict = [[orgins, dests]]
             console.log(dict);
         }
+        $scope.id = 0;
         for (var j = 0; j < dict.length; j++) {
+            $scope.trips = []
             //console.log(dict+"123");
             orgin = dict[j][0]
             dest = dict[j][1]
@@ -64,19 +66,22 @@ angular.module('starter.controllers', [])
                 //console.log('Success', string);
 
                 tripobj = xmlParser.xml_str2json(string.data);
-                var id = j;
+
+                //console.log(id);
                 destination = tripobj.root.destination
                 origin = tripobj.root.origin
                 schedule = tripobj.root.schedule.request.trip
+
                 trip = {
                         "origin": origin,
                         "destination": destination,
-                        "id": id,
+                        "id": $scope.id,
                         "trips": []
 
                     }
+              $scope.id = $scope.id +1;
                     //console.log(schedule[0]);
-               
+
                 for (var i = 0; i < schedule.length; i++) {
                     origTime = schedule[i]._origTimeMin
                     destTime = schedule[i]._destTimeMin
@@ -142,8 +147,8 @@ angular.module('starter.controllers', [])
 
     addRoute("12th", "CIVC");
     //console.log(JSON.parse(window.localStorage.getItem("trips")).params);
-    tripGetter("asd", "rasd", 1);
-    //$interval(tripGetter("asd","rasd",1), 1000);
+    //tripGetter("asd", "rasd", 1);
+    $interval(tripGetter("asd","ras d",1), 1000);
     //console.log($scope.time)
 
     //END OF ALL THE MAINCTRL CODE
@@ -152,7 +157,7 @@ angular.module('starter.controllers', [])
 
 .controller('ChatDetailCtrl', function ($scope, $stateParams, Chats) {
     $scope.chat = Chats.get($stateParams.chatId);
-    
+
 })
 
 .controller('AccountCtrl', function ($scope) {
