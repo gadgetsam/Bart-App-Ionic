@@ -3,11 +3,11 @@
 <!--      <p ng-repeat="trip in trips">Orig Time "{{trip.trips[0].origTime}}" Destination Time"{{trip.trips[0].destTime}}"Orgin "{{trip.origin}}"destination"{{trip.destination}}"</p>-->
         <div style="margin:10px;">
             <div class="row">
-                <button class="button button-small button-outline button-positive icon" style="width:60%; margin-right:1%;" ng-click="modal.show()">Quick Lookup
+                <button class="button button-small button-outline button-calm icon" style="width:60%; margin-right:1%;" ng-click="modal.show()">Quick Lookup
                 </button>
-                <button class="button button-small button-outline button-positive icon ion-ios-plus-outline" style="width:20%; margin-right:1%;  margin-left:1%;" ng-click="showConfirm()">
+                <button class="button button-small button-outline button-calm icon ion-ios-plus-outline" style="width:20%; margin-right:1%;  margin-left:1%;" ng-click="modal2.show()">
                 </button>
-                <button class="button button-small button-outline button-positive icon  ion-location" style="width:20%; margin-left:1%;">
+                <button class="button button-small button-outline button-calm icon  ion-location" style="width:20%; margin-left:1%;">
                 </button>
             </div>
         </div>
@@ -87,10 +87,74 @@
                             </select>
                             <br>
                             <br>
-                            <p>Confirm your trip from <b>{{start}}</b> to <b>{{end}}</b>
+                            <p ng-if="start.length > 0 && end.length > 0">View your trip from <b>{{start}}</b> to <b>{{end}}</b>
                             </p>
-                            <button class="button button-outline button-calm" ng-click="tripGetter(start, end)">
+                            <button class="button button-outline button-balanced" ng-click="tripGetter(start, end)">
                                 View
+                            </button>
+
+                            <p ng-repeat="trip in trips">
+                                {{trips.fare[0]}}
+                            </p>
+                        </center>
+                    </div>
+
+                </ion-content>
+            </ion-modal-view>
+        </script>
+    <script id="my-modal2.html" type="text/ng-template">
+            <ion-modal-view>
+                <ion-header-bar>
+                    <h1 class="title">Add Trip</h1>
+                    <div class="button button-clear" ng-click="modal2.hide()"><span class="icon ion-close"></span>
+                    </div>
+                </ion-header-bar>
+                <ion-content>
+                    <div style="padding:5%; font-size:17px;">
+                        <center>
+                            Depart From:
+                            <select ng-model="start">
+                                <option>Milbrae</option>
+                                <option>SFO</option>
+                                <option>San Bruno</option>
+                                <option>South San Francisco</option>
+                                <option>Colma</option>
+                                <option>Daily City</option>
+                                <option>Balboa</option>
+                                <option>Glen Park</option>
+                                <option>24th Street</option>
+                                <option>16th Street</option>
+                                <option>Civic Center</option>
+                                <option>Powell Street</option>
+                                <option>Montogomery</option>
+                                <option>Embarcadero</option>
+
+                            </select>
+                            <br>
+                            <br> Arrive At:
+                            <select ng-model="end">
+                                <option>Milbrae</option>
+                                <option>SFO</option>
+                                <option>San Bruno</option>
+                                <option>South San Francisco</option>
+                                <option>Colma</option>
+                                <option>Daily City</option>
+                                <option>Balboa</option>
+                                <option>Glen Park</option>
+                                <option>24th Street</option>
+                                <option>16th Street</option>
+                                <option>Civic Center</option>
+                                <option>Powell Street</option>
+                                <option>Montogomery</option>
+                                <option>Embarcadero</option>
+
+                            </select>
+                            <br>
+                            <br>
+                            <p ng-if="start.length > 0 && end.length > 0">View your trip from <b>{{start}}</b> to <b>{{end}}</b>
+                            </p>
+                            <button class="button button-outline button-energized" ng-click="addRoute(start, end)">
+                                Add
                             </button>
 
                             <p ng-repeat="trip in trips">

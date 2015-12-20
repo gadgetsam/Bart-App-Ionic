@@ -41,6 +41,34 @@ angular.module('starter.controllers', [])
     $scope.$on('modal.removed', function () {
         // Execute action
     });
+    
+    // Ionic Modal for adding
+         //Ionic modal code
+    $ionicModal.fromTemplateUrl('my-modal2.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function (modal) {
+        $scope.modal2 = modal;
+    });
+    $scope.openModal = function () {
+        $scope.modal2.show();
+    };
+    $scope.closeModal = function () {
+        $scope.modal2.hide();
+    };
+    //Cleanup the modal when we're done with it!
+    $scope.$on('$destroy', function () {
+        $scope.modal2.remove();
+    });
+    // Execute action on hide modal
+    $scope.$on('modal.hidden', function () {
+        // Execute action
+    });
+    // Execute action on remove modal
+    $scope.$on('modal.removed', function () {
+        // Execute action
+    });
+
 
     //Below this line is all the code from MainCtrl. Need all the code to be here too because in the html it can only access information from it's own controller. It can't jump between controllers.
 
