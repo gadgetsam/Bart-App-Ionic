@@ -62,12 +62,13 @@ angular.module('starter.controllers', [])
             //console.log(dict+"123");
             orgin = dict[j][0]
             dest = dict[j][1]
-            $http.get('http://api.bart.gov/api/sched.aspx?cmd=arrive&orig=' + orgin + '&dest=' + dest + '&date=now&key=MW9S-E7SL-26DU-VV8V&b=2&a=2&l=1').then(function (string) {
-                //console.log('Success', string);
+            $http.get('http://api.bart.gov/api/sched.aspx?cmd=arrive&orig=' + orgin + '&dest=' + dest + '&date=now&key=MW9S-E7SL-26DU-VV8V&b=0&a=5&l=1').then(function (string) {
+                //console.log('http://api.bart.gov/api/sched.aspx?cmd=arrive&orig=' + orgin + '&dest=' + dest + '&date=now&key=MW9S-E7SL-26DU-VV8V&b=2&a=2&l=1');
+
 
                 tripobj = xmlParser.xml_str2json(string.data);
 
-                //console.log(id);
+                console.log(tripobj);
                 destination = tripobj.root.destination
                 origin = tripobj.root.origin
                 schedule = tripobj.root.schedule.request.trip
