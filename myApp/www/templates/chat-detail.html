@@ -23,9 +23,9 @@
             </div>
         </div>
 
-        <div class="card" ng-repeat="trips[0].trip">
+        <div class="card" ng-repeat="trip in trips[0].trips">
             <div class="item item-text-wrap">
-                <b>From: </b>
+                <b>From: {{trip.origTime}}</b>
                 <b>To: </b>
                 <b>Time: </b>
                 <b>Duration: </b>

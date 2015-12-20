@@ -84,14 +84,19 @@ angular.module('starter.controllers', [])
                     //console.log(schedule[0]);
 
                 for (var i = 0; i < schedule.length; i++) {
+
                     origTime = schedule[i]._origTimeMin
-                    destTime = schedule[i]._destTimeMin
-                    fare = schedule[i]._destTimeMin
-                    trip.trips.push({
-                            'origTime': origTime,
-                            "destTime": destTime,
-                            "fare": fare
-                        })
+                    if(!(parseInt(origTime.substr(0, 1)) <= $scope.hours&&parseInt(origTime.substr(4, 5)) <= $scope.min)){
+                      destTime = schedule[i]._destTimeMin
+                      fare = schedule[i]._destTimeMin
+                      trip.trips.push({
+                        'origTime': origTime,
+                        "destTime": destTime,
+                        "fare": fare
+                      })
+                    }
+
+
                         //console.log(trip.trips);
                 };
                 //return trip
