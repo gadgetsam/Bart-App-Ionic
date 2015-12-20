@@ -100,12 +100,13 @@ angular.module('starter.controllers', [])
 
           }
           else{
-              console.log(trips.params);
-              console.log(JSON.parse(window.localStorage.getItem("trips")));
-              console.log("run 2");
-              console.log(trips.params.push([origs,dests]));
-              //window.localStorage.removeItem("trips")
-              //window.localStorage.setItem("trips", JSON.stringify({params:trips.params.push([origs,dests])}));
+              //console.log(trips.params);
+              array = JSON.parse(window.localStorage.getItem("trips")).params
+
+              array.push([origs,dests]);
+
+              window.localStorage.removeItem("trips")
+              window.localStorage.setItem("trips", JSON.stringify({params:array}));
               console.log(JSON.parse(window.localStorage.getItem("trips")));
             }};
           var tripCounter = function(){
@@ -119,9 +120,9 @@ angular.module('starter.controllers', [])
       console.log("ran")
     }
     window.localStorage.removeItem("trips")
-
+    console.log(JSON.parse(window.localStorage.getItem("trips")));
     addRoute("ASHB","CIVC");
-    console.log(JSON.parse(window.localStorage.getItem("trips")).params);
+
     addRoute("ASHBs","CIVCs");
     //console.log(JSON.parse(window.localStorage.getItem("trips")).params);
     tripCounter();
