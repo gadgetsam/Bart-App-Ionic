@@ -4,7 +4,7 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="{{trips[0].origin}} to {{trips[0].destination}}">
+<ion-view view-title="{{trips[currentId].origin}} to {{trips[currentId].destination}}">
     <ion-content class="padding">
 
 <h4>Soonest Train</h4>
@@ -14,13 +14,13 @@
                 <blockquote style="padding-bottom:0px; padding-top:0px; border-color:#FF5733;">
                         <p style="font-size:17px;">
 
-                        <b>From: </b>{{trips[0].origin}}
+                        <b>From: </b>{{trips[currentId].origin}}
                         <br>
-                        <b>To: </b>{{trips[0].destination}}
+                        <b>To: </b>{{trips[currentId].destination}}
                         <br>
-                        <b>Time: </b>{{trips[0].trips[0].origTime}} - {{trips[0].trips[0].destTime}}
+                        <b>Time: </b>{{trips[currentId].trips[0].origTime}} - {{trips[0].trips[0].destTime}}
                         <br>
-                        <b>Fare: </b>{{trips[0].trips[0].fare}}
+                        <b>Fare: </b>{{trips[currentId].trips[0].fare}}
                         <br>
                     </p>
                 </blockquote>
@@ -32,9 +32,9 @@
             <div class="item item-text-wrap">
                 <blockquote style="padding-bottom:0px; padding-top:0px; border-color:#FF5733;">
                     <p>
-                        <b>From: </b>{{trips[0].origin}}
+                        <b>From: </b>{{trips[currentId].origin}}
                         <br>
-                        <b>To: </b>{{trips[0].destination}}
+                        <b>To: </b>{{trips[currentId].destination}}
                         <br>
                         <b>Time: </b>{{trip.origTime}}
                         <br>
