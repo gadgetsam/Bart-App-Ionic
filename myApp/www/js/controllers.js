@@ -191,7 +191,7 @@ angular.module('starter.controllers', [])
                     //console.log('Success', string);
 
                     tripobj = xmlParser.xml_str2json(string.data);
-
+                    console.log(tripobj);
                     destination = tripobj.root.destination
                     origin = tripobj.root.origin
                     schedule = tripobj.root.schedule.request.trip
@@ -205,7 +205,7 @@ angular.module('starter.controllers', [])
                     for (var i = 0; i < schedule.length; i++) {
                         origTime = schedule[i]._origTimeMin
                         destTime = schedule[i]._destTimeMin
-                        fare = schedule[i]._destTimeMin
+                        fare = "$"+schedule[i]._fare
                         trip.trips.push({
                                 'origTime': origTime,
                                 "destTime": destTime,
