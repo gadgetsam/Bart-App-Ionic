@@ -53,17 +53,31 @@ angular.module('starter.controllers', [])
 })
   .controller('MainCtrl', function($scope, $http, xmlParser, $interval) {
 
-    var tripGetter = function(orgin, dest) {
+    var tripGetter = function(orgins, dests, num) {
+      tripDic =JSON.parse(window.localStorage.getItem("trips")).params;
+      console.log(tripDic);
+      if( tripDic!== undefined && num == 1) {
+        dict = tripDic
+        //console.log(dict+"12");
+      }
+      else{
+        dict = [[orgins,dests]]
+        console.log(dict);
+      }
+      for (var j = 0; j < dict.length; j++){
+        //console.log(dict+"123");
+        orgin = dict[j][0]
+        dest = dict[j][1]
       $http.get('http://api.bart.gov/api/sched.aspx?cmd=arrive&orig=' + orgin + '&dest=' + dest + '&date=now&key=MW9S-E7SL-26DU-VV8V&b=2&a=2&l=1').then(function (string) {
         //console.log('Success', string);
 
-        $scope.tripobj =  xmlParser.xml_str2json(string.data);
+        tripobj =  xmlParser.xml_str2json(string.data);
 
-        destination = $scope.tripobj.root.destination
-        origin = $scope.tripobj.root.origin
-        schedule = $scope.tripobj.root.schedule.request.trip
+        destination = tripobj.root.destination
+        origin = tripobj.root.origin
+        schedule = tripobj.root.schedule.request.trip
         trip = {"origin": origin,
-          "destinatiob":destination,
+          "destination":destination,
           "trips": []
 
         }
@@ -75,8 +89,16 @@ angular.module('starter.controllers', [])
           trip.trips.push({'origTime':origTime, "destTime":destTime, "fare":fare})
           //console.log(trip.trips);
         };
-
-        return trip
+        //return trip
+        //console.log(trip)
+        if(num == 1){
+          if($scope.trips==undefined){
+            $scope.trips = [];
+          }
+          $scope.trips.push(trip)
+          console.log("this contains all the data for the ng repeat it is contained in a array called $scope.trips")
+          console.log($scope.trips);
+        }
 
 
 
@@ -87,16 +109,16 @@ angular.module('starter.controllers', [])
       });
 
 
-    }
+    }}
     var addRoute = function(origs, dests){
       trips = JSON.parse(window.localStorage.getItem("trips"));
 
 
             if(trips== undefined) {
-              console.log(trips);
+              //console.log(trips);
             window.localStorage.setItem("trips", JSON.stringify({params:[[origs,dests]]}));
-              console.log("run 1");
-              console.log(JSON.parse(window.localStorage.getItem("trips")));
+              //console.log("run 1");
+              //console.log(JSON.parse(window.localStorage.getItem("trips")));
 
           }
           else{
@@ -107,26 +129,17 @@ angular.module('starter.controllers', [])
 
               window.localStorage.removeItem("trips")
               window.localStorage.setItem("trips", JSON.stringify({params:array}));
-              console.log(JSON.parse(window.localStorage.getItem("trips")));
+              //console.log(JSON.parse(window.localStorage.getItem("trips")));
             }};
-          var tripCounter = function(){
-      trips =JSON.parse(window.localStorage.getItem("trips")).params;
-      //console.log(trips);
-      if( trips!== undefined) {
 
-        $scope.trip = tripGetter(trips[0][0],trips[0][1])
-      }
-
-      console.log("ran")
-    }
     window.localStorage.removeItem("trips")
-    console.log(JSON.parse(window.localStorage.getItem("trips")));
+    //console.log(JSON.parse(window.localStorage.getItem("trips")));
     addRoute("ASHB","CIVC");
 
-    addRoute("ASHBs","CIVCs");
+    addRoute("12th","CIVC");
     //console.log(JSON.parse(window.localStorage.getItem("trips")).params);
-    tripCounter();
-    $interval(tripCounter, 1000);
+    tripGetter("asd","rasd",1);
+    //$interval(tripGetter("asd","rasd",1), 1000);
     //console.log($scope.time)
 
   })
