@@ -62,7 +62,7 @@ angular.module('starter.controllers', [])
             //console.log(dict+"123");
             orgin = dict[j][0]
             dest = dict[j][1]
-            $http.get('http://api.bart.gov/api/sched.aspx?cmd=arrive&orig=' + orgin + '&dest=' + dest + '&date=now&key=MW9S-E7SL-26DU-VV8V&b=0&a=4&l=1').then(function (string) {
+            $http.get('http://api.bart.gov/api/sched.aspx?cmd=depart&orig=' + orgin + '&dest=' + dest + '&date=now&key=MW9S-E7SL-26DU-VV8V&b=0&a=4&l=1').then(function (string) {
                 //console.log('http://api.bart.gov/api/sched.aspx?cmd=arrive&orig=' + orgin + '&dest=' + dest + '&date=now&key=MW9S-E7SL-26DU-VV8V&b=2&a=2&l=1');
 
 
@@ -264,7 +264,7 @@ angular.module('starter.controllers', [])
         window.localStorage.removeItem("trips")
             //console.log(JSON.parse(window.localStorage.getItem("trips")));
         addRoute("ASHB", "CIVC");
-
+    console.log( window.location.href.substr(-1,-1));
         addRoute("12th", "CIVC");
         //console.log(JSON.parse(window.localStorage.getItem("trips")).params);
         tripGetter("asd", "rasd", 1);
@@ -278,8 +278,11 @@ angular.module('starter.controllers', [])
         timem = moment();
         $scope.sec = timem.format("ss");
         $scope.min = timem.format("mm");
+
         //console.log($scope.sec)
     }
     tick();
+
+
     $interval(tick, 1000);
 })
