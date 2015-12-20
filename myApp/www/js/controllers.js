@@ -117,6 +117,7 @@ angular.module('starter.controllers', [])
                 dict = [[orgins, dests]]
                 console.log(dict);
             }
+            id = 0;
             for (var j = 0; j < dict.length; j++) {
                 //console.log(dict+"123");
                 orgin = dict[j][0]
@@ -143,9 +144,11 @@ angular.module('starter.controllers', [])
                     trip = {
                             "origin": stationsAbbr[origin].name,
                             "destination": stationsAbbr[destination].name,
+                            "id":id,
                             "trips": []
 
                         }
+                    id = id +1
                     console.log(trip.origin)
                         //console.log(schedule[0]);
                     for (var i = 0; i < schedule.length; i++) {
