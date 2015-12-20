@@ -1,6 +1,9 @@
 {
     "jscodehints.detectedExclusions": [
         "/Users/alexfine/Desktop/Bart-App-Ionic/myApp/www/lib/ionic/js/ionic.min.js",
-        "/Users/alexfine/Desktop/Bart-App-Ionic/myApp/platforms/ios/build/emulator/myApp.app/www/plugins/cordova-plugin-device/www/device.js"
+        "/Users/alexfine/Desktop/Bart-App-Ionic/myApp/platforms/ios/build/emulator/myApp.app/www/plugins/cordova-plugin-device/www/device.js",
+        "/Users/alexfine/Desktop/Bart-App-Ionic/myApp/platforms/ios/platform_www/plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+        "/Users/alexfine/Desktop/Bart-App-Ionic/myApp/platforms/ios/platform_www/plugins/cordova-plugin-statusbar/www/statusbar.js",
+        "/Users/alexfine/Desktop/Bart-App-Ionic/myApp/platforms/ios/platform_www/plugins/ionic-plugin-keyboard/www/ios/keyboard.js"
     ]
 }
