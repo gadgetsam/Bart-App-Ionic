@@ -68,7 +68,7 @@ angular.module('starter.controllers', [])
     $scope.$on('modal.removed', function () {
         // Execute action
     });
-    
+
     //Popup for nearest station
     // An alert dialog
  $scope.showAlert = function() {
@@ -181,9 +181,10 @@ angular.module('starter.controllers', [])
 
             }
         }
-        var addRoute = function (origs, dests) {
+        var addRoute = function (origsd, destsd) {
             tripsd = JSON.parse(window.localStorage.getItem("trips"));
-
+          origs = stationName[origsd];
+          dests = stationName[destsd];
 
             if (tripsd == undefined) {
                 //console.log(trips);
@@ -206,13 +207,26 @@ angular.module('starter.controllers', [])
                 //console.log(JSON.parse(window.localStorage.getItem("trips")));
             }
         };
+        var deleteRoute = function (id) {
 
+          tripse = JSON.parse(window.localStorage.getItem("trips")).params;
+          console.log(tripse)
+          tripse.splice(id,1);
+          window.localStorage.setItem("trips", JSON.stringify({
+            params: tripse
+          }));
+          console.log(tripse)
+
+
+
+        }
         window.localStorage.removeItem("trips")
             //console.log(JSON.parse(window.localStorage.getItem("trips")));
-        addRoute("ASHB", "CIVC");
+        addRoute("12th St. Oakland City Center", "Balboa Park");
     currentId = 0;
-        addRoute("12th", "CIVC");
-        //console.log(JSON.parse(window.localStorage.getItem("trips")).params);
+        addRoute("Balboa Park", "16th St. Mission");
+
+
         tripGetter("asd", "rasd", 1);
         //$interval(tripGetter("asd","rasd",1), 1000);
         //console.log($scope.time)
