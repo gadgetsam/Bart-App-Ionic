@@ -21,13 +21,11 @@
                     </div>
                     <div class="row">
 
-<<<<<<< HEAD
+
                  <p ng-if="trip.trips[0].origTime.substr(0,1) != hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(2,3)-1+60-min}}:{{60-sec}}<span  style="margin-left:200px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
                      <p ng-if="trip.trips[0].origTime.substr(0,1) === hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(2,3)-min-1}}:{{60-sec}}<span  style="margin-left:200px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
-=======
-                 <p ng-if="trip.trips[0].origTime.substr(0,1) != hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(2,3)-min-1}}:{{60-sec}}<span  style="margin-left:200px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
-                     <p ng-if="trip.trips[0].origTime.substr(0,1) === hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(2,3)-min}}:{{60-sec}}<span  style="margin-left:200px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
->>>>>>> origin/master
+
+
                     </div>
                     <i class="icon ion-chevron-right icon-accessory"></i>
                 </blockquote>
