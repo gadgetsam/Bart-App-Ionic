@@ -122,8 +122,47 @@ angular.module('starter.controllers', [])
                 $http.get(
                   'http://api.bart.gov/api/sched.aspx?cmd=depart&orig=' + orgin + '&dest=' + dest + '&date=now&key=MW9S-E7SL-26DU-VV8V&b=0&a=4&l=1'
                 ).then(function (string) {
-                    //console.log('Success', string);
 
+                    destination = tripobj.root.destination
+                    origin = tripobj.root.origin
+                    schedule = tripobj.root.schedule.request.trip
+                    routes = tripobj.root.schedule.request.trip[0].leg
+                    //console.log("routes")
+
+                    //trainId = routes._trainIdx
+                    console.log(trainId)
+                    if(routes.length>=2){
+                      //station = routes[0]._trainHeadStation
+                      //console.log(1)
+                      //console.log(routes)
+                      route = routes[0]._line.substr(6,routes[0]._line.length-5)
+                    }
+                    else{
+                      //station = routes._trainHeadStation
+                      //console.log(2)
+                      //console.log(routes)
+                      route = routes._line.substr(6,routes._line.length-5)
+
+                    }
+                    if(route>9){
+                      routed =route
+
+                    }else{
+                      routed =  "0"+route
+                    }
+                    $http.get(
+                      'http://api.bart.gov/api/sched.aspx?cmd=load&ld1='+origin+routed+trainId+'&st=w&key=MW9S-E7SL-26DU-VV8V'
+                    ).then(function (strings) {
+                    //console.log('Success', string);
+                        $scope.loads = xmlParser.xml_str2json(strings.data).root.load.request.leg._load;
+                        //console.log(xmlParser.xml_str2json(strings.data).root.load.request.leg)
+                        $scope.load = [];
+                        console.log($scope.loads)
+                        while($scope.loads != 0){
+                          $scope.loads = $scope.loads-1
+                          $scope.load.push($scope.loads)
+                          console.log($scope.load)
+                        }
                     tripobj = xmlParser.xml_str2json(string.data);
 
                     //hi = {};
@@ -134,9 +173,6 @@ angular.module('starter.controllers', [])
                     //}
                     console.log(tripobj.root)
 
-                    destination = tripobj.root.destination
-                    origin = tripobj.root.origin
-                    schedule = tripobj.root.schedule.request.trip
                     //console.log(stationsAbbr[origin].name)
 
                     trip = {
@@ -150,40 +186,51 @@ angular.module('starter.controllers', [])
                     //console.log(trip.origin)
                         //console.log(schedule[0]);
                     for (var i = 0; i < schedule.length; i++) {
+
                       routes = tripobj.root.schedule.request.trip[i].leg
                       //console.log("routes")
-                      //console.log(routes)
+
+                      trainId = routes._trainIdx
+                      console.log(trainId)
                       if(routes.length>=2){
                         station = routes[0]._trainHeadStation
                         //console.log(1)
                         //console.log(routes)
-                        route = routes[0]._line.substr(5,routes[0]._line.length-5)
+                        route = routes[0]._line.substr(6,routes[0]._line.length-5)
                       }
                       else{
                         station = routes._trainHeadStation
                         //console.log(2)
                         //console.log(routes)
-                        route = routes._line.substr(5,routes._line.length-5)
+                        route = routes._line.substr(6,routes._line.length-5)
 
                       }
-                      //$http.get(
-                      //  'http://ad.sfbart.org/api/sched.aspx?cmd=load&ld1='+origin+'&ld2=BAYF0331&ld3=19TH0217&st=w'
-                      //).then(function (string) {
-                      //    $scope.load;
-                      //  })
+                      if(route>9){
+                        routed =route
 
-                      //console.log(route)
-                        origTime = schedule[i]._origTimeMin
-                        destTime = schedule[i]._destTimeMin
-                        fare = "$"+schedule[i]._fare
-                        trip.trips.push({
-                                'origTime': origTime,
-                                "destTime": destTime,
-                                "fare": fare,
+                      }else{
+                        routed =  "0"+route
+                      }
+                      //console.log('http://api.bart.gov/api/sched.aspx?cmd=load&ld1='+origin+routed+trainId+'&st=w&key=MW9S-E7SL-26DU-VV8V')
 
-                          "headStation":stationsAbbr[station].name,
-                          "routes":route
-                            })
+
+
+                          console.log(route)
+                          origTime = schedule[i]._origTimeMin
+                          destTime = schedule[i]._destTimeMin
+                          fare = "$"+schedule[i]._fare
+                          trip.trips.push({
+                            'origTime': origTime,
+                            "destTime": destTime,
+                            "fare": fare,
+
+                            "headStation":stationsAbbr[station].name,
+                            "routes":route
+                          })
+
+
+                        })
+
                         //console.log(trip)
                             //console.log(trip.trips);
                     };
