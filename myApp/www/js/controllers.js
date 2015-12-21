@@ -232,6 +232,7 @@ angular.module('starter.controllers', [])
         $scope.addRoute("12th St. Oakland City Center", "Balboa Park");
     $scope.update(0);
         $scope.addRoute("Balboa Park", "16th St. Mission");
+    $scope.addRoute("Balboa Park", "San Bruno");
 
 
         $scope.tripGetter("asd", "rasd", 1);
