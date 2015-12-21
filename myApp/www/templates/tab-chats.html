@@ -34,7 +34,7 @@
                     </div>
                     <i class="icon ion-chevron-right icon-accessory"></i>
                 </blockquote>
-                <ion-option-button class="button-assertive" ng-click="deleteRoute(trip.id);  reload()">
+                <ion-option-button class="button-assertive" ng-click="deleteRoute(trip.id); reload()">
                     Delete
                 </ion-option-button>
                 </div>
@@ -63,21 +63,53 @@
                                     Depart From
                                 </div>
                                 <select ng-model="start">
-                                    <option>Milbrae</option>
-                                    <option>SFO</option>
-                                    <option>San Bruno</option>
-                                    <option>South San Francisco</option>
-                                    <option>Colma</option>
-                                    <option>Daily City</option>
+                                    <option>12th St. Oakland City Center</option>
+                                    <option>16th St. Mission</option>
+                                    <option>19th St. Oakland</option>
+                                    <option>24th St. Mission</option>
+                                    <option>Ashby</option>
                                     <option>Balboa Park</option>
-                                    <option>Glen Park</option>
-                                    <option>24th Street</option>
-                                    <option>16th Street</option>
-                                    <option>Civic Center</option>
-                                    <option>Powell Street</option>
-                                    <option>Montogomery</option>
+                                    <option>Bay Fair</option>
+                                    <option>Castro Valley</option>
+                                    <option>Civic Center/UN Plaza</option>
+                                    <option>Coliseum</option>
+                                    <option>Colma</option>
+                                    <option>Concord</option>
+                                    <option>Daly City</option>
+                                    <option>Downtown Berkeley</option>
+                                    <option>Dublin/Pleasanton</option>
+                                    <option>El Cerrito del Norte</option>
+                                    <option>El Cerrito Plaza</option>
                                     <option>Embarcadero</option>
-
+                                    <option>Fremont</option>
+                                    <option>Fruitvale</option>
+                                    <option>Glen Park</option>
+                                    <option>Hayward</option>
+                                    <option>Lafayette</option>
+                                    <option>Lake Merritt</option>
+                                    <option>MacArthur</option>
+                                    <option>Millbrae</option>
+                                    <option>Montgomery St.</option>
+                                    <option>North Berkeley</option>
+                                    <option>North Concord/Martinez</option>
+                                    <option>Oakland Int'l Airport</option>
+                                    <option>Orinda</option>
+                                    <option>Pleasant Hill/Contra Costa Centre</option>
+                                    <option>Powell St.</option>
+                                    <option>Richmond</option>
+                                    <option>Rockridge</option>
+                                    <option>San Bruno</option>
+                                    <option>San Francisco Int'l Airport</option>
+                                    <option>San Leandro</option>
+                                    <option>South Hayward</option>
+                                    <option>South San Francisco</option>
+                                    <option>Union City</option>
+                                    <option>Walnut Creek</option>
+                                    <option>West Dublin/Pleasanton</option>
+                                    <option>Dublin</option>
+                                    <option>West Oakland</option>
+                                                                  
+                                    
                                 </select>
                             </label>
                             <label class="item item-input item-select">
@@ -85,20 +117,51 @@
                                     Arrive At
                                 </div>
                                 <select ng-model="end">
-                                    <option>Milbrae</option>
-                                    <option>SFO</option>
-                                    <option>San Bruno</option>
-                                    <option>South San Francisco</option>
-                                    <option>Colma</option>
-                                    <option>Daily City</option>
+                                    <option>12th St. Oakland City Center</option>
+                                    <option>16th St. Mission</option>
+                                    <option>19th St. Oakland</option>
+                                    <option>24th St. Mission</option>
+                                    <option>Ashby</option>
                                     <option>Balboa Park</option>
-                                    <option>Glen Park</option>
-                                    <option>24th Street</option>
-                                    <option>16th Street</option>
-                                    <option>Civic Center</option>
-                                    <option>Powell Street</option>
-                                    <option>Montogomery</option>
+                                    <option>Bay Fair</option>
+                                    <option>Castro Valley</option>
+                                    <option>Civic Center/UN Plaza</option>
+                                    <option>Coliseum</option>
+                                    <option>Colma</option>
+                                    <option>Concord</option>
+                                    <option>Daly City</option>
+                                    <option>Downtown Berkeley</option>
+                                    <option>Dublin/Pleasanton</option>
+                                    <option>El Cerrito del Norte</option>
+                                    <option>El Cerrito Plaza</option>
                                     <option>Embarcadero</option>
+                                    <option>Fremont</option>
+                                    <option>Fruitvale</option>
+                                    <option>Glen Park</option>
+                                    <option>Hayward</option>
+                                    <option>Lafayette</option>
+                                    <option>Lake Merritt</option>
+                                    <option>MacArthur</option>
+                                    <option>Millbrae</option>
+                                    <option>Montgomery St.</option>
+                                    <option>North Berkeley</option>
+                                    <option>North Concord/Martinez</option>
+                                    <option>Oakland Int'l Airport</option>
+                                    <option>Orinda</option>
+                                    <option>Pleasant Hill/Contra Costa Centre</option>
+                                    <option>Powell St.</option>
+                                    <option>Richmond</option>
+                                    <option>Rockridge</option>
+                                    <option>San Bruno</option>
+                                    <option>San Francisco Int'l Airport</option>
+                                    <option>San Leandro</option>
+                                    <option>South Hayward</option>
+                                    <option>South San Francisco</option>
+                                    <option>Union City</option>
+                                    <option>Walnut Creek</option>
+                                    <option>West Dublin/Pleasanton</option>
+                                    <option>Dublin</option>
+                                    <option>West Oakland</option>
 
                                 </select>
                             </label>
@@ -155,20 +218,51 @@
                                     Depart From
                                 </div>
                                 <select ng-model="start">
-                                    <option>Milbrae</option>
-                                    <option>SFO</option>
-                                    <option>San Bruno</option>
-                                    <option>South San Francisco</option>
-                                    <option>Colma</option>
-                                    <option>Daily City</option>
+                                    <option>12th St. Oakland City Center</option>
+                                    <option>16th St. Mission</option>
+                                    <option>19th St. Oakland</option>
+                                    <option>24th St. Mission</option>
+                                    <option>Ashby</option>
                                     <option>Balboa Park</option>
-                                    <option>Glen Park</option>
-                                    <option>24th Street</option>
-                                    <option>16th Street</option>
-                                    <option>Civic Center</option>
-                                    <option>Powell Street</option>
-                                    <option>Montogomery</option>
+                                    <option>Bay Fair</option>
+                                    <option>Castro Valley</option>
+                                    <option>Civic Center/UN Plaza</option>
+                                    <option>Coliseum</option>
+                                    <option>Colma</option>
+                                    <option>Concord</option>
+                                    <option>Daly City</option>
+                                    <option>Downtown Berkeley</option>
+                                    <option>Dublin/Pleasanton</option>
+                                    <option>El Cerrito del Norte</option>
+                                    <option>El Cerrito Plaza</option>
                                     <option>Embarcadero</option>
+                                    <option>Fremont</option>
+                                    <option>Fruitvale</option>
+                                    <option>Glen Park</option>
+                                    <option>Hayward</option>
+                                    <option>Lafayette</option>
+                                    <option>Lake Merritt</option>
+                                    <option>MacArthur</option>
+                                    <option>Millbrae</option>
+                                    <option>Montgomery St.</option>
+                                    <option>North Berkeley</option>
+                                    <option>North Concord/Martinez</option>
+                                    <option>Oakland Int'l Airport</option>
+                                    <option>Orinda</option>
+                                    <option>Pleasant Hill/Contra Costa Centre</option>
+                                    <option>Powell St.</option>
+                                    <option>Richmond</option>
+                                    <option>Rockridge</option>
+                                    <option>San Bruno</option>
+                                    <option>San Francisco Int'l Airport</option>
+                                    <option>San Leandro</option>
+                                    <option>South Hayward</option>
+                                    <option>South San Francisco</option>
+                                    <option>Union City</option>
+                                    <option>Walnut Creek</option>
+                                    <option>West Dublin/Pleasanton</option>
+                                    <option>Dublin</option>
+                                    <option>West Oakland</option>
 
                                 </select>
                             </label>
@@ -177,20 +271,51 @@
                                     Arrive At
                                 </div>
                                 <select ng-model="end">
-                                    <option>Milbrae</option>
-                                    <option>SFO</option>
-                                    <option>San Bruno</option>
-                                    <option>South San Francisco</option>
-                                    <option>Colma</option>
-                                    <option>Daily City</option>
+                                    <option>12th St. Oakland City Center</option>
+                                    <option>16th St. Mission</option>
+                                    <option>19th St. Oakland</option>
+                                    <option>24th St. Mission</option>
+                                    <option>Ashby</option>
                                     <option>Balboa Park</option>
-                                    <option>Glen Park</option>
-                                    <option>24th Street</option>
-                                    <option>16th Street</option>
-                                    <option>Civic Center</option>
-                                    <option>Powell Street</option>
-                                    <option>Montogomery</option>
+                                    <option>Bay Fair</option>
+                                    <option>Castro Valley</option>
+                                    <option>Civic Center/UN Plaza</option>
+                                    <option>Coliseum</option>
+                                    <option>Colma</option>
+                                    <option>Concord</option>
+                                    <option>Daly City</option>
+                                    <option>Downtown Berkeley</option>
+                                    <option>Dublin/Pleasanton</option>
+                                    <option>El Cerrito del Norte</option>
+                                    <option>El Cerrito Plaza</option>
                                     <option>Embarcadero</option>
+                                    <option>Fremont</option>
+                                    <option>Fruitvale</option>
+                                    <option>Glen Park</option>
+                                    <option>Hayward</option>
+                                    <option>Lafayette</option>
+                                    <option>Lake Merritt</option>
+                                    <option>MacArthur</option>
+                                    <option>Millbrae</option>
+                                    <option>Montgomery St.</option>
+                                    <option>North Berkeley</option>
+                                    <option>North Concord/Martinez</option>
+                                    <option>Oakland Int'l Airport</option>
+                                    <option>Orinda</option>
+                                    <option>Pleasant Hill/Contra Costa Centre</option>
+                                    <option>Powell St.</option>
+                                    <option>Richmond</option>
+                                    <option>Rockridge</option>
+                                    <option>San Bruno</option>
+                                    <option>San Francisco Int'l Airport</option>
+                                    <option>San Leandro</option>
+                                    <option>South Hayward</option>
+                                    <option>South San Francisco</option>
+                                    <option>Union City</option>
+                                    <option>Walnut Creek</option>
+                                    <option>West Dublin/Pleasanton</option>
+                                    <option>Dublin</option>
+                                    <option>West Oakland</option>
 
                                 </select>
                             </label>

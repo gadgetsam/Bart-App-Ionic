@@ -283,7 +283,7 @@ angular.module('starter.controllers', [])
         //console.log($scope.time)
         $scope.reload = function(){
             console.log("reload was initiated brah")
-            $window.location.reload(true);
+            $state.go($state.current, {}, {reload: true});
             console.log("reload was a success brah")
         }
         
