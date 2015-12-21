@@ -177,7 +177,7 @@
 
 
                         <!--View the actual train data -->
-                        <div class="card" ng-if="start.length > 0 && end.length > 0">
+                        <div class="card" ng-if="tripTemp.trips[0].origTime.length > 0 && end.length > 0 && banana">
                             <div class="item item-text-wrap">
                                 <blockquote style="padding-bottom:0px; padding-top:0px; border-color:#FF5733;">
                                     <p>
@@ -185,9 +185,11 @@
                                         <br>
                                         <b>To: </b>{{end}}
                                         <br>
-                                        <b>Time: </b>{{trip[3].trips[0].origTime}} - {{trip[3].trips[0].destTime}}
+                                        <b>Time Depart: </b>{{tripTemp.trips[0].origTime}}
                                         <br>
-                                        <b>Fare: </b>{{trip.fare}}
+                                        <b>Time Arrive: </b>{{tripTemp.trips[0].destTime}}
+                                        <br>
+                                        <b>Fare: </b>{{tripTemp.trips[0].fare}}
                                         <br>
 
                                     </p>
