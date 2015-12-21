@@ -17,7 +17,7 @@
                 </button>
             </div>
         </div>
-        
+
         <ion-list>
 
             <ion-item class="item-remove-animate item-icon-right" ng-repeat="trip in trips" type="item-text-wrap" href="#/tab/chats/{{trip.id}}" ng-click="update(trip.id)">
@@ -30,8 +30,8 @@
 
 
 
-                        <p ng-if="trip.trips[0].origTime.substr(0,1) != hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(2,3)-min-1}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
-                        <p ng-if="trip.trips[0].origTime.substr(0,1) === hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(2,3)-min-1}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
+                        <p ng-if="trip.trips[0].origTime.substr(0,2) != hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
+                        <p ng-if="trip.trips[0].origTime.substr(0,2) === hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
 
 
                     </div>

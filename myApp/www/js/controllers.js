@@ -719,6 +719,10 @@ angular.module('starter.controllers', [])
                     origTime = schedule[i]._origTimeMin
                     destTime = schedule[i]._destTimeMin
                     fare = "$" + schedule[i]._fare
+                  console.log(origTime)
+                  if(origTime.length!=8){
+                    origTime = "0"+origTime
+                  }
                     trip.trips.push({
                             'origTime': origTime,
                             "destTime": destTime,
