@@ -18,8 +18,10 @@
                         <br>
                         <b>To: </b>{{trips[currentId].destination}}
                         <br>
-                        <b>Time: </b>{{trips[currentId].trips[0].origTime}} - {{trips[0].trips[0].destTime}}
+                        <b>Time Depart: </b>{{trips[currentId].trips[0].origTime}}
                         <br>
+                        <b>Time Arrive: </b>{{trips[currentId].trips[0].destTime}}
+                        <br>  
                         <b>Fare: </b>{{trips[currentId].trips[0].fare}}
                         <br>
                     </p>
@@ -36,7 +38,9 @@
                         <br>
                         <b>To: </b>{{trips[currentId].destination}}
                         <br>
-                        <b>Time: </b>{{trip.origTime}}
+                        <b>Time Depart: </b>{{trip.origTime}}
+                        <br>
+                        <b>Time Arrive: </b>{{trip.destTime}}
                         <br>
                         <b>Fare: </b>{{trip.fare}}
                         <br>
