@@ -22,6 +22,7 @@
                     <div class="row">
 
 
+
                         <p ng-if="trip.trips[0].origTime.substr(0,1) != hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(2,3)-min-1}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
                         <p ng-if="trip.trips[0].origTime.substr(0,1) === hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(2,3)-min-1}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
 
@@ -217,7 +218,7 @@
                                 </div>
                             </div>
                             <!--End train data -->
-                       
+
                     </div>
 
                 </ion-content>

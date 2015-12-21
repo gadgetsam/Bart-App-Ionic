@@ -154,19 +154,22 @@ angular.module('starter.controllers', [])
                         //console.log(schedule[0]);
                     for (var i = 0; i < schedule.length; i++) {
                       routes = tripobj.root.schedule.request.trip[i].leg
+                      console.log("routes")
                       console.log(routes)
                       if(routes.length>=2){
                         station = routes[0]._trainHeadStation
-                        //console.log(1)
-                        //console.log(routes)
-                        route = routes[0]._line.substr(5,routes[0]._line-1)
+                        console.log(1)
+                        console.log(routes)
+                        route = routes[0]._line.substr(5,routes._line.length-5)
                       }
                       else{
                         station = routes._trainHeadStation
-                        //console.log(2)
-                        //console.log(routes)
-                        route = routes._line.substr(5,routes._line-1)
+                        console.log(2)
+                        console.log(routes)
+                        route = routes._line.substr(5,routes._line.length-5)
+
                       }
+                      console.log(route)
                         origTime = schedule[i]._origTimeMin
                         destTime = schedule[i]._destTimeMin
                         fare = "$"+schedule[i]._fare
@@ -178,6 +181,7 @@ angular.module('starter.controllers', [])
                           "headStation":stationsAbbr[station].name,
                           "routes":route
                             })
+                        console.log(trip)
                             //console.log(trip.trips);
                     };
                     //return trip
@@ -254,7 +258,7 @@ angular.module('starter.controllers', [])
 
 
         $scope.tripGetter("asd", "rasd", 1);
-        //$interval(tripGetter("asd","rasd",1), 1000);
+        $interval(tripGetter("asd","rasd",1), 30000);
         //console.log($scope.time)
 
     })
