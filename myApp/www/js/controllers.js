@@ -114,7 +114,7 @@ angular.module('starter.controllers', [])
                 dict = tripDic
                     //console.log(dict+"12");
             } else {
-                dict = [[stationName[orgins], stationName[dests]]
+                dict = [[stationName[orgins], stationName[dests]]]
                 //console.log(dict);
             }
             id = 0;
