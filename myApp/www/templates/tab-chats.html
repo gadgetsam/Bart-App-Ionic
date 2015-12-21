@@ -12,7 +12,7 @@
             </div>
         </div>
 <!--
-        <ion-refresher pulling-text="Pull to refresh..." on-refresh="$window.location.reload(true)">
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="reload()">
         </ion-refresher>
 -->
         <ion-list>
@@ -34,7 +34,7 @@
                     </div>
                     <i class="icon ion-chevron-right icon-accessory"></i>
                 </blockquote>
-                <ion-option-button class="button-assertive" ng-click="remove(chat)">
+                <ion-option-button class="button-assertive" ng-click="deleteRoute(trip.id);  reload()">
                     Delete
                 </ion-option-button>
                 </div>
@@ -122,7 +122,7 @@
                                         <br>
                                         <b>To: </b>{{end}}
                                         <br>
-                                        <b>Time: </b>{{trip.origTime}}
+                                        <b>Time: </b>{{trip[3].trips[0].origTime}} - {{trip[3].trips[0].destTime}}
                                         <br>
                                         <b>Fare: </b>{{trip.fare}}
                                         <br>
@@ -198,31 +198,12 @@
                         </div>
                         <p ng-if="start.length > 0 && end.length > 0">View your trip from <b>{{start}}</b> to <b>{{end}}</b>
                         </p>
-                        <button class="button button-outline button-energized" ng-click="addRoute(start, end)">
+                        <button class="button button-outline button-energized" ng-click="addRoute(start, end); modal2.hide(); reload()">
                             Add
                         </button>
 
                         <!--View the actual train data -->
-                        <div class="card" ng-if="start.length > 0 && end.length > 0">
-                            <div class="item item-text-wrap">
-                                <blockquote style="padding-bottom:0px; padding-top:0px; border-color:#FF5733;">
-                                    <p>
-                                        <b>From: </b>{{start}}
-                                        <br>
-                                        <b>To: </b>{{end}}
-                                        <br>
-                                        <b>Time: </b>{{trip.origTime}}
-                                        <br>
-                                        <b>Fare: </b>{{trip.fare}}
-                                        <br>
-
-                                    </p>
-                                </blockquote>
-
-                            </div>
-                            <!--End train data -->
-
-                    </div>
+                        
 
                 </ion-content>
             </ion-modal-view>
