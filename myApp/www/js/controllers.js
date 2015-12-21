@@ -804,6 +804,7 @@ angular.module('starter.controllers', [])
         window.localStorage.setItem("trips", JSON.stringify({
             params: tripse
         }));
+        $scope.trips.splice(id,1)
         //console.log(tripse)
 
 
@@ -838,7 +839,7 @@ angular.module('starter.controllers', [])
         $state.go($state.current, {}, { reload: true }); //second parameter is for $stateParams
         console.log("success")
     }
-    
+
     $scope.doRefresh = function () {
         $http.get('/new-items')
             .success(function (newItems) {
