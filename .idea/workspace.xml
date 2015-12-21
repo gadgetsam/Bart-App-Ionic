@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32a370d3-9055-49d3-8c5f-830afdd056c2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myApp/www/js/controllers.js" afterPath="$PROJECT_DIR$/myApp/www/js/controllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myApp/www/index.html" afterPath="$PROJECT_DIR$/myApp/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myApp/www/templates/tab-chats.html" afterPath="$PROJECT_DIR$/myApp/www/templates/tab-chats.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -29,9 +29,9 @@
         <entry file="file://$PROJECT_DIR$/myApp/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="230" column="76" selection-start-line="230" selection-start-column="76" selection-end-line="230" selection-end-column="76" />
+              <caret line="231" column="71" selection-start-line="231" selection-start-column="71" selection-end-line="231" selection-end-column="71" />
               <folding>
-                <marker date="1450660684000" expanded="true" signature="18579:18659" placeholder="//..." />
+                <marker date="1450660740000" expanded="true" signature="18669:18709" placeholder="//..." />
               </folding>
             </state>
           </provider>
@@ -94,12 +94,14 @@
       <file leaf-file-name="tab-chats.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myApp/www/templates/tab-chats.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.503876">
-              <caret line="23" column="174" selection-start-line="23" selection-start-column="174" selection-end-line="23" selection-end-column="174" />
+            <state vertical-scroll-proportion="0.5813953">
+              <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
               <folding>
                 <element signature="n#style#0;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#p#1;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#2;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#p#3;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -419,7 +421,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="98" column="46" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
           <folding>
-            <marker date="1450660684000" expanded="true" signature="18579:18659" placeholder="//..." />
+            <marker date="1450660740000" expanded="true" signature="18669:18709" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -476,6 +478,8 @@
             <element signature="n#style#0;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#1;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#2;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#3;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -493,7 +497,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1450660684000" expanded="true" signature="18579:18659" placeholder="//..." />
+            <marker date="1450660740000" expanded="true" signature="18669:18709" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -550,6 +554,8 @@
             <element signature="n#style#0;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#1;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#2;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#3;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -567,7 +573,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
           <folding>
-            <marker date="1450660684000" expanded="true" signature="18579:18659" placeholder="//..." />
+            <marker date="1450660740000" expanded="true" signature="18669:18709" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -624,6 +630,8 @@
             <element signature="n#style#0;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#1;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#2;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#3;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -641,7 +649,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1450660684000" expanded="true" signature="18579:18659" placeholder="//..." />
+            <marker date="1450660740000" expanded="true" signature="18669:18709" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -690,6 +698,8 @@
             <element signature="n#style#0;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#1;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#2;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#3;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -714,7 +724,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="107" column="21" selection-start-line="107" selection-start-column="21" selection-end-line="107" selection-end-column="21" />
           <folding>
-            <marker date="1450660684000" expanded="true" signature="18579:18659" placeholder="//..." />
+            <marker date="1450660740000" expanded="true" signature="18669:18709" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -810,9 +820,9 @@
     <entry file="file://$PROJECT_DIR$/myApp/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="230" column="76" selection-start-line="230" selection-start-column="76" selection-end-line="230" selection-end-column="76" />
+          <caret line="231" column="71" selection-start-line="231" selection-start-column="71" selection-end-line="231" selection-end-column="71" />
           <folding>
-            <marker date="1450660684000" expanded="true" signature="18579:18659" placeholder="//..." />
+            <marker date="1450660740000" expanded="true" signature="18669:18709" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -847,12 +857,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myApp/www/templates/tab-chats.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.503876">
-          <caret line="23" column="174" selection-start-line="23" selection-start-column="174" selection-end-line="23" selection-end-column="174" />
+        <state vertical-scroll-proportion="0.5813953">
+          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#p#1;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#2;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#p#3;n#div#1;n#blockquote#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
