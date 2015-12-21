@@ -263,7 +263,7 @@ angular.module('starter.controllers', [])
         $scope.addRoute("Balboa Park", "North Berkeley");
     $scope.addRoute("Balboa Park", "San Bruno");
 
-
+    $scope.tripGetter("sda","dsa",1)
 
         //$interval($scope.update(1), 100);
         //console.log($scope.time)
