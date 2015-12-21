@@ -11,6 +11,10 @@
                 </button>
             </div>
         </div>
+<!--
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="tripGetter(asd,rasd,1)">
+        </ion-refresher>
+-->
         <ion-list>
 
             <ion-item class="item-remove-animate item-icon-right" ng-repeat="trip in trips" type="item-text-wrap" href="#/tab/chats/{{trip.id}}" ng-click="update(trip.id)">
@@ -192,33 +196,32 @@
                             </label>
 
                         </div>
-                            <p ng-if="start.length > 0 && end.length > 0">View your trip from <b>{{start}}</b> to <b>{{end}}</b>
-                            </p>
-                            <button class="button button-outline button-energized" ng-click="addRoute(start, end)">
-                                Add
-                            </button>
+                        <p ng-if="start.length > 0 && end.length > 0">View your trip from <b>{{start}}</b> to <b>{{end}}</b>
+                        </p>
+                        <button class="button button-outline button-energized" ng-click="addRoute(start, end)">
+                            Add
+                        </button>
 
-                            <!--View the actual train data -->
-                            <div class="card" ng-if="start.length > 0 && end.length > 0">
-                                <div class="item item-text-wrap">
-                                    <blockquote style="padding-bottom:0px; padding-top:0px; border-color:#FF5733;">
-                                        <p>
-                                            <b>From: </b>{{start}}
-                                            <br>
-                                            <b>To: </b>{{end}}
-                                            <br>
-                                            <b>Time: </b>{{trip.origTime}}
-                                            <br>
-                                            <b>Fare: </b>{{trip.fare}}
-                                            <br>
+                        <!--View the actual train data -->
+                        <div class="card" ng-if="start.length > 0 && end.length > 0">
+                            <div class="item item-text-wrap">
+                                <blockquote style="padding-bottom:0px; padding-top:0px; border-color:#FF5733;">
+                                    <p>
+                                        <b>From: </b>{{start}}
+                                        <br>
+                                        <b>To: </b>{{end}}
+                                        <br>
+                                        <b>Time: </b>{{trip.origTime}}
+                                        <br>
+                                        <b>Fare: </b>{{trip.fare}}
+                                        <br>
 
-                                        </p>
-                                    </blockquote>
+                                    </p>
+                                </blockquote>
 
-                                </div>
                             </div>
                             <!--End train data -->
-
+                     
                     </div>
 
                 </ion-content>
