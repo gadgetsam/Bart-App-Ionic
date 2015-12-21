@@ -18,9 +18,12 @@
                         <br>
                         <b>To: </b>{{trips[currentId].destination}}
                         <br>
-                        <b>Time Depart: </b>{{trips[currentId].trips[0].origTime}}
+                        <span ng-if="trips[currentId].trips[0].origTime.substr(0,1) != hour"><b>Time: </b> {{trips[currentId].trips[0].origTime.substr(2,3)-min-1}}:{{60-sec}} </span>
+                     <span ng-if="trips[currentId].trips[0].origTime.substr(0,1) === hour"><b>Time: </b>{{trips[currentId].trips[0].origTime.substr(2,3)-min-1}}:{{60-sec}}</span>
                         <br>
-                        <b>Time Arrive: </b>{{trips[currentId].trips[0].destTime}}
+                        <b>Depart: </b>{{trips[currentId].trips[0].origTime}}
+                        <br>
+                        <b>Arrive: </b>{{trips[currentId].trips[0].destTime}}
                         <br>  
                         <b>Fare: </b>{{trips[currentId].trips[0].fare}}
                         <br>

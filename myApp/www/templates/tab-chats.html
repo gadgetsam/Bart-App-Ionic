@@ -22,8 +22,8 @@
                     <div class="row">
 
 
-                 <p ng-if="trip.trips[0].origTime.substr(0,1) != hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(2,3)-min-1}}:{{60-sec}}<span  style="margin-left:200px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
-                     <p ng-if="trip.trips[0].origTime.substr(0,1) === hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(2,3)-min-1}}:{{60-sec}}<span  style="margin-left:200px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
+                        <p ng-if="trip.trips[0].origTime.substr(0,1) != hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(2,3)-min-1}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
+                        <p ng-if="trip.trips[0].origTime.substr(0,1) === hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(2,3)-min-1}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
 
 
                     </div>
@@ -51,75 +51,84 @@
                 </ion-header-bar>
                 <ion-content>
                     <div style="padding:5%; font-size:17px;">
-                        <center>
-                            Depart From:
-                            <select ng-model="start">
-                                <option>Milbrae</option>
-                                <option>SFO</option>
-                                <option>San Bruno</option>
-                                <option>South San Francisco</option>
-                                <option>Colma</option>
-                                <option>Daily City</option>
-                                <option>Balboa</option>
-                                <option>Glen Park</option>
-                                <option>24th Street</option>
-                                <option>16th Street</option>
-                                <option>Civic Center</option>
-                                <option>Powell Street</option>
-                                <option>Montogomery</option>
-                                <option>Embarcadero</option>
+                        <div class="list">
 
-                            </select>
-                            <br>
-                            <br> Arrive At:
-                            <select ng-model="end">
-                                <option>Milbrae</option>
-                                <option>SFO</option>
-                                <option>San Bruno</option>
-                                <option>South San Francisco</option>
-                                <option>Colma</option>
-                                <option>Daily City</option>
-                                <option>Balboa</option>
-                                <option>Glen Park</option>
-                                <option>24th Street</option>
-                                <option>16th Street</option>
-                                <option>Civic Center</option>
-                                <option>Powell Street</option>
-                                <option>Montogomery</option>
-                                <option>Embarcadero</option>
-
-                            </select>
-                            <br>
-                            <br>
-                            <p ng-if="start.length > 0 && end.length > 0">View your trip from <b>{{start}}</b> to <b>{{end}}</b>
-                            </p>
-                            <button class="button button-outline button-balanced" ng-click="tripGetter(start, end)">
-                                View
-                            </button>
-
-
-                            <!--View the actual train data -->
-                            <div class="card" ng-if="start.length > 0 && end.length > 0">
-                                <div class="item item-text-wrap">
-                                    <blockquote style="padding-bottom:0px; padding-top:0px; border-color:#FF5733;">
-                                        <p>
-                                            <b>From: </b>{{start}}
-                                            <br>
-                                            <b>To: </b>{{end}}
-                                            <br>
-                                            <b>Time: </b>{{trip.origTime}}
-                                            <br>
-                                            <b>Fare: </b>{{trip.fare}}
-                                            <br>
-
-                                        </p>
-                                    </blockquote>
-
+                            <label class="item item-input item-select">
+                                <div class="input-label">
+                                    Depart From
                                 </div>
-                            </div>
-                            <!--End train data -->
+                                <select ng-model="start">
+                                    <option>Milbrae</option>
+                                    <option>SFO</option>
+                                    <option>San Bruno</option>
+                                    <option>South San Francisco</option>
+                                    <option>Colma</option>
+                                    <option>Daily City</option>
+                                    <option>Balboa</option>
+                                    <option>Glen Park</option>
+                                    <option>24th Street</option>
+                                    <option>16th Street</option>
+                                    <option>Civic Center</option>
+                                    <option>Powell Street</option>
+                                    <option>Montogomery</option>
+                                    <option>Embarcadero</option>
 
-                        </center>
+                                </select>
+                            </label>
+                            <label class="item item-input item-select">
+                                <div class="input-label">
+                                    Arrive At
+                                </div>
+                                <select ng-model="end">
+                                    <option>Milbrae</option>
+                                    <option>SFO</option>
+                                    <option>San Bruno</option>
+                                    <option>South San Francisco</option>
+                                    <option>Colma</option>
+                                    <option>Daily City</option>
+                                    <option>Balboa</option>
+                                    <option>Glen Park</option>
+                                    <option>24th Street</option>
+                                    <option>16th Street</option>
+                                    <option>Civic Center</option>
+                                    <option>Powell Street</option>
+                                    <option>Montogomery</option>
+                                    <option>Embarcadero</option>
+
+                                </select>
+                            </label>
+
+                        </div>
+
+
+                        <p ng-if="start.length > 0 && end.length > 0">View your trip from <b>{{start}}</b> to <b>{{end}}</b>
+                        </p>
+                        <button class="button button-outline button-balanced" ng-click="tripGetter(start, end)">
+                            View
+                        </button>
+
+
+                        <!--View the actual train data -->
+                        <div class="card" ng-if="start.length > 0 && end.length > 0">
+                            <div class="item item-text-wrap">
+                                <blockquote style="padding-bottom:0px; padding-top:0px; border-color:#FF5733;">
+                                    <p>
+                                        <b>From: </b>{{start}}
+                                        <br>
+                                        <b>To: </b>{{end}}
+                                        <br>
+                                        <b>Time: </b>{{trip.origTime}}
+                                        <br>
+                                        <b>Fare: </b>{{trip.fare}}
+                                        <br>
+
+                                    </p>
+                                </blockquote>
+
+                            </div>
+                        </div>
+                        <!--End train data -->
+
                     </div>
 
                 </ion-content>
@@ -134,46 +143,54 @@
                 </ion-header-bar>
                 <ion-content>
                     <div style="padding:5%; font-size:17px;">
-                        <center>
-                            Depart From:
-                            <select ng-model="start">
-                                <option>Milbrae</option>
-                                <option>SFO</option>
-                                <option>San Bruno</option>
-                                <option>South San Francisco</option>
-                                <option>Colma</option>
-                                <option>Daily City</option>
-                                <option>Balboa</option>
-                                <option>Glen Park</option>
-                                <option>24th Street</option>
-                                <option>16th Street</option>
-                                <option>Civic Center</option>
-                                <option>Powell Street</option>
-                                <option>Montogomery</option>
-                                <option>Embarcadero</option>
+                        <div class="list">
 
-                            </select>
-                            <br>
-                            <br> Arrive At:
-                            <select ng-model="end">
-                                <option>Milbrae</option>
-                                <option>SFO</option>
-                                <option>San Bruno</option>
-                                <option>South San Francisco</option>
-                                <option>Colma</option>
-                                <option>Daily City</option>
-                                <option>Balboa</option>
-                                <option>Glen Park</option>
-                                <option>24th Street</option>
-                                <option>16th Street</option>
-                                <option>Civic Center</option>
-                                <option>Powell Street</option>
-                                <option>Montogomery</option>
-                                <option>Embarcadero</option>
+                            <label class="item item-input item-select">
+                                <div class="input-label">
+                                    Depart From
+                                </div>
+                                <select ng-model="start">
+                                    <option>Milbrae</option>
+                                    <option>SFO</option>
+                                    <option>San Bruno</option>
+                                    <option>South San Francisco</option>
+                                    <option>Colma</option>
+                                    <option>Daily City</option>
+                                    <option>Balboa</option>
+                                    <option>Glen Park</option>
+                                    <option>24th Street</option>
+                                    <option>16th Street</option>
+                                    <option>Civic Center</option>
+                                    <option>Powell Street</option>
+                                    <option>Montogomery</option>
+                                    <option>Embarcadero</option>
 
-                            </select>
-                            <br>
-                            <br>
+                                </select>
+                            </label>
+                            <label class="item item-input item-select">
+                                <div class="input-label">
+                                    Arrive At
+                                </div>
+                                <select ng-model="end">
+                                    <option>Milbrae</option>
+                                    <option>SFO</option>
+                                    <option>San Bruno</option>
+                                    <option>South San Francisco</option>
+                                    <option>Colma</option>
+                                    <option>Daily City</option>
+                                    <option>Balboa</option>
+                                    <option>Glen Park</option>
+                                    <option>24th Street</option>
+                                    <option>16th Street</option>
+                                    <option>Civic Center</option>
+                                    <option>Powell Street</option>
+                                    <option>Montogomery</option>
+                                    <option>Embarcadero</option>
+
+                                </select>
+                            </label>
+
+                        </div>
                             <p ng-if="start.length > 0 && end.length > 0">View your trip from <b>{{start}}</b> to <b>{{end}}</b>
                             </p>
                             <button class="button button-outline button-energized" ng-click="addRoute(start, end)">
@@ -200,7 +217,7 @@
                                 </div>
                             </div>
                             <!--End train data -->
-                        </center>
+                       
                     </div>
 
                 </ion-content>
