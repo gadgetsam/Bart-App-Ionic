@@ -245,7 +245,8 @@ angular.module('starter.controllers', [])
         time = moment();
         $scope.sec = time.format("ss");
         $scope.min = time.format("mm");
-        console.log($scope.currentId)
+      $scope.hour = time.format("hh");
+      console.log($scope.currentId)
       //$scope.currentId = $location.$$absUrl.substr($location.$$absUrl.length -1);
         //console.log($scope.sec)
     }
