@@ -257,7 +257,7 @@ angular.module('starter.controllers', [])
     $scope.addRoute("Balboa Park", "San Bruno");
 
 
-        $scope.tripGetter("asd", "rasd", 1);
+        
         $interval($scope.tripGetter("asd","rasd",1), 30000);
         //console.log($scope.time)
 
