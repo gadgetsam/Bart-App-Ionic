@@ -12,7 +12,7 @@
             </div>
         </div>
 <!--
-        <ion-refresher pulling-text="Pull to refresh..." on-refresh="tripGetter(asd,rasd,1)">
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="$window.location.reload(true)">
         </ion-refresher>
 -->
         <ion-list>
@@ -108,7 +108,7 @@
 
                         <p ng-if="start.length > 0 && end.length > 0">View your trip from <b>{{start}}</b> to <b>{{end}}</b>
                         </p>
-                        <button class="button button-outline button-balanced" ng-click="tripGetter(start, end)">
+                        <button class="button button-outline button-balanced" ng-click="tripGetter(start, end, 0)">
                             View
                         </button>
 
@@ -161,7 +161,7 @@
                                     <option>South San Francisco</option>
                                     <option>Colma</option>
                                     <option>Daily City</option>
-                                    <option>Balboa</option>
+                                    <option>Balboa Park</option>
                                     <option>Glen Park</option>
                                     <option>24th Street</option>
                                     <option>16th Street</option>
@@ -183,7 +183,7 @@
                                     <option>South San Francisco</option>
                                     <option>Colma</option>
                                     <option>Daily City</option>
-                                    <option>Balboa</option>
+                                    <option>Balboa Park</option>
                                     <option>Glen Park</option>
                                     <option>24th Street</option>
                                     <option>16th Street</option>
@@ -198,7 +198,7 @@
                         </div>
                         <p ng-if="start.length > 0 && end.length > 0">View your trip from <b>{{start}}</b> to <b>{{end}}</b>
                         </p>
-                        <button class="button button-outline button-energized" ng-click="addRoute(start, end)">
+                        <button class="button button-outline button-energized" ng-click="addRoute('start', 'end')">
                             Add
                         </button>
 
