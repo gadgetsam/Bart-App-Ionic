@@ -84,13 +84,7 @@ angular.module('starter.controllers', [])
     //End popup
 
 
-    //Below this line is all the code from MainCtrl. Need all the code to be here too because in the html it can only access information from it's own controller. It can't jump between controllers.
 
-    //START OF MAINCTRL CODE
-
-
-
-    //END OF ALL THE MAINCTRL CODE
 
 })
 
@@ -103,7 +97,7 @@ angular.module('starter.controllers', [])
         $scope.settings = {
             enableFriends: true
         };
-     
+
     })
 
 
@@ -115,10 +109,10 @@ angular.module('starter.controllers', [])
             console.log("update");
             if (tripDic !== undefined && num == 1) {
                 dict = tripDic
-                    //console.log(dict+"12");
+                    console.log(dict);
             } else {
                 dict = [[stationName[orgins], stationName[dests]]]
-                //console.log(dict);
+                console.log(dict);
             }
             id = 0;
             for (var j = 0; j < dict.length; j++) {
@@ -138,7 +132,7 @@ angular.module('starter.controllers', [])
                     //    hi[t.name] = t.abbr
                     //
                     //}
-                    //console.log(JSON.stringify(hi))
+                    console.log(tripobj.root)
 
                     destination = tripobj.root.destination
                     origin = tripobj.root.origin
@@ -200,6 +194,13 @@ angular.module('starter.controllers', [])
                     }
                     if(num==0){
                       $scope.tripTemp=trip;
+                      console.log($scope.tripTrip);
+                    }
+                    if(num==3){
+                      if ($scope.trips == undefined) {
+                        $scope.trips = [];
+                      }
+                      $scope.trips.push(trip)
                     }
 
 
@@ -216,6 +217,9 @@ angular.module('starter.controllers', [])
             tripsd = JSON.parse(window.localStorage.getItem("trips"));
           origs = stationName[origsd];
           dests = stationName[destsd];
+          console.log(origsd)
+          console.log(destsd)
+
 
             if (tripsd == undefined) {
                 //console.log(trips);
@@ -223,6 +227,7 @@ angular.module('starter.controllers', [])
                     params: [[origs, dests]]
                 }));
                 //console.log("run 1");
+              $scope.tripGetter(origsd,destsd, 3)
                 //console.log(JSON.parse(window.localStorage.getItem("trips")));
 
             } else {
@@ -235,6 +240,7 @@ angular.module('starter.controllers', [])
                 window.localStorage.setItem("trips", JSON.stringify({
                     params: array
                 }));
+              $scope.tripGetter(origsd,destsd, 3)
                 //console.log(JSON.parse(window.localStorage.getItem("trips")));
             }
         };
@@ -261,10 +267,9 @@ angular.module('starter.controllers', [])
     }
         window.localStorage.removeItem("trips")
             //console.log(JSON.parse(window.localStorage.getItem("trips")));
-        $scope.addRoute("12th St. Oakland City Center", "Balboa Park");
+        $scope.addRoute("Glen Park", "Balboa Park");
     $scope.update(0);
-        $scope.addRoute("Balboa Park", "North Berkeley");
-    $scope.addRoute("Balboa Park", "San Bruno");
+
 
     $scope.tripGetter("sda","dsa",1)
 

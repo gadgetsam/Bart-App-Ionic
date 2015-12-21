@@ -198,7 +198,7 @@
                         </div>
                         <p ng-if="start.length > 0 && end.length > 0">View your trip from <b>{{start}}</b> to <b>{{end}}</b>
                         </p>
-                        <button class="button button-outline button-energized" ng-click="addRoute('start', 'end')">
+                        <button class="button button-outline button-energized" ng-click="addRoute(start, end)">
                             Add
                         </button>
 
@@ -221,7 +221,7 @@
 
                             </div>
                             <!--End train data -->
-                     
+
                     </div>
 
                 </ion-content>
