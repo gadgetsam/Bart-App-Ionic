@@ -20,7 +20,7 @@
         
         <ion-list>
 
-            <ion-item class="item-remove-animate item-icon-right" ng-repeat="trip in trips" type="item-text-wrap" href="#/tab/chats/{{trip.id}}" ng-click="update(trip.id)">
+            <ion-item class="item-remove-animate item-icon-right" ng-repeat="trip in trips" type="item-text-wrap" href="#/tab/chats/{{$index}}" ng-click="update($index)">
                 <blockquote style="margin-top:0px; margin-bottom:0px; padding:0px; padding-left:10px; border-color:#FF5733;">
                     <div class="row">
                         <h2>From {{trip.origin}} to {{trip.destination}}</h2>
@@ -31,13 +31,13 @@
 
 
                         <p ng-if="trip.trips[0].origTime.substr(0,1) != hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(2,3)-min-1}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
-                        <p ng-if="trip.trips[0].origTime.substr(0,1) === hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(2,3)-min-1}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
+                        <p ng-if="trip.trips[0].origTime.substr(0,1) === hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(2,3)-min-1 | date : 'HH:mm:ss'}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
 
 
                     </div>
                     <i class="icon ion-chevron-right icon-accessory"></i>
                 </blockquote>
-                <ion-option-button class="button-assertive" ng-click="deleteRoute(trip.id); tabgo()">
+                <ion-option-button class="button-assertive" ng-click="deleteRoute($index); tabgo()">
                     Delete
                 </ion-option-button>
                 </div>
@@ -188,11 +188,11 @@
                                         <br>
                                         <b>To: </b>{{end}}
                                         <br>
-                                        <b>Time Depart: </b>{{tripTemp.trips.origTime}}
+                                        <b>Time Depart: </b>{{tripTemp.trips[$index].origTime}}
                                         <br>
-                                        <b>Time Arrive: </b>{{tripTemp.trips[0].destTime}}
+                                        <b>Time Arrive: </b>{{tripTemp.trips[$index].destTime}}
                                         <br>
-                                        <b>Fare: </b>{{tripTemp.trips[0].fare}}
+                                        <b>Fare: </b>{{tripTemp.trips[$index].fare}}
                                         <br>
 
                                     </p>
