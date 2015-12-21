@@ -166,6 +166,12 @@ angular.module('starter.controllers', [])
                         route = routes._line.substr(5,routes._line.length-5)
 
                       }
+                      //$http.get(
+                      //  'http://ad.sfbart.org/api/sched.aspx?cmd=load&ld1='+origin+'&ld2=BAYF0331&ld3=19TH0217&st=w'
+                      //).then(function (string) {
+                      //    $scope.load;
+                      //  })
+
                       //console.log(route)
                         origTime = schedule[i]._origTimeMin
                         destTime = schedule[i]._destTimeMin
@@ -194,7 +200,7 @@ angular.module('starter.controllers', [])
                     }
                     if(num==0){
                       $scope.tripTemp=trip;
-                      console.log($scope.tripTrip);
+                      console.log($scope.tripTemp);
                     }
                     if(num==3){
                       if ($scope.trips == undefined) {
@@ -265,9 +271,9 @@ angular.module('starter.controllers', [])
       console.log("update");
       //$scope.tripGetter("asd","rasd",1);
     }
-        window.localStorage.removeItem("trips")
-            //console.log(JSON.parse(window.localStorage.getItem("trips")));
-        $scope.addRoute("Glen Park", "Balboa Park");
+        //window.localStorage.removeItem("trips")
+        //    //console.log(JSON.parse(window.localStorage.getItem("trips")));
+        //$scope.addRoute("Glen Park", "Balboa Park");
     $scope.update(0);
 
 
