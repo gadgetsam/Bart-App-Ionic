@@ -109,13 +109,13 @@ angular.module('starter.controllers', [])
     var stationName ={"12th St. Oakland City Center":"12TH","16th St. Mission":"16TH","19th St. Oakland":"19TH","24th St. Mission":"24TH","Ashby":"ASHB","Balboa Park":"BALB","Bay Fair":"BAYF","Castro Valley":"CAST","Civic Center/UN Plaza":"CIVC","Coliseum":"COLS","Colma":"COLM","Concord":"CONC","Daly City":"DALY","Downtown Berkeley":"DBRK","Dublin/Pleasanton":"DUBL","El Cerrito del Norte":"DELN","El Cerrito Plaza":"PLZA","Embarcadero":"EMBR","Fremont":"FRMT","Fruitvale":"FTVL","Glen Park":"GLEN","Hayward":"HAYW","Lafayette":"LAFY","Lake Merritt":"LAKE","MacArthur":"MCAR","Millbrae":"MLBR","Montgomery St.":"MONT","North Berkeley":"NBRK","North Concord/Martinez":"NCON","Oakland Int'l Airport":"OAKL","Orinda":"ORIN","Pittsburg/Bay Point":"PITT","Pleasant Hill/Contra Costa Centre":"PHIL","Powell St.":"POWL","Richmond":"RICH","Rockridge":"ROCK","San Bruno":"SBRN","San Francisco Int'l Airport":"SFIA","San Leandro":"SANL","South Hayward":"SHAY","South San Francisco":"SSAN","Union City":"UCTY","Walnut Creek":"WCRK","West Dublin/Pleasanton":"WDUB","West Oakland":"WOAK"}
     $scope.tripGetter = function (orgins, dests, num) {
             tripDic = JSON.parse(window.localStorage.getItem("trips")).params;
-            console.log(tripDic);
+            console.log("update");
             if (tripDic !== undefined && num == 1) {
                 dict = tripDic
                     //console.log(dict+"12");
             } else {
-                dict = [[orgins, dests]]
-                console.log(dict);
+                dict = [[stationName[orgins], stationName[dests]]
+                //console.log(dict);
             }
             id = 0;
             for (var j = 0; j < dict.length; j++) {
@@ -140,7 +140,7 @@ angular.module('starter.controllers', [])
                     destination = tripobj.root.destination
                     origin = tripobj.root.origin
                     schedule = tripobj.root.schedule.request.trip
-                    console.log(stationsAbbr[origin].name)
+                    //console.log(stationsAbbr[origin].name)
 
                     trip = {
                             "origin": stationsAbbr[origin].name,
@@ -150,26 +150,26 @@ angular.module('starter.controllers', [])
 
                         }
                     id = id +1
-                    console.log(trip.origin)
+                    //console.log(trip.origin)
                         //console.log(schedule[0]);
                     for (var i = 0; i < schedule.length; i++) {
                       routes = tripobj.root.schedule.request.trip[i].leg
-                      console.log("routes")
-                      console.log(routes)
+                      //console.log("routes")
+                      //console.log(routes)
                       if(routes.length>=2){
                         station = routes[0]._trainHeadStation
-                        console.log(1)
-                        console.log(routes)
+                        //console.log(1)
+                        //console.log(routes)
                         route = routes[0]._line.substr(5,routes[0]._line.length-5)
                       }
                       else{
                         station = routes._trainHeadStation
-                        console.log(2)
-                        console.log(routes)
+                        //console.log(2)
+                        //console.log(routes)
                         route = routes._line.substr(5,routes._line.length-5)
 
                       }
-                      console.log(route)
+                      //console.log(route)
                         origTime = schedule[i]._origTimeMin
                         destTime = schedule[i]._destTimeMin
                         fare = "$"+schedule[i]._fare
@@ -181,7 +181,7 @@ angular.module('starter.controllers', [])
                           "headStation":stationsAbbr[station].name,
                           "routes":route
                             })
-                        console.log(trip)
+                        //console.log(trip)
                             //console.log(trip.trips);
                     };
                     //return trip
@@ -190,11 +190,14 @@ angular.module('starter.controllers', [])
                         if ($scope.trips == undefined) {
                             $scope.trips = [];
                         }
-                        $scope.trips.push(trip)
+                      $scope.trips.push(trip)
+
                         //console.log("this contains all the data for the ng repeat it is contained in a array called $scope.trips")
                         //console.log($scope.trips);
                     }
-
+                    if(num==0){
+                      $scope.tripTemp=trip;
+                    }
 
 
                     // For JSON responses, resp.data contains the result
@@ -235,19 +238,23 @@ angular.module('starter.controllers', [])
         $scope.deleteRoute = function (id) {
 
           tripse = JSON.parse(window.localStorage.getItem("trips")).params;
-          console.log(tripse)
+          //console.log(tripse)
           tripse.splice(id,1);
           window.localStorage.setItem("trips", JSON.stringify({
             params: tripse
           }));
-          console.log(tripse)
+          //console.log(tripse)
 
 
 
         }
     $scope.update = function(id){
       $scope.currentId = id;
+      //
+    }
+    $scope.update2 = function(){
       console.log("update");
+      //$scope.tripGetter("asd","rasd",1);
     }
         window.localStorage.removeItem("trips")
             //console.log(JSON.parse(window.localStorage.getItem("trips")));
@@ -257,8 +264,8 @@ angular.module('starter.controllers', [])
     $scope.addRoute("Balboa Park", "San Bruno");
 
 
-        
-        $interval($scope.tripGetter("asd","rasd",1), 30000);
+
+        //$interval($scope.update(1), 100);
         //console.log($scope.time)
 
     })
