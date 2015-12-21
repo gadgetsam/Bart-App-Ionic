@@ -141,40 +141,42 @@ angular.module('starter.controllers', [])
                     origin = tripobj.root.origin
                     schedule = tripobj.root.schedule.request.trip
                     console.log(stationsAbbr[origin].name)
-                    routes = tripobj.root.schedule.request.trip[0].leg
-                    console.log(routes)
-                    if(routes.length>=2){
-                      station = routes[0]._trainHeadStation
-                      //console.log(1)
-                      //console.log(routes)
-                      route = routes[0]._line.substr(5,routes[0]._line-1)
-                    }
-                    else{
-                      station = routes._trainHeadStation
-                      //console.log(2)
-                      //console.log(routes)
-                      route = routes._line.substr(5,routes._line-1)
-                    }
+
                     trip = {
                             "origin": stationsAbbr[origin].name,
                             "destination": stationsAbbr[destination].name,
                             "id":id,
-                            "trips": [],
-                            "headStation":stationsAbbr[station].name,
-                      "routes":route
+                            "trips": []
 
                         }
                     id = id +1
                     console.log(trip.origin)
                         //console.log(schedule[0]);
                     for (var i = 0; i < schedule.length; i++) {
+                      routes = tripobj.root.schedule.request.trip[i].leg
+                      console.log(routes)
+                      if(routes.length>=2){
+                        station = routes[0]._trainHeadStation
+                        //console.log(1)
+                        //console.log(routes)
+                        route = routes[0]._line.substr(5,routes[0]._line-1)
+                      }
+                      else{
+                        station = routes._trainHeadStation
+                        //console.log(2)
+                        //console.log(routes)
+                        route = routes._line.substr(5,routes._line-1)
+                      }
                         origTime = schedule[i]._origTimeMin
                         destTime = schedule[i]._destTimeMin
                         fare = "$"+schedule[i]._fare
                         trip.trips.push({
                                 'origTime': origTime,
                                 "destTime": destTime,
-                                "fare": fare
+                                "fare": fare,
+
+                          "headStation":stationsAbbr[station].name,
+                          "routes":route
                             })
                             //console.log(trip.trips);
                     };
