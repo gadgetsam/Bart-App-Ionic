@@ -1,20 +1,23 @@
 <ion-view view-title="Favorites">
     <ion-content>
         <!--      <p ng-repeat="trip in trips">Orig Time "{{trip.trips[0].origTime}}" Destination Time"{{trip.trips[0].destTime}}"Orgin "{{trip.origin}}"destination"{{trip.destination}}"</p>-->
+<!--
+        <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+        </ion-refresher>
+-->
         <div style="margin:10px;">
             <div class="row">
                 <button class="button button-small button-outline button-calm icon" style="width:60%; margin-right:1%;" ng-click="modal.show()">Quick Lookup
                 </button>
                 <button class="button button-small button-outline button-calm icon ion-ios-plus-outline" style="width:20%; margin-right:1%;  margin-left:1%;" ng-click="modal2.show()">
                 </button>
-                <button class="button button-small button-outline button-calm icon  ion-location" style="width:20%; margin-left:1%;" ng-click="showAlert()">
+                <button class="button button-small button-outline button-calm icon  ion-location" style="width:20%; margin-left:1%; margin-right:1%;" ng-click="showAlert()">
+                </button>
+                <button class="button button-small button-outline button-calm icon ion-ios-refresh" style="width:10%; margin-left:1%;" ng-click="tabgo()">
                 </button>
             </div>
         </div>
-<!--
-        <ion-refresher pulling-text="Pull to refresh..." on-refresh="reload()">
-        </ion-refresher>
--->
+        
         <ion-list>
 
             <ion-item class="item-remove-animate item-icon-right" ng-repeat="trip in trips" type="item-text-wrap" href="#/tab/chats/{{trip.id}}" ng-click="update(trip.id)">
@@ -34,7 +37,7 @@
                     </div>
                     <i class="icon ion-chevron-right icon-accessory"></i>
                 </blockquote>
-                <ion-option-button class="button-assertive" ng-click="deleteRoute(trip.id); reload()">
+                <ion-option-button class="button-assertive" ng-click="deleteRoute(trip.id); tabgo()">
                     Delete
                 </ion-option-button>
                 </div>
@@ -108,8 +111,8 @@
                                     <option>West Dublin/Pleasanton</option>
                                     <option>Dublin</option>
                                     <option>West Oakland</option>
-                                                                  
-                                    
+
+
                                 </select>
                             </label>
                             <label class="item item-input item-select">
@@ -177,7 +180,7 @@
 
 
                         <!--View the actual train data -->
-                        <div class="card" ng-if="tripTemp.trips[0].origTime.length > 0 && end.length > 0 && banana">
+                        <div class="card" ng-if="tripTemp.trips[0].origTime.length > 0 && end.length > 0 && banana" ng-repeat=" trip in tripTemp">
                             <div class="item item-text-wrap">
                                 <blockquote style="padding-bottom:0px; padding-top:0px; border-color:#FF5733;">
                                     <p>
@@ -185,7 +188,7 @@
                                         <br>
                                         <b>To: </b>{{end}}
                                         <br>
-                                        <b>Time Depart: </b>{{tripTemp.trips[0].origTime}}
+                                        <b>Time Depart: </b>{{tripTemp.trips.origTime}}
                                         <br>
                                         <b>Time Arrive: </b>{{tripTemp.trips[0].destTime}}
                                         <br>
@@ -325,12 +328,12 @@
                         </div>
                         <p ng-if="start.length > 0 && end.length > 0">View your trip from <b>{{start}}</b> to <b>{{end}}</b>
                         </p>
-                        <button class="button button-outline button-energized" ng-click="addRoute(start, end); modal2.hide(); reload()">
+                        <button class="button button-outline button-energized" ng-click="addRoute(start, end); modal2.hide(); doRefresh()">
                             Add
                         </button>
 
                         <!--View the actual train data -->
-                        
+
 
                 </ion-content>
             </ion-modal-view>
