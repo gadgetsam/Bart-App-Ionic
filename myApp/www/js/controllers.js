@@ -160,7 +160,7 @@ angular.module('starter.controllers', [])
                         station = routes[0]._trainHeadStation
                         console.log(1)
                         console.log(routes)
-                        route = routes[0]._line.substr(5,routes._line.length-5)
+                        route = routes[0]._line.substr(5,routes[0]._line.length-5)
                       }
                       else{
                         station = routes._trainHeadStation
@@ -258,7 +258,7 @@ angular.module('starter.controllers', [])
 
 
         $scope.tripGetter("asd", "rasd", 1);
-        $interval(tripGetter("asd","rasd",1), 30000);
+        $interval($scope.tripGetter("asd","rasd",1), 30000);
         //console.log($scope.time)
 
     })
