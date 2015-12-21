@@ -141,11 +141,27 @@ angular.module('starter.controllers', [])
                     origin = tripobj.root.origin
                     schedule = tripobj.root.schedule.request.trip
                     console.log(stationsAbbr[origin].name)
+                    routes = tripobj.root.schedule.request.trip[0].leg
+                    console.log(routes)
+                    if(routes.length>=2){
+                      station = routes[0]._trainHeadStation
+                      //console.log(1)
+                      //console.log(routes)
+                      route = routes[0]._line.substr(5,routes[0]._line-1)
+                    }
+                    else{
+                      station = routes._trainHeadStation
+                      //console.log(2)
+                      //console.log(routes)
+                      route = routes._line.substr(5,routes._line-1)
+                    }
                     trip = {
                             "origin": stationsAbbr[origin].name,
                             "destination": stationsAbbr[destination].name,
                             "id":id,
-                            "trips": []
+                            "trips": [],
+                            "headStation":stationsAbbr[station].name,
+                      "routes":route
 
                         }
                     id = id +1
@@ -231,7 +247,7 @@ angular.module('starter.controllers', [])
             //console.log(JSON.parse(window.localStorage.getItem("trips")));
         $scope.addRoute("12th St. Oakland City Center", "Balboa Park");
     $scope.update(0);
-        $scope.addRoute("Balboa Park", "16th St. Mission");
+        $scope.addRoute("Balboa Park", "North Berkeley");
     $scope.addRoute("Balboa Park", "San Bruno");
 
 
