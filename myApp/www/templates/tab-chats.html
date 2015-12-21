@@ -21,9 +21,9 @@
         <ion-list>
 
             <ion-item class="item-remove-animate item-icon-right" ng-repeat="trip in trips" type="item-text-wrap" href="#/tab/chats/{{$index}}" ng-click="update($index)">
-                <blockquote style="margin-top:0px; margin-bottom:0px; padding:0px; padding-left:10px; border-color:#FF5733;">
+                <blockquote style="margin-top:0px; margin-bottom:0px; padding:0px; padding-left:10px; border-color:{{trip.trips[$index].routes}};">
                     <div class="row">
-                        <h2>From {{trip.origin}} to {{trip.destination}}</h2>
+                        <h2>From {{trip.origin}} to {{trip.destination}} </h2>
 
                     </div>
                     <div class="row">
@@ -342,3 +342,8 @@
         </script>
     </ion-content>
 </ion-view>
+<<<<<<< Updated upstream
+=======
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<root>
+>>>>>>> Stashed changes

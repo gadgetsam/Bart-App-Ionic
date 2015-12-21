@@ -714,11 +714,38 @@ angular.module('starter.controllers', [])
                     //).then(function (string) {
                     //    $scope.load;
                     //  })
+                    
+                      var routes = {
+                         "1": "#ffcc33",
+                         "2": "#ffcc33",
+                         "3": "#ffaa33",
+                         "4": "#ffaa33",
+                         "5": "#39ac39",
+                         "6": "#39ac39",
+                         "7": "#ff4d4d",
+                         "8": "#ff4d4d",
+                         "9": "#ff4d4d",
+                         "10": "#00bfff",
+                         "11": "#00bfff",
+                         "12": "#00bfff",
+                         "13": "#00bfff",
+                         "14": "#00bfff",
+                         "15": "#00bfff",
+                         "16": "#00bfff",
+                         "17": "#00bfff",
+                         "18": "#00bfff",
+                         "19": "#d5cfa3",
+                         "20": "#d5cfa3"
+                            
+                        }
 
                     //console.log(route)
                     origTime = schedule[i]._origTimeMin
                     destTime = schedule[i]._destTimeMin
                     fare = "$" + schedule[i]._fare
+                    console.log(typeof route)
+                    console.log("routes")
+                    console.log(routes[route])
                   console.log(origTime)
                   if(origTime.length!=8){
                     origTime = "0"+origTime
@@ -729,10 +756,11 @@ angular.module('starter.controllers', [])
                             "fare": fare,
 
                             "headStation": stationsAbbr[station].name,
-                            "routes": route
+                            "routes": routes["1"]
                         })
                         //console.log(trip)
                         //console.log(trip.trips);
+                    
                 };
                 //return trip
                 //console.log(trip)
