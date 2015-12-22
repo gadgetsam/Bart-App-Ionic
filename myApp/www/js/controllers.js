@@ -747,12 +747,14 @@ angular.module('starter.controllers', [])
 
                     //console.log(route)
                     origTime = schedule[i]._origTimeMin
+                    timeUntil =  moment(schedule[i]._origTimeMin,"hh-mm a").fromNow()
+                  //console.log(origTime.toNow())
                     destTime = schedule[i]._destTimeMin
                     fare = "$" + schedule[i]._fare
                     //console.log(typeof route)
                     //console.log("routes")
                   console.log(routed[parseInt(route)])
-                  console.log(origTime)
+                  //console.log(timeUntil)
                   if(origTime.length!=8){
                     origTime = "0"+origTime
                   }
@@ -763,11 +765,13 @@ angular.module('starter.controllers', [])
 
                             "headStation": stationsAbbr[station].name,
 
-                            "routes": routed[parseInt(route)]
+                            "routes": routed[parseInt(route)],
+                            "timeUntil":timeUntil
 
                         })
+
                         //console.log(trip)
-                        //console.log(trip.trips);
+                        console.log(trip.trips[0].timeUntil);
 
                 };
                 //return trip
@@ -897,6 +901,7 @@ angular.module('starter.controllers', [])
     $scope.counter = 0
     var tick = function () {
         time = moment();
+        $scope.time = time
         $scope.sec = time.format("ss");
         $scope.min = time.format("mm");
         $scope.hour = time.format("hh");
