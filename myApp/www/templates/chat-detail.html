@@ -11,16 +11,18 @@
         <div class="card">
             <div class="item item-text-wrap">
 
-                <blockquote style="padding-bottom:0px; padding-top:0px; border-color:#FF5733;">
+                <blockquote style="padding-bottom:0px; padding-top:0px; border-color:{{trip.trips[currentId].routes}};">
+                    
                         <p style="font-size:17px;">
 
                         <b>From: </b>{{trips[currentId].origin}}
                         <br>
+                            
                         <b>To: </b>{{trips[currentId].destination}}
                         <br>
                         
-                        <span ng-if="trips[currentId].trips[0].origTime.substr(0,1) != hour"><b>Time: </b> {{trips[currentId].trips[0].origTime.substr(2,3)-min-1}}:{{60-sec}} </span>
-                     <span ng-if="trips[currentId].trips[0].origTime.substr(0,1) === hour"><b>Time: </b>{{trips[currentId].trips[0].origTime.substr(2,3)-min-1}}:{{60-sec}}</span>
+                        <span ng-if="trips[currentId].trips[0].origTime.substr(0,1) != hour"><b>Time: </b> {{trips[currentId].trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}} </span>
+                     <span ng-if="trips[currentId].trips[0].origTime.substr(0,1) === hour"><b>Time: </b>{{trips[currentId].trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}}</span>
                         <br>
                         <b>Depart: </b>{{trips[currentId].trips[0].origTime}}
                         <br>

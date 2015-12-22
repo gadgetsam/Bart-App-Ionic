@@ -756,7 +756,7 @@ angular.module('starter.controllers', [])
                             "fare": fare,
 
                             "headStation": stationsAbbr[station].name,
-                            "routes": routes["1"]
+                            "routes": routes["4"]
                         })
                         //console.log(trip)
                         //console.log(trip.trips);
