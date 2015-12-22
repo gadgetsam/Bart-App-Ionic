@@ -31,8 +31,8 @@
 
 
 
-                        <p ng-if="trip.trips[0].origTime.substr(0,2) != hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
-                        <p ng-if="trip.trips[0].origTime.substr(0,2) === hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </p>
+                        <p ng-if="trip.trips[0].origTime.substr(0,2) != hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </span></p>
+                        <p ng-if="trip.trips[0].origTime.substr(0,2) === hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </span></p>
 
 
 
@@ -184,7 +184,7 @@
                         <!--View the actual train data -->
                         <div class="card" ng-if="tripTemp.trips[0].origTime.length > 0 && end.length > 0 && banana" ng-repeat=" trip in tripTemp">
                             <div class="item item-text-wrap">
-                                <blockquote style="padding-bottom:0px; padding-top:0px; border-color:#FF5733;">
+                                <blockquote style="padding-bottom:0px; padding-top:0px; border-color:{{tripTemp.trips[$index].routes}}">
                                     <p>
                                         <b>From: </b>{{start}}
                                         <br>
@@ -342,8 +342,4 @@
         </script>
     </ion-content>
 </ion-view>
-<<<<<<< Updated upstream
-=======
-This XML file does not appear to have any style information associated with it. The document tree is shown below.
-<root>
->>>>>>> Stashed changes
+

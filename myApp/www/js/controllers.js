@@ -714,12 +714,12 @@ angular.module('starter.controllers', [])
                     //).then(function (string) {
                     //    $scope.load;
                     //  })
-                    
-                      var routes = {
+
+                      var routed = {
                          "1": "#ffcc33",
                          "2": "#ffcc33",
-                         "3": "#ffaa33",
-                         "4": "#ffaa33",
+                         "3": "#FC8E1F",
+                         "4": "#FC8E1F",
                          "5": "#39ac39",
                          "6": "#39ac39",
                          "7": "#ff4d4d",
@@ -736,7 +736,7 @@ angular.module('starter.controllers', [])
                          "18": "#00bfff",
                          "19": "#d5cfa3",
                          "20": "#d5cfa3"
-                            
+
                         }
 
                     //console.log(route)
@@ -745,7 +745,7 @@ angular.module('starter.controllers', [])
                     fare = "$" + schedule[i]._fare
                     console.log(typeof route)
                     console.log("routes")
-                    console.log(routes[route])
+                    console.log(routed[parseInt(route)])
                   console.log(origTime)
                   if(origTime.length!=8){
                     origTime = "0"+origTime
@@ -756,11 +756,13 @@ angular.module('starter.controllers', [])
                             "fare": fare,
 
                             "headStation": stationsAbbr[station].name,
-                            "routes": routes["4"]
+
+                            "routes": routed[parseInt(route)]
+
                         })
                         //console.log(trip)
                         //console.log(trip.trips);
-                    
+
                 };
                 //return trip
                 //console.log(trip)
