@@ -849,6 +849,7 @@ angular.module('starter.controllers', [])
 
 
 
+    }
     $scope.update = function (id) {
         $scope.currentId = id;
         //
