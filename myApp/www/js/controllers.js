@@ -899,7 +899,7 @@ angular.module('starter.controllers', [])
         console.log($scope.counter)
         if($scope.counter == 15){
           $scope.tripGetter( "123","213", 1)
-          counter = 0
+          $scope.counter = 0
         }
       $scope.counter = $scope.counter + 1
             //$scope.currentId = $location.$$absUrl.substr($location.$$absUrl.length -1);
