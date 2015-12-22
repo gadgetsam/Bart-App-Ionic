@@ -28,8 +28,8 @@
                     </div>
                     <div class="row">
                         
-                        <p ng-if="trip.trips[0].origTime.substr(0,2) != hour" style="font-size:16px;">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </span><span style=" font-size:20px;"> {{trip.trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}}</span></p>
-                        <p ng-if="trip.trips[0].origTime.substr(0,2) === hour" style="font-size:16px;">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span> <span class="ion-android-bicycle"></span></span><span style=" font-size:20px;"> {{trip.trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}}</span> </p>
+                        <p ng-if="trip.trips[0].origTime.substr(0,2) != hour" style="font-size:16px;">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}<span style="margin-left:50px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </span><span style=" font-size:20px;"> {{trip.trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}}</span></p>
+                        <p ng-if="trip.trips[0].origTime.substr(0,2) === hour" style="font-size:16px;">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}<span style="margin-left:50px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span> <span class="ion-android-bicycle"></span></span><span style=" font-size:20px;"> {{trip.trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}}</span> </p>
 
 
 
