@@ -73,8 +73,8 @@ angular.module('starter.controllers', [])
     // An alert dialog
     $scope.showAlert = function () {
         var alertPopup = $ionicPopup.alert({
-            title: 'Richmond',
-            template: 'The nearest Station, Richmond Station, is 5.1 miles away'
+            title: 'In Dev',
+            template: "Don't worry, this feature is in dev and coming soon"
         });
 
         alertPopup.then(function (res) {
@@ -849,7 +849,6 @@ angular.module('starter.controllers', [])
 
 
 
-    }
     $scope.update = function (id) {
         $scope.currentId = id;
         //
