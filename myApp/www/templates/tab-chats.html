@@ -21,7 +21,7 @@
         <ion-list>
 
             <ion-item class="item-remove-animate item-icon-right" ng-repeat="trip in trips" type="item-text-wrap" href="#/tab/chats/{{$index}}" ng-click="update($index)">
-                <blockquote style="margin-top:0px; margin-bottom:0px; padding:0px; padding-left:10px; border-color:{{trip.trips[$index].routes}};">
+                <blockquote style="margin-top:0px; margin-bottom:0px; padding:0px; padding-left:10px; border-color:{{trip.trips[0].routes}};">
                     <div class="row">
                         <h2>From {{trip.origin}} to {{trip.destination}} </h2>
 
@@ -30,7 +30,7 @@
 
 
 
-
+                        
                         <p ng-if="trip.trips[0].origTime.substr(0,2) != hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </span></p>
                         <p ng-if="trip.trips[0].origTime.substr(0,2) === hour">{{trip.trips[0].origTime}} - {{trip.trips[0].destTime}}, {{trip.trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}}<span style="margin-left:100px;"><span ng-repeat="trip in trips" class="ion-ios-person"></span><span class="ion-android-bicycle"></span> </span></p>
 

@@ -650,13 +650,14 @@ angular.module('starter.controllers', [])
         console.log(orgins)
       console.log(dests)
       console.log(num)
-      $scope.trips = []
+
         var banana = false;
         tripDic = JSON.parse(window.localStorage.getItem("trips")).params;
         console.log("update");
         if (tripDic !== undefined && num == 1) {
             dict = tripDic
             console.log(dict);
+          $scope.trips = []
         } else {
             dict = [[stationName[orgins], stationName[dests]]]
             console.log(dict);
@@ -669,7 +670,7 @@ angular.module('starter.controllers', [])
             $http.get(
                 'http://api.bart.gov/api/sched.aspx?cmd=depart&orig=' + orgin + '&dest=' + dest + '&date=now&key=MW9S-E7SL-26DU-VV8V&b=0&a=4&l=1'
             ).then(function (string) {
-                //console.log('Success', string);
+                console.log('Success', string);
 
                 tripobj = xmlParser.xml_str2json(string.data);
 
@@ -696,6 +697,30 @@ angular.module('starter.controllers', [])
                 id = id + 1
                     //console.log(trip.origin)
                     //console.log(schedule[0]);
+
+                var routed = {
+                  "1": "#ffcc33",
+                  "2": "#ffcc33",
+                  "3": "#FC8E1F",
+                  "4": "#FC8E1F",
+                  "5": "#39ac39",
+                  "6": "#39ac39",
+                  "7": "#ff4d4d",
+                  "8": "#ff4d4d",
+                  "9": "#ff4d4d",
+                  "10": "#00bfff",
+                  "11": "#00bfff",
+                  "12": "#00bfff",
+                  "13": "#00bfff",
+                  "14": "#00bfff",
+                  "15": "#00bfff",
+                  "16": "#00bfff",
+                  "17": "#00bfff",
+                  "18": "#00bfff",
+                  "19": "#d5cfa3",
+                  "20": "#d5cfa3"
+
+                }
                 for (var i = 0; i < schedule.length; i++) {
                     routes = tripobj.root.schedule.request.trip[i].leg
                         //console.log("routes")
@@ -718,37 +743,15 @@ angular.module('starter.controllers', [])
                     //    $scope.load;
                     //  })
 
-                      var routed = {
-                         "1": "#ffcc33",
-                         "2": "#ffcc33",
-                         "3": "#FC8E1F",
-                         "4": "#FC8E1F",
-                         "5": "#39ac39",
-                         "6": "#39ac39",
-                         "7": "#ff4d4d",
-                         "8": "#ff4d4d",
-                         "9": "#ff4d4d",
-                         "10": "#00bfff",
-                         "11": "#00bfff",
-                         "12": "#00bfff",
-                         "13": "#00bfff",
-                         "14": "#00bfff",
-                         "15": "#00bfff",
-                         "16": "#00bfff",
-                         "17": "#00bfff",
-                         "18": "#00bfff",
-                         "19": "#d5cfa3",
-                         "20": "#d5cfa3"
 
-                        }
 
                     //console.log(route)
                     origTime = schedule[i]._origTimeMin
                     destTime = schedule[i]._destTimeMin
                     fare = "$" + schedule[i]._fare
-                    console.log(typeof route)
-                    console.log("routes")
-                    console.log(routed[parseInt(route)])
+                    //console.log(typeof route)
+                    //console.log("routes")
+                  console.log(routed[parseInt(route)])
                   console.log(origTime)
                   if(origTime.length!=8){
                     origTime = "0"+origTime
@@ -788,7 +791,7 @@ angular.module('starter.controllers', [])
                     }
                     $scope.trips.push(trip)
                 }
-
+              console.log("done")
 
                 // For JSON responses, resp.data contains the result
             }, function (err) {
@@ -861,7 +864,7 @@ angular.module('starter.controllers', [])
     $scope.update(0);
 
 
-    //$scope.tripGetter("sda", "dsa", 1)
+    $scope.tripGetter("sda", "dsa", 1)
 
     //$interval($scope.update(1), 100);
     //console.log($scope.time)
@@ -876,7 +879,7 @@ angular.module('starter.controllers', [])
         $state.go($state.current, {}, { reload: true }); //second parameter is for $stateParams
         console.log("success")
     }
-    $interval($scope.tripGetter( "123","213", 1), 1000, 12,true);
+    //$interval($scope.tripGetter( "123","213", 1), 1000, 12,true);
     //$scope.doRefresh = function () {
     //    $http.get('/new-items')
     //        .success(function (newItems) {
@@ -898,7 +901,7 @@ angular.module('starter.controllers', [])
         $scope.min = time.format("mm");
         $scope.hour = time.format("hh");
         console.log($scope.counter)
-        if($scope.counter == 15){
+        if($scope.counter == 60){
           $scope.tripGetter( "123","213", 1)
           $scope.counter = 0
         }
