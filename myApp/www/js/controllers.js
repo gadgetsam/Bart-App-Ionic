@@ -650,6 +650,7 @@ angular.module('starter.controllers', [])
         console.log(orgins)
       console.log(dests)
       console.log(num)
+      $scope.trips = []
         var banana = false;
         tripDic = JSON.parse(window.localStorage.getItem("trips")).params;
         console.log("update");
