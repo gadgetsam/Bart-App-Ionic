@@ -647,7 +647,9 @@ angular.module('starter.controllers', [])
         "West Oakland": "WOAK"
     }
     $scope.tripGetter = function (orgins, dests, num) {
-
+        console.log(orgins)
+      console.log(dests)
+      console.log(num)
         var banana = false;
         tripDic = JSON.parse(window.localStorage.getItem("trips")).params;
         console.log("update");
@@ -858,7 +860,7 @@ angular.module('starter.controllers', [])
     $scope.update(0);
 
 
-    $scope.tripGetter("sda", "dsa", 1)
+    //$scope.tripGetter("sda", "dsa", 1)
 
     //$interval($scope.update(1), 100);
     //console.log($scope.time)
@@ -873,27 +875,33 @@ angular.module('starter.controllers', [])
         $state.go($state.current, {}, { reload: true }); //second parameter is for $stateParams
         console.log("success")
     }
-
-    $scope.doRefresh = function () {
-        $http.get('/new-items')
-            .success(function (newItems) {
-                $scope.items = newItems;
-            })
-            .finally(function () {
-                // Stop the ion-refresher from spinning
-                $scope.$broadcast('scroll.refreshComplete');
-            });
-    };
+    $interval($scope.tripGetter( "123","213", 1), 1000, 12,true);
+    //$scope.doRefresh = function () {
+    //    $http.get('/new-items')
+    //        .success(function (newItems) {
+    //            $scope.items = newItems;
+    //        })
+    //        .finally(function () {
+    //            // Stop the ion-refresher from spinning
+    //            $scope.$broadcast('scroll.refreshComplete');
+    //        });
+    //};
 
 })
 
 .controller('TimeCtrl', function ($scope, $interval, $location) {
+    $scope.counter = 0
     var tick = function () {
         time = moment();
         $scope.sec = time.format("ss");
         $scope.min = time.format("mm");
         $scope.hour = time.format("hh");
-        console.log($scope.currentId)
+        console.log($scope.counter)
+        if($scope.counter == 15){
+          $scope.tripGetter( "123","213", 1)
+          counter = 0
+        }
+      $scope.counter = $scope.counter + 1
             //$scope.currentId = $location.$$absUrl.substr($location.$$absUrl.length -1);
             //console.log($scope.sec)
     }
