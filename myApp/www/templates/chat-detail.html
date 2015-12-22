@@ -7,22 +7,17 @@
 <ion-view view-title="{{trips[currentId].origin}} to {{trips[currentId].destination}}">
     <ion-content class="padding">
 
-<h4>Soonest Train</h4>
+        <h4>Soonest Train</h4>
         <div class="card">
             <div class="item item-text-wrap">
 
                 <blockquote style="padding-bottom:0px; padding-top:0px; border-color:{{trips[currentId].trips[0].routes}};">
 
-                        <p style="font-size:17px;">
+                    <p style="font-size:17px;">
 
-                        <b>From: </b>{{trips[currentId].origin}}
-                        <br>
-
-                        <b>To: </b>{{trips[currentId].destination}}
-                        <br>
 
                         <span ng-if="trips[currentId].trips[0].origTime.substr(0,1) != hour"><b>Time: </b> {{trips[currentId].trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}} </span>
-                     <span ng-if="trips[currentId].trips[0].origTime.substr(0,1) === hour"><b>Time: </b>{{trips[currentId].trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}}</span>
+                        <span ng-if="trips[currentId].trips[0].origTime.substr(0,1) === hour"><b>Time: </b>{{trips[currentId].trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}}</span>
                         <br>
                         <b>Depart: </b>{{trips[currentId].trips[0].origTime}}
                         <br>
@@ -30,27 +25,26 @@
                         <br>
                         <b>Fare: </b>{{trips[currentId].trips[0].fare}}
                         <br>
+                        <b>Line: </b> {{trips[currentId].trips[0].headStation}}
                     </p>
                 </blockquote>
             </div>
         </div>
 
-       <h4>Later Trains</h4>
-        <div class="card"  ng-repeat="trip in trips[currentId].trips">
+        <h4>Later Trains</h4>
+        <div class="card" ng-repeat="trip in trips[currentId].trips">
             <div class="item item-text-wrap">
                 <blockquote style="padding-bottom:0px; padding-top:0px; border-color:{{trip.routes}};">
                     <p>
-                        <b>From: </b>{{trips[currentId].origin}}
-                        <br>
-                        <b>To: </b>{{trips[currentId].destination}}
-                        <br>
+
                         <b>Time Depart: </b>{{trip.origTime}}
                         <br>
                         <b>Time Arrive: </b>{{trip.destTime}}
                         <br>
                         <b>Fare: </b>{{trip.fare}}
                         <br>
-
+                        <b>Line: </b>{{trip.headStation}}
+                        <br>
                     </p>
                 </blockquote>
 
