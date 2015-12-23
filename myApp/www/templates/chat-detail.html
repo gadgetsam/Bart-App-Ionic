@@ -16,8 +16,8 @@
                     <p style="font-size:17px;">
                       <b> {{trips[currentId].trips[0].headStation}}</b>
                       <br>
-                        <span ng-if="trips[currentId].trips[0].origTime.substr(0,1) != hour"><b>Time: </b> {{trips[currentId].trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}} </span>
-                        <span ng-if="trips[currentId].trips[0].origTime.substr(0,1) === hour"><b>Time: </b>{{trips[currentId].trips[0].origTime.substr(3,2)-min-1}}:{{60-sec}}</span>
+                        <span ng-if="trips[currentId].trips[0].origTime.substr(0,1) != hour"><b>Time: </b> {{trips[currentId].trips[0].timeUntil}} </span>
+                        
                         <br>
                         <b>Depart: </b>{{trips[currentId].trips[0].origTime}}
                         <br>
@@ -38,9 +38,9 @@
                     <p>
                       <b>{{trip.headStation}}</b>
                       <br>
-                        <b>Time Depart: </b>{{trip.origTime}}
+                        <b>Depart: </b>{{trip.origTime}}
                         <br>
-                        <b>Time Arrive: </b>{{trip.destTime}}
+                        <b>Arrive: </b>{{trip.destTime}}
                         <br>
                         <b>Fare: </b>{{trip.fare}}
 
