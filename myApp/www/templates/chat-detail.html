@@ -16,16 +16,14 @@
                     <p style="font-size:17px;">
                       <b> {{trips[currentId].trips[0].headStation}}</b>
                       <br>
-                        <span ng-if="trips[currentId].trips[0].origTime.substr(0,1) != hour"><b>Time: </b> {{trips[currentId].trips[0].timeUntil}} </span>
-                        
-                        <br>
-                        <b>Depart: </b>{{trips[currentId].trips[0].origTime}}
-                        <br>
-                        <b>Arrive: </b>{{trips[currentId].trips[0].destTime}}
-                        <br>
-                        <b>Fare: </b>{{trips[currentId].trips[0].fare}}
-                        <br>
 
+
+                        {{trips[currentId].trips[0].origTime}} -{{trips[currentId].trips[0].destTime}}
+
+
+                      <span style=" font-size:20px;"> {{trips[currentId].trips[0].timeUntil}}</span>
+                        <br>
+                      {{trips[currentId].trips[0].fare}}
                     </p>
                 </blockquote>
             </div>
@@ -36,16 +34,16 @@
             <div class="item item-text-wrap">
                 <blockquote style="padding-bottom:0px; padding-top:0px; border-color:{{trip.routes}};">
                     <p>
-                      <b>{{trip.headStation}}</b>
+                      <span style=" font-size:16px;"><b> {{trip.headStation}}</b></span>
                       <br>
-                        <b>Depart: </b>{{trip.origTime}}
-                        <br>
-                        <b>Arrive: </b>{{trip.destTime}}
-                        <br>
-                        <b>Fare: </b>{{trip.fare}}
 
 
-                        <br>
+                      {{trip.origTime}} -{{trip.destTime}}
+
+
+                      <span style=" font-size:16px;"> {{trip.timeUntil}}</span>
+                      <br>
+                      {{trip.fare}}
                     </p>
                 </blockquote>
 

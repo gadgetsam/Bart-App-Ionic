@@ -98,11 +98,12 @@ angular.module('starter.controllers', [])
         enableFriends: true
     };
 
+}).controller("geo",function($scope){
+
+
 })
-
-
 .controller('MainCtrl', function ($scope, $http, $state, $stateParams, xmlParser, $interval, $location) {
-    var stationsAbbr = {
+    $scope.stationsAbbr = {
         "12TH": {
             "name": "12th St. Oakland City Center",
             "abbr": "12TH",
@@ -688,8 +689,8 @@ angular.module('starter.controllers', [])
                     //console.log(stationsAbbr[origin].name)
 
                 trip = {
-                    "origin": stationsAbbr[origin].name,
-                    "destination": stationsAbbr[destination].name,
+                    "origin": $scope.stationsAbbr[origin].name,
+                    "destination": $scope.stationsAbbr[destination].name,
                     "id": id,
                     "trips": []
 
@@ -763,7 +764,7 @@ angular.module('starter.controllers', [])
                             "destTime": destTime,
                             "fare": fare,
 
-                            "headStation": stationsAbbr[station].name,
+                            "headStation": $scope.stationsAbbr[station].name,
 
                             "routes": routed[parseInt(route)],
                             "timeUntil":timeUntil
@@ -918,4 +919,4 @@ angular.module('starter.controllers', [])
 
 
     $interval(tick, 1000);
-})
+});
