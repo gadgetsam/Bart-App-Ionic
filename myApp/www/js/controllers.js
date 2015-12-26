@@ -98,7 +98,16 @@ angular.module('starter.controllers', [])
         enableFriends: true
     };
 
-}).controller("geo",function($scope){
+}).controller("geoCtrl",function($scope, $){
+    navigator.geolocation.getCurrentPosition(geoSuccess
+      );
+    var geoSuccess = function(loc){
+      most = {}
+      for(x in $scope.stationsAbbr){
+        (x.gtfs_latitude)
+      }
+
+    }
 
 
 })
