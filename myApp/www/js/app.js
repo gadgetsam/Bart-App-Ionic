@@ -20,9 +20,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             // org.apache.cordova.statusbar required
             StatusBar.styleDefault();
         }
-        $timeout(function () {
-            $state.go('home');
-        }, 5000);
+       
     });
 })
 

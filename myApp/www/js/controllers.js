@@ -878,7 +878,7 @@ angular.module('starter.controllers', [])
     $scope.update(0);
 
 
-    $scope.tripGetter("sda", "dsa", 1)
+    //$scope.tripGetter("sda", "dsa", 1)
 
     //$interval($scope.update(1), 100);
     //console.log($scope.time)
