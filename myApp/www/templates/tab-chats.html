@@ -41,6 +41,26 @@
                 </ion-option-button>
                 </div>
             </ion-item>
+        <ion-item class="item-remove-animate item-icon-right" ng-show="!trips.length" type="item-text-wrap" >
+                <blockquote style="margin-top:0px; margin-bottom:0px; padding:0px; padding-left:10px; border-color:grey;">
+                    <div class="row">
+                        <h2>Enter your first trip above! </h2>
+
+                    </div>
+                    <div class="row">
+
+                         <p style="font-size:16px;">Click the plus button to add your frequent trips! </p>
+
+
+
+
+                    </div>
+                </blockquote>
+                <ion-option-button class="button-assertive" ng-click="tabgo()">
+                    Delete
+                </ion-option-button>
+                </div>
+            </ion-item>
             <!--
             <div class="item-remove-animate " ng-repeat="chat in chats"  href="#/tab/chats/{{chat.id}}">
                 <blockquote style="border-color:blue;">Yo Homeslice</blockquote>
