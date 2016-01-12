@@ -660,14 +660,14 @@ angular.module('starter.controllers', [])
         console.log(orgins)
       console.log(dests)
       console.log(num)
-
+        $scope.temp = $scope.trips;
         var banana = false;
         tripDic = JSON.parse(window.localStorage.getItem("trips")).params;
         console.log("update");
         if (tripDic !== undefined && num == 1) {
             dict = tripDic
             console.log(dict);
-          $scope.trips = []
+          $scope.temp = []
         } else {
             dict = [[stationName[orgins], stationName[dests]]]
             console.log(dict);
@@ -787,10 +787,10 @@ angular.module('starter.controllers', [])
                 //return trip
                 //console.log(trip)
                 if (num == 1) {
-                    if ($scope.trips == undefined) {
-                        $scope.trips = [];
+                    if ($scope.temp == undefined) {
+                        $scope.temp = [];
                     }
-                    $scope.trips.push(trip)
+                    $scope.temp.push(trip)
 
                     //console.log("this contains all the data for the ng repeat it is contained in a array called $scope.trips")
                     //console.log($scope.trips);
@@ -800,13 +800,13 @@ angular.module('starter.controllers', [])
                     console.log($scope.tripTemp);
                 }
                 if (num == 3) {
-                    if ($scope.trips == undefined) {
-                        $scope.trips = [];
+                    if ($scope.temp == undefined) {
+                        $scope.temp = [];
                     }
-                    $scope.trips.push(trip)
+                    $scope.temp.push(trip)
                 }
               console.log("done")
-
+              $scope.trips = $scope.temp
                 // For JSON responses, resp.data contains the result
             }, function (err) {
                 console.error('ERR', err);
@@ -909,6 +909,7 @@ angular.module('starter.controllers', [])
 
 .controller('TimeCtrl', function ($scope, $interval, $location) {
     $scope.counter = 0
+    $scope.tripGetter( "123","213", 1)
     var tick = function () {
         time = moment();
         $scope.time = time
@@ -916,8 +917,9 @@ angular.module('starter.controllers', [])
         $scope.min = time.format("mm");
         $scope.hour = time.format("hh");
         console.log($scope.counter)
-        if($scope.counter == 60){
+        if($scope.counter == 25){
           $scope.tripGetter( "123","213", 1)
+          console.log("update"+JSON.parse(window.localStorage.getItem("trips")).params)
           $scope.counter = 0
         }
       $scope.counter = $scope.counter + 1
