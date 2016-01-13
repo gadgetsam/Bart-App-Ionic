@@ -14,16 +14,12 @@
                 <blockquote style="padding-bottom:0px; padding-top:0px; border-color:{{trips[currentId].trips[0].routes}};">
 
                     <p style="font-size:17px;">
-                      <b> {{trips[currentId].trips[0].headStation}}</b>
-                      <br>
+                        <b> {{trips[currentId].trips[0].headStation}}</b>
+                        <br> {{trips[currentId].trips[0].origTime}} - {{trips[currentId].trips[0].destTime}}
 
-
-                        {{trips[currentId].trips[0].origTime}} -  {{trips[currentId].trips[0].destTime}}
-
-
-                      <span style=" font-size:20px;"> {{trips[currentId].trips[0].timeUntil}}</span>
                         <br>
-                      {{trips[currentId].trips[0].fare}}
+                        <span style=" font-size:20px;"> {{trips[currentId].trips[0].timeUntil}}</span>
+                        <br> {{trips[currentId].trips[0].fare}}
                     </p>
                 </blockquote>
             </div>
@@ -34,16 +30,12 @@
             <div class="item item-text-wrap">
                 <blockquote style="padding-bottom:0px; padding-top:0px; border-color:{{trip.routes}};">
                     <p>
-                      <span style=" font-size:16px;"><b> {{trip.headStation}}</b></span>
-                      <br>
+                        <span style=" font-size:16px;"><b> {{trip.headStation}}</b></span>
+                        <br> {{trip.origTime}} - {{trip.destTime}}
 
-
-                      {{trip.origTime}} - {{trip.destTime}}
-
-
-                      <span style=" font-size:16px;"> {{trip.timeUntil}}</span>
-                      <br>
-                      {{trip.fare}}
+                        <br>
+                        <span style=" font-size:16px;"> {{trip.timeUntil}}</span>
+                        <br> {{trip.fare}}
                     </p>
                 </blockquote>
 

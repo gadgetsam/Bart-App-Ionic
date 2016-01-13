@@ -112,6 +112,8 @@ angular.module('starter.controllers', [])
 
 })
 .controller('MainCtrl', function ($scope, $http, $state, $stateParams, xmlParser, $interval, $location) {
+    
+    
     $scope.stationsAbbr = {
         "12TH": {
             "name": "12th St. Oakland City Center",
@@ -893,6 +895,8 @@ angular.module('starter.controllers', [])
         $state.go($state.current, {}, { reload: true }); //second parameter is for $stateParams
         console.log("success")
     }
+        
+$scope.tripGetter(123,213, 1);
     //$interval($scope.tripGetter( "123","213", 1), 1000, 12,true);
     //$scope.doRefresh = function () {
     //    $http.get('/new-items')
