@@ -13,6 +13,8 @@
         "/Users/alexfine/Desktop/Bart-App-Ionic/myApp/platforms/ios/build/emulator/HelloCordova.app/www/plugins/cordova-plugin-device/www/device.js",
         "/Users/alexfine/Desktop/Bart-App-Ionic/myApp/platforms/ios/build/emulator/HelloCordova.app/www/plugins/cordova-plugin-splashscreen/www/splashscreen.js",
         "/Users/alexfine/Desktop/Bart-App-Ionic/myApp/platforms/ios/build/emulator/HelloCordova.app/www/plugins/cordova-plugin-statusbar/www/statusbar.js",
-        "/Users/alexfine/Desktop/Bart-App-Ionic/myApp/platforms/ios/build/emulator/HelloCordova.app/www/plugins/ionic-plugin-keyboard/www/ios/keyboard.js"
+        "/Users/alexfine/Desktop/Bart-App-Ionic/myApp/platforms/ios/build/emulator/HelloCordova.app/www/plugins/ionic-plugin-keyboard/www/ios/keyboard.js",
+        "/Users/alexfine/Desktop/Bart-App-Ionic/myApp/platforms/ios/build/emulator/myApp.app/www/cordova-js-src/exec.js",
+        "/Users/alexfine/Desktop/Bart-App-Ionic/myApp/www/js/controllers.js"
     ]
 }

@@ -10,6 +10,8 @@ angular.module('starter.controllers', [])
     //
     //$scope.$on('$ionicView.enter', function(e) {
     //});
+    
+    
 
     $scope.chats = Chats.all();
     $scope.remove = function (chat) {
@@ -896,7 +898,6 @@ angular.module('starter.controllers', [])
         console.log("success")
     }
         
-$scope.tripGetter(123,213, 1);
     //$interval($scope.tripGetter( "123","213", 1), 1000, 12,true);
     //$scope.doRefresh = function () {
     //    $http.get('/new-items')
