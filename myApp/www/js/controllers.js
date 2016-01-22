@@ -823,6 +823,7 @@ angular.module('starter.controllers', [])
 
         $scope.banana = banana;
     }
+    
     $scope.addRoute = function (origsd, destsd) {
         tripsd = JSON.parse(window.localStorage.getItem("trips"));
         origs = stationName[origsd];
